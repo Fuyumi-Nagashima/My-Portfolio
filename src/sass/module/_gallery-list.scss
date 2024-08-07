@@ -1,0 +1,67 @@
+@use "global" as *;
+.gallery-list{
+    display:grid;
+    gap:rem(8);
+    @include mq('md'){
+        grid-template-columns: repeat(11, 1fr);
+        grid-auto-flow: dense;
+}
+}
+.gallery-list__item {
+    cursor: pointer;
+    @include mq('md'){
+        grid-column: span 6;
+        grid-row: span 1;
+    }
+}
+//縦長画像の比率
+.gallery-list__item:nth-of-type(6n+1), 
+.gallery-list__item:nth-of-type(6n+6){
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    aspect-ratio: 345 / 523;  
+    @include mq('md'){
+        grid-column: span 5;
+        grid-row: span 2;  
+    }
+}
+//横長の画像
+.gallery-list__item img{   
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    aspect-ratio: 345 / 219;
+    @include mq('md'){
+        aspect-ratio: 580 / 369;
+    } 
+}
+/*モーダル*/
+.modal {
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    display: none;
+    width: 100%;
+    height: 100%;
+    padding: rem(40) rem(20);
+    background: rgba(32, 32, 32, 80%);
+}
+//モーダルの画像配置
+.modal__img img{
+    position:absolute;
+    top:0;
+    bottom:0;
+    right:0;
+    left:0;
+    margin:auto;
+    object-fit:contain;
+    max-height:90%;
+    max-width:90%;
+    @include mq('md'){
+        max-height:80%;
+        max-width:90%;
+    }
+}
+

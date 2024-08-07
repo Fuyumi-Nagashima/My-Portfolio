@@ -1,0 +1,34 @@
+@use "global" as *;
+.sub-mv{
+    position:relative;
+}
+.sub-mv__page-header{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align:center ;
+    @include mq('md'){
+    // padding-top:rem(274);
+    }
+}
+.sub-mv__title{
+    color: $white;
+    font-size:clamp(40px, 6vw, 80px);
+    line-height: calc(48/40);
+    font-weight: $regular;
+    font-family:$number-font-family ;
+    width: 100%;
+    display: block; /* spanをブロック要素にして中央揃えを確実にします */
+    text-align: center; /* span内のテキストを中央揃えにします */
+    @include mq('md'){
+    line-height: calc(100/80);
+    }
+}
+.sub-mv__title span{
+    text-transform: capitalize;
+}
+.sub-mv__title--faq span{
+    text-transform:uppercase;
+}

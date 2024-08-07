@@ -1,0 +1,27 @@
+@use "global" as *;
+.inner.blog__inner{
+    padding-right:21px;
+    padding-left:21px;
+    @include mq('md'){
+        padding-right:rem(25);
+        padding-left:rem(25);   
+    }
+}
+.blog__btn{
+    text-align: center;
+    margin-top:rem(40);
+    @include mq('md'){
+        margin-top:rem(80);
+    }
+}
+.blog__cards{
+    margin-top:rem(28);
+    @include mq('md'){
+        margin-top:rem(80);
+    }
+}
+.section-title__primary--white::first-letter{
+    @include mq('md'){
+        color:$white;
+    }
+}

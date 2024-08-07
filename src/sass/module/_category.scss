@@ -1,0 +1,41 @@
+@use "global" as *;
+.category{
+    column-gap:rem(21) ;
+    display: grid;
+    gap: rem(16) rem(21);
+    grid-template-columns: repeat(2, 1fr);
+    
+    @include mq('md'){
+        display: flex;
+    flex-wrap: wrap;
+    gap: rem(16) rem(32);
+    
+}
+}
+.category__item{
+    display: inline-block;
+    width: 100%;
+    font-size: rem(14);
+    text-align: center;
+    line-height: calc(22 / 14);
+    font-weight: $regular;
+    color:$main-green;
+    background-color:$white;
+    border: 1px solid $main-green;
+    padding:rem(5);
+    text-transform: uppercase;
+    transition: 0.3s;
+    z-index:100;
+    @include mq('md'){
+        width:rem(162) ;
+    }
+}
+.category__item.is-active {
+    background:$main-green;
+    color:$white;
+}
+.category__item:hover{
+    color:$white;
+    background-color:$main-green;
+    opacity: 1;
+}
