@@ -4,7 +4,7 @@
     width: rem(48);
     height:rem(48);
     border-radius: 50%;
-    border:1px solid $main-green;
+    border:1px solid $main-blue;
     background-color:$white;
     position:relative;
     transition:all 0.3s; 
@@ -33,7 +33,7 @@
     }
 }
 .pagetop__button:hover{
-    background-color:$main-green;
+    background-color:$main-blue;
 }
 .pagetop__button:hover .pagetop__arrow::before{
     filter: brightness(0) invert(1);

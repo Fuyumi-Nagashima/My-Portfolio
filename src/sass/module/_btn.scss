@@ -14,14 +14,14 @@
     color: white;
     padding: rem(16) rem(40);
     margin-bottom:rem(4);
-    background-color:$main-green;
+    background-color:$main-blue;
     z-index:1;
     }
 .btn span::first-letter{
     text-transform:uppercase;
 }
 .btn::before {
-    border: 1px solid $main-green;
+    border: 1px solid $main-blue;
     content: "";
     height: 100%;
     right: -4px;
@@ -35,7 +35,7 @@
 }
 .btn::after{
     background:$white;
-    border:1px solid $main-green;
+    border:1px solid $main-blue;
     position: absolute;
     top: 0;
     left: 0;  
@@ -59,35 +59,35 @@
     transform: skew(45deg);
 }
 .btn:hover span{
-    color:$main-green;
+    color:$main-blue;
 }
 .btn:hover .btn__arrow{
     margin-left:rem(8);
     width:rem(40);
     height:rem(6);
-    border-bottom: 1px solid $main-green;
-    border-right: 1px solid $main-green;
+    border-bottom: 1px solid $main-blue;
+    border-right: 1px solid $main-blue;
     transform: skew(45deg);
 }
 .btn:hover{
-    color:$main-green;
+    color:$main-blue;
     opacity:1 ;
     z-index:10;
 }
 //btn--whiteのCSS
 .btn--white{
     background-color: $white;
-    color: $main-green;
+    color: $main-blue;
 }
 .btn--white::before{
     border:1px solid $white;
 }
 .btn__arrow.btn__arrow--green{
-    border-bottom: 1px solid $main-green;
-    border-right: 1px solid $main-green;
+    border-bottom: 1px solid $main-blue;
+    border-right: 1px solid $main-blue;
 }
 .btn--white::after{
-    background-color: $main-green;
+    background-color: $main-blue;
     border: 1px solid $white;
 }
 .btn--white:hover span{

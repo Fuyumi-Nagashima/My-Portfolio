@@ -8,7 +8,7 @@
 .asideblog-list__year,
 .asideblog-list__month{
     position:relative;
-    color:$main-green;
+    color:$main-blue;
     font-size:rem(24);
     font-weight: $regular;
     margin-top:rem(3);
@@ -20,7 +20,7 @@
     height:0;
     border-style:solid;
     border-width:12px 0 12px 20.8px;
-    border-color: transparent transparent transparent $main-green;  
+    border-color: transparent transparent transparent $main-blue;  
     transition: transform .3s;
     display: inline-block;
     margin-right:rem(8);

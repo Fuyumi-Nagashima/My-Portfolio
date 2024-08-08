@@ -26,7 +26,7 @@
                     $sp_image = $sp_images["mv_sp_0$i"];
                     if ($pc_image && $sp_image) :
                 ?>
-                    <div class="swiper-slide fv__swiper-slide">
+                    <div class="swiper-slide slide-img fv__swiper-slide">
                         <picture>
                             <source srcset="<?php echo esc_url($sp_image['sizes']['medium_large']); ?>"
                                 media="(max-width:767px)" />
@@ -41,8 +41,7 @@
                 ?>
                 </div>
                 <div class="fv__title-wrap">
-                    <p class="fv__title-large">Dream Quest for all</p>
-                    <p class="fv__title-small">working holiday and study abroad</p>
+                    <!-- <p class="fv__title-large">その挑戦が<br>夢へつながる</p> -->
                 </div>
             </div>
         </div>

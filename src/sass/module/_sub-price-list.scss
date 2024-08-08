@@ -15,10 +15,10 @@
 .sub-price-list__container{
     display:flex;
     flex-direction:column;
-    border:1px solid $main-green;
+    border:1px solid $main-blue;
     @include mq('md'){
         flex-direction:row;
-        border:1px solid $main-green;
+        border:1px solid $main-blue;
     }
 }
 .sub-price-list__item{
@@ -27,7 +27,7 @@
     align-items: center;
 }
 .sub-price-list__item:not(:first-child) {
-    border-top: 1px solid $main-green;
+    border-top: 1px solid $main-blue;
 }
 .sub-price-list__items{
     display:contents;
@@ -38,7 +38,7 @@
 }
 //タイトル
 .sub-price-list__title-wrap{
-    background-color:$main-green;
+    background-color:$main-blue;
     padding:rem(8);
     text-align: center;
     display:flex;
@@ -96,7 +96,7 @@
     flex-direction: column;
     align-items: center;
     justify-content:center;
-    border-right:1px solid $main-green;
+    border-right:1px solid $main-blue;
     text-align:center;
     font-size:rem(16);
     line-height:calc(24/16);

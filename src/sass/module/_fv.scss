@@ -17,6 +17,24 @@
     @include mq('md'){
     }
 }
+@keyframes zoomUp {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+        transform: scale(1.15);
+    }
+}
+.swiper-slide-active .fv__swiper-slide,
+.swiper-slide-duplicate-active .fv__swiper-slide,
+.swiper-slide-prev .fv__swiper-slide {
+  animation: zoomUp 7s linear 0s normal both;
+}
+
+.swiper-slide img {
+    height: auto;
+    width: 100%;
+}
 .fv__title-wrap{
     position:absolute;
     top:50%;

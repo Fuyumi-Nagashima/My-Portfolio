@@ -42,8 +42,8 @@
     font-size: rem(12);
     line-height: calc(22/12);
     font-weight: $regular;
-    color:$main-green;
-    border:1px solid $main-green;
+    color:$main-blue;
+    border:1px solid $main-blue;
     padding:rem(3) rem(11);
     @include mq('md'){
     padding:rem(6) rem(14);
@@ -55,7 +55,7 @@
     font-weight: $medium;
     margin-top: rem(4);
     flex-grow:1;
-    border-bottom: 1px solid $main-green;
+    border-bottom: 1px solid $main-blue;
     padding-bottom:rem(8);
 }
 .campaign-list__text{
@@ -90,9 +90,7 @@
     font-size: rem(20);
     line-height: 1;
     font-weight: $bold;
-    font-family: $number-font-family;
     text-decoration:line-through;
-    text-decoration-color: $red;
     text-decoration-thickness: rem(3);
     @include mq('md'){
         font-size: rem(24);
@@ -102,8 +100,7 @@
     font-size: rem(32);
     line-height: 1;
     font-weight: $bold;
-    color:$main-green;
-    font-family: $number-font-family;
+    color:$main-blue;
     @include mq('md'){
         font-size: rem(40);
     }
@@ -154,9 +151,8 @@
     font-size: rem(16);
     line-height: calc(18/16);
     font-weight:$bold;
-    color: $main-green;
+    color: $main-blue;
     margin-top:rem(32);
-    font-family: $number-font-family;
     text-align:center;
 }
 .campaign-list__apply-link{
@@ -164,7 +160,7 @@
     line-height: calc(18/14);
     margin-top:rem(7);
     text-align: center;
-    color:$main-green;
+    color:$main-blue;
 }
 .campaign-list__btn{
     margin-top:rem(16);

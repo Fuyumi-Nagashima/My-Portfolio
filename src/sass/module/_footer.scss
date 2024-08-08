@@ -2,7 +2,7 @@
 .footer{
     padding-top: rem(48);
     padding-bottom: rem(56);
-    background-color:$main-green;
+    background-color:$main-blue;
     @include mq('md'){
         padding:rem(80) 0;
     }

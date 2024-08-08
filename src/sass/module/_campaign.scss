@@ -52,7 +52,7 @@
         height:rem(80);
         background-color:$white;
         border-radius: 50%;
-        border: 1px solid $main-green;
+        border: 1px solid $main-blue;
         transition: all 0.3s; 
     }   
 }
@@ -82,7 +82,7 @@
 .campaign__next:hover,
 .campaign__prev:hover{
     @include mq('md'){
-        background-color:$main-green;
+        background-color:$main-blue;
     }
     
 }

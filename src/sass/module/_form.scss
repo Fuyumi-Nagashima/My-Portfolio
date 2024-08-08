@@ -5,7 +5,7 @@
         align-items: flex-start;
         justify-content:space-between;
         padding-bottom:rem(24);
-        border-bottom: 1px dotted $main-green;
+        border-bottom: 1px dotted $main-blue;
         @include mq('md'){
         padding-bottom:rem(40);
         }
@@ -13,7 +13,7 @@
 }
 .form__items + .form__items {
     margin-top:rem(24);
-    border-bottom: 1px dotted $main-green;
+    border-bottom: 1px dotted $main-blue;
     @include mq('md'){
         margin-top:rem(40);
     }
@@ -81,7 +81,7 @@
     left: 0;
     transform: translateY(-50%);
     background:$white;
-    border: 1px solid $main-green;
+    border: 1px solid $main-blue;
     display: block;
     width: rem(22);
     height:rem(22);
@@ -130,7 +130,7 @@
     border: none;
     z-index: 1;
     // transition: color 0.4s ease-in-out;
-    // border:1px solid $main-green;
+    // border:1px solid $main-blue;
 }
 
 .form__btn-submit input[type="submit"] {
@@ -178,10 +178,10 @@
 }
 .form__btn-submit:hover::before {
     left: 0; /* ホバー時に背景色がボタン全体を覆う */
-    color:$main-green;
+    color:$main-blue;
 }
 .form__btn-submit:hover .btn__arrow {
-    border-color: $main-green; /* ホバー時の矢印の色 */
+    border-color: $main-blue; /* ホバー時の矢印の色 */
 }
 .form__btn {
     margin-top: 24px;
@@ -251,7 +251,7 @@
 }*/
 /*.form__btn-submit::after{
     background:$white;
-    border:1px solid $main-green;
+    border:1px solid $main-blue;
     position: absolute;
     top: 0;
     left: 0;  

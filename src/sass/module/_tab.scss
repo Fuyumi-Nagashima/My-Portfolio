@@ -16,7 +16,7 @@
     padding:rem(9) rem(16);
     font-size:rem(14);
     background-color:#DDF0F1;
-    color:$main-green; 
+    color:$main-blue; 
     transition:0.3s ease-in-out;
     box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25);
     z-index:10;//あしらいをタブより上にもってくるため
@@ -30,12 +30,12 @@
     }
 }
 .tab__menu-item:hover{
-    background-color:$main-green;
+    background-color:$main-blue;
     color:$white; 
 }
 .tab__menu-item.is-active{
     background-color:#DDF0F1;
-    color:$main-green; 
+    color:$main-blue; 
 }
 .tab__menu-item span{
     @include mq('md'){
@@ -63,11 +63,11 @@
 }
 .tab__menu-item:nth-child(2) span::before{
     mask-image: url(../images/common/mini-icon-shark.svg);
-    background-color:$main-green;
+    background-color:$main-blue;
 }
 .tab__menu-item:nth-child(3) span::before {
     mask-image: url(../images/common/mini-icon-fish.svg);
-    background-color:$main-green;
+    background-color:$main-blue;
 }
 
 //ホバーしたらSVGの色を変える
@@ -81,7 +81,7 @@
 //タブ切り替えしたらアイコンのsvg画像の色を変える
 .tab__menu-item:nth-child(1) span::before {
     mask-image: url(../images/common/mini-icon-whale.svg);
-    background-color:$main-green;
+    background-color:$main-blue;
 }
 .tab__menu-item.is-active:nth-child(2) span::before  {
     -webkit-mask-image: url(../images/common/mini-icon-shark.svg);
@@ -95,7 +95,7 @@
 }
 .tab__content-inner {
     margin-top: rem(16);
-    border: 1px solid $main-green;
+    border: 1px solid $main-blue;
     padding: rem(24);
     @include mq('md'){
     margin-top: rem(24);    
@@ -129,7 +129,7 @@
     font-size: rem(24);
     line-height:1;
     font-weight:$bold;
-    border-bottom: 1px solid $main-green;
+    border-bottom: 1px solid $main-blue;
     padding-bottom:rem(8);
     @include mq('md'){
         font-weight:$medium;
@@ -141,7 +141,7 @@
     line-height:calc(24/16);
 }
 .tab__menu-item.is-active {
-    background-color:$main-green;
+    background-color:$main-blue;
     color:$white;
 }
 .tab__content-item.is-active{

@@ -39,13 +39,14 @@ jQuery(function ($) {
       //fvスライダー
       const swiper = new Swiper(".js-fv__swiper", {
         loop: true,
-        effect: "fade",
-        speed: 3000,
-        allowTouchMove: false,
+        effect: "fade", // フェード切り替え
+        // 自動再生
         autoplay: {
-          delay: 3000,
-        },
-      });
+          delay: 4000, // 4秒後に次のスライドへ
+          disableOnInteraction: false, // ユーザーが操作しても自動再生を継続
+          },
+          speed: 2000, // 2秒かけてフェード
+        });
     
       //campaignスライダー
       var topCampaign_swiper = new Swiper(".js-campaign-swiper", {

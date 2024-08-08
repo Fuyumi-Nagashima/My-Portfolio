@@ -1,10 +1,10 @@
 @use "global" as *;
 .sitemap-nav__heading{
     position: relative;
-    color:$font-color;
+    color:$main-blue;
 }
 .sitemap-nav__list li{
-    color:$font-color;
+    color:$main-blue;
 }
 .sitemap-nav__heading::before{
     content: "";

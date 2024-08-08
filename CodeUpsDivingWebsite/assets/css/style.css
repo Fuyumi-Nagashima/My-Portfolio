@@ -1,6 +1,6 @@
 body {
-	color: #0D2936;
-	font-family: "Noto Sans JP", sans-serif;
+	color: #6E97CD;
+	font-family: "Zen Kaku Gothic New", sans-serif;
 }
 
 .u-desktop {
@@ -235,13 +235,13 @@ a:hover {
 }
 
 .layout-information {
-	background-color: #DDF0F1;
+	background-color: #6E97CD;
 	margin-top: 4.375rem;
 	padding: 5rem 0;
 }
 
 .layout-page-404 {
-	background-color: #408F95;
+	background-color: #6E97CD;
 	padding: 2.4375rem 0 2.5rem 0;
 	position: relative;
 	text-align: center;
@@ -441,7 +441,7 @@ a:hover {
 }
 
 .layout-price {
-	background-color: #DDF0F1;
+	background-color: #6E97CD;
 	margin-top: 5rem;
 	padding: 5rem 0;
 }
@@ -574,8 +574,8 @@ a:hover {
 }
 
 .about-content__text-title {
-	color: #408F95;
-	font-family: "Gotu", sans-serif;
+	color: #6E97CD;
+	font-family: "Cardo", serif;
 	font-size: 2.5rem;
 	font-weight: 300;
 	line-height: 1;
@@ -626,7 +626,7 @@ a:hover {
 }
 
 .accordion__question {
-	background: #408F95;
+	background: #6E97CD;
 	color: #fff;
 	cursor: pointer;
 	font-size: 1rem;
@@ -667,11 +667,10 @@ a:hover {
 }
 
 .accordion__answer {
-	border-bottom: 1px solid #408F95;
-	border-left: 1px solid #408F95;
-	border-right: 1px solid #408F95;
-	border-top: 1px solid #408F95;
-	color: #0D2936;
+	border-bottom: 1px solid #6E97CD;
+	border-left: 1px solid #6E97CD;
+	border-right: 1px solid #6E97CD;
+	border-top: 1px solid #6E97CD;
 	font-size: 1rem;
 	padding: 1.1875rem 1rem;
 }
@@ -705,7 +704,7 @@ a:hover {
 }
 
 .aside-card__title {
-	border-bottom: 1px solid #408F95;
+	border-bottom: 1px solid #6E97CD;
 	flex-grow: 1;
 	font-size: 1rem;
 	font-weight: 500;
@@ -732,18 +731,15 @@ a:hover {
 
 .aside-card__number {
 	-webkit-text-decoration: line-through;
-	font-family: "Lato", sans-serif;
 	font-size: 1.25rem;
 	font-weight: 700;
 	line-height: 1;
 	text-decoration: line-through;
-	text-decoration-color: #C94800;
 	text-decoration-thickness: 0.1875rem;
 }
 
 .aside-card__discount-number {
-	color: #408F95;
-	font-family: "Lato", sans-serif;
+	color: #6E97CD;
 	font-size: 2rem;
 	font-weight: 700;
 	line-height: 1;
@@ -821,7 +817,7 @@ a:hover {
 }
 
 .aside-wrapper__title::before {
-	background-color: #408F95;
+	background-color: #6E97CD;
 	content: "";
 	display: inline-block;
 	height: 3.125rem;
@@ -854,7 +850,7 @@ a:hover {
 
 .asideblog-list__year,
 .asideblog-list__month {
-	color: #408F95;
+	color: #6E97CD;
 	font-size: 1.5rem;
 	font-weight: 400;
 	margin-top: 0.1875rem;
@@ -863,7 +859,7 @@ a:hover {
 
 .asideblog-list__year::before,
 .asideblog-list__month::before {
-	border-color: transparent transparent transparent #408F95;
+	border-color: transparent transparent transparent #6E97CD;
 	border-style: solid;
 	border-width: 12px 0 12px 20.8px;
 	content: "";
@@ -930,7 +926,7 @@ a:hover {
 .breadcrumb__list-link{
     text-transform:uppercase;
     font-size: rem(14);
-    color:$font-color;
+    color:$main-blue;
 }
 .breadcrumb__list-link--white{
     color:$white;
@@ -975,12 +971,12 @@ a:hover {
 
 .btn {
 	align-items: center;
-	background-color: #408F95;
+	background-color: #6E97CD;
 	color: #fff;
 	color: white;
 	cursor: pointer;
 	display: inline-flex;
-	font-family: "Gotu", sans-serif;
+	font-family: "Cardo", serif;
 	font-size: 0.875rem;
 	font-weight: 400;
 	line-height: 1.5714285714;
@@ -997,7 +993,7 @@ a:hover {
 }
 
 .btn::before {
-	border: 1px solid #408F95;
+	border: 1px solid #6E97CD;
 	content: "";
 	height: 100%;
 	position: absolute;
@@ -1013,7 +1009,7 @@ a:hover {
 
 .btn::after {
 	background: #fff;
-	border: 1px solid #408F95;
+	border: 1px solid #6E97CD;
 	content: "";
 	height: 100%;
 	left: 0;
@@ -1040,12 +1036,12 @@ a:hover {
 }
 
 .btn:hover span {
-	color: #408F95;
+	color: #6E97CD;
 }
 
 .btn:hover .btn__arrow {
-	border-bottom: 1px solid #408F95;
-	border-right: 1px solid #408F95;
+	border-bottom: 1px solid #6E97CD;
+	border-right: 1px solid #6E97CD;
 	height: 0.375rem;
 	margin-left: 0.5rem;
 	transform: skew(45deg);
@@ -1053,14 +1049,14 @@ a:hover {
 }
 
 .btn:hover {
-	color: #408F95;
+	color: #6E97CD;
 	opacity: 1;
 	z-index: 10;
 }
 
 .btn--white {
 	background-color: #fff;
-	color: #408F95;
+	color: #6E97CD;
 }
 
 .btn--white::before {
@@ -1068,12 +1064,12 @@ a:hover {
 }
 
 .btn__arrow.btn__arrow--green {
-	border-bottom: 1px solid #408F95;
-	border-right: 1px solid #408F95;
+	border-bottom: 1px solid #6E97CD;
+	border-right: 1px solid #6E97CD;
 }
 
 .btn--white::after {
-	background-color: #408F95;
+	background-color: #6E97CD;
 	border: 1px solid #fff;
 }
 
@@ -1149,8 +1145,8 @@ a:hover {
 }
 
 .campaign-list__category {
-	border: 1px solid #408F95;
-	color: #408F95;
+	border: 1px solid #6E97CD;
+	color: #6E97CD;
 	display: inline-block;
 	font-size: 0.75rem;
 	font-weight: 400;
@@ -1161,7 +1157,7 @@ a:hover {
 }
 
 .campaign-list__title {
-	border-bottom: 1px solid #408F95;
+	border-bottom: 1px solid #6E97CD;
 	flex-grow: 1;
 	font-size: 1rem;
 	font-weight: 500;
@@ -1192,18 +1188,15 @@ a:hover {
 
 .campaign-list__number {
 	-webkit-text-decoration: line-through;
-	font-family: "Lato", sans-serif;
 	font-size: 1.25rem;
 	font-weight: 700;
 	line-height: 1;
 	text-decoration: line-through;
-	text-decoration-color: #C94800;
 	text-decoration-thickness: 0.1875rem;
 }
 
 .campaign-list__discount-number {
-	color: #408F95;
-	font-family: "Lato", sans-serif;
+	color: #6E97CD;
 	font-size: 2rem;
 	font-weight: 700;
 	line-height: 1;
@@ -1229,8 +1222,7 @@ a:hover {
 }
 
 .campaign-list__deadline {
-	color: #408F95;
-	font-family: "Lato", sans-serif;
+	color: #6E97CD;
 	font-size: 1rem;
 	font-weight: 700;
 	line-height: 1.125;
@@ -1239,7 +1231,7 @@ a:hover {
 }
 
 .campaign-list__apply-link {
-	color: #408F95;
+	color: #6E97CD;
 	font-size: 0.875rem;
 	line-height: 1.2857142857;
 	margin-top: 0.4375rem;
@@ -1317,13 +1309,13 @@ a:hover {
 }
 
 .card__date {
-	font-family: "Gotu", sans-serif;
+	font-family: "Cardo", serif;
 	font-size: 0.75rem;
 	line-height: 1.5;
 }
 
 .card__meta {
-	border-bottom: 1px solid #408F95;
+	border-bottom: 1px solid #6E97CD;
 	padding-bottom: 0.25rem;
 }
 
@@ -1429,8 +1421,8 @@ a:hover {
 
 .category__item {
 	background-color: #fff;
-	border: 1px solid #408F95;
-	color: #408F95;
+	border: 1px solid #6E97CD;
+	color: #6E97CD;
 	display: inline-block;
 	font-size: 0.875rem;
 	font-weight: 400;
@@ -1444,12 +1436,12 @@ a:hover {
 }
 
 .category__item.is-active {
-	background: #408F95;
+	background: #6E97CD;
 	color: #fff;
 }
 
 .category__item:hover {
-	background-color: #408F95;
+	background-color: #6E97CD;
 	color: #fff;
 	opacity: 1;
 }
@@ -1460,7 +1452,7 @@ a:hover {
 }
 
 .contact__logo {
-	border-bottom: 1px solid #408F95;
+	border-bottom: 1px solid #6E97CD;
 	padding-bottom: 0.375rem;
 }
 
@@ -1523,7 +1515,7 @@ a:hover {
 }
 
 .contact__text {
-	color: #408F95;
+	color: #6E97CD;
 	display: block;
 	font-size: 0.875rem;
 	line-height: 1.2857142857;
@@ -1537,7 +1529,7 @@ a:hover {
 }
 
 .header__drawer-menu {
-	background: #408F95;
+	background: #6E97CD;
 	display: none;
 	height: 100vh;
 	left: 0;
@@ -1700,7 +1692,7 @@ a:hover {
 }
 
 .footer {
-	background-color: #408F95;
+	background-color: #6E97CD;
 	padding-bottom: 3.5rem;
 	padding-top: 3rem;
 }
@@ -1745,7 +1737,7 @@ a:hover {
 
 .footer__copyright small {
 	color: #fff;
-	font-family: "Gotu", sans-serif;
+	font-family: "Cardo", serif;
 	font-size: 0.75rem;
 	font-weight: 100;
 	line-height: 1.5;
@@ -1774,7 +1766,7 @@ a:hover {
 
 .form-checkbox input + span::before {
 	background: #fff;
-	border: 1px solid #408F95;
+	border: 1px solid #6E97CD;
 	content: "";
 	display: block;
 	height: 0.875rem;
@@ -1812,7 +1804,7 @@ a:hover {
 	appearance: none;
 	background-color: transparent;
 	background-image: none;
-	border: 1px solid #408F95;
+	border: 1px solid #6E97CD;
 	border-radius: 0;
 	color: #DDF0F1;
 	font-size: 1rem;
@@ -1822,7 +1814,7 @@ a:hover {
 }
 
 .form-input input:focus {
-	border: 2px solid #408F95;
+	border: 2px solid #6E97CD;
 	box-shadow: none;
 	outline: none;
 }
@@ -1830,7 +1822,7 @@ a:hover {
 .form-input input[type=text]:focus,
 .form-input input[type=tel]:focus,
 .form-input input[type=email]:focus {
-	color: #0D2936;
+	color: #274875;
 }
 
 .form-select select {
@@ -1841,7 +1833,7 @@ a:hover {
 	background-position: right 0.3125rem top 0.75rem;
 	background-repeat: no-repeat;
 	background-size: 0.75rem;
-	border: 1px solid #408F95;
+	border: 1px solid #6E97CD;
 	border-radius: 0;
 	cursor: pointer;
 	font-size: 0.75rem;
@@ -1866,7 +1858,7 @@ a:hover {
 	appearance: none;
 	background-color: transparent;
 	background-image: none;
-	border: 1px solid #408F95;
+	border: 1px solid #6E97CD;
 	border-radius: 0;
 	font-size: 1rem;
 	height: 12.5rem;
@@ -1876,13 +1868,13 @@ a:hover {
 }
 
 .form-textarea textarea:focus {
-	border: 2px solid #408F95;
+	border: 2px solid #6E97CD;
 	box-shadow: none;
 	outline: none;
 }
 
 .form__items + .form__items {
-	border-bottom: 1px dotted #408F95;
+	border-bottom: 1px dotted #6E97CD;
 	margin-top: 1.5rem;
 }
 
@@ -1931,7 +1923,7 @@ a:hover {
 
 .form__submit input + span::before {
 	background: #fff;
-	border: 1px solid #408F95;
+	border: 1px solid #6E97CD;
 	content: "";
 	display: block;
 	height: 1.375rem;
@@ -2026,12 +2018,12 @@ a:hover {
 }
 
 .form__btn-submit:hover::before {
-	color: #408F95;
+	color: #6E97CD;
 	left: 0; /* ホバー時に背景色がボタン全体を覆う */
 }
 
 .form__btn-submit:hover .btn__arrow {
-	border-color: #408F95; /* ホバー時の矢印の色 */
+	border-color: #6E97CD; /* ホバー時の矢印の色 */
 }
 
 .form__btn {
@@ -2108,7 +2100,7 @@ a:hover {
 
 /*.form__btn-submit::after{
     background:$white;
-    border:1px solid $main-green;
+    border:1px solid $main-blue;
     position: absolute;
     top: 0;
     left: 0;  
@@ -2152,6 +2144,17 @@ a:hover {
 	object-fit: cover;
 }
 
+.swiper-slide-active .fv__swiper-slide,
+.swiper-slide-duplicate-active .fv__swiper-slide,
+.swiper-slide-prev .fv__swiper-slide {
+	animation: zoomUp 7s linear 0s normal both;
+}
+
+.swiper-slide img {
+	height: auto;
+	width: 100%;
+}
+
 .fv__title-wrap {
 	left: 50%;
 	position: absolute;
@@ -2162,7 +2165,7 @@ a:hover {
 
 .fv__title-large {
 	color: #fff;
-	font-family: "Gotu", sans-serif;
+	font-family: "Cardo", serif;
 	font-size: 2.5rem;
 	letter-spacing: 0.54em;
 	line-height: 1;
@@ -2172,7 +2175,7 @@ a:hover {
 
 .fv__title-small {
 	color: #fff;
-	font-family: "Gotu", sans-serif;
+	font-family: "Cardo", serif;
 	font-size: 1.25rem;
 	font-weight: 300;
 	text-align: center;
@@ -2243,7 +2246,7 @@ a:hover {
 }
 
 .header.is-active {
-	background-color: #408F95;
+	background-color: #6E97CD;
 	transition: 0.5s;
 }
 
@@ -2357,7 +2360,7 @@ a:hover {
 }
 
 .information__text-title {
-	border-bottom: 1px solid #408F95;
+	border-bottom: 1px solid #6E97CD;
 	font-size: 1.25rem;
 	font-weight: 700;
 	line-height: 1.2;
@@ -2391,13 +2394,12 @@ a:hover {
 }
 
 .page-404 {
-	background-color: #408F95;
+	background-color: #6E97CD;
 	margin-top: 5rem;
 }
 
 .page-404__title {
 	color: #fff;
-	font-family: "Lato", sans-serif;
 	font-size: 5rem;
 	font-weight: 400;
 	letter-spacing: 0.5em;
@@ -2407,7 +2409,6 @@ a:hover {
 
 .page-404__text {
 	color: #fff;
-	font-family: "Lato", sans-serif;
 	font-size: 1rem;
 	line-height: 1.5;
 }
@@ -2482,7 +2483,7 @@ a:hover {
 }
 
 .page404-footer {
-	background-color: #408F95;
+	background-color: #6E97CD;
 	padding-bottom: 3.5rem;
 	padding-top: 3rem;
 }
@@ -2496,7 +2497,7 @@ a:hover {
 
 .pagetop__button {
 	background-color: #fff;
-	border: 1px solid #408F95;
+	border: 1px solid #6E97CD;
 	border-radius: 50%;
 	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 	height: 3rem;
@@ -2520,7 +2521,7 @@ a:hover {
 }
 
 .pagetop__button:hover {
-	background-color: #408F95;
+	background-color: #6E97CD;
 }
 
 .pagetop__button:hover .pagetop__arrow::before {
@@ -2549,7 +2550,7 @@ a:hover {
 	color: #fff;
 	display: flex;
 	flex-direction: column;
-	font-family: "Gotu", sans-serif;
+	font-family: "Cardo", serif;
 	font-size: 1.125rem;
 	height: inherit;
 	justify-content: center;
@@ -2613,7 +2614,7 @@ a:hover {
 }
 
 .price-table__head {
-	border-bottom: 1px solid #408F95;
+	border-bottom: 1px solid #6E97CD;
 	font-size: 1rem;
 	font-weight: 700;
 	line-height: 1.5;
@@ -2699,8 +2700,8 @@ a:hover {
 }
 
 .section-title__primary {
-	color: #0D2936;
-	font-family: "Gotu", sans-serif;
+	color: #6E97CD;
+	font-family: "Cardo", serif;
 	font-size: 2rem;
 	font-weight: 400;
 	line-height: 1.25;
@@ -2712,11 +2713,11 @@ a:hover {
 }
 
 .section-title__primary::first-letter {
-	color: #408F95;
+	color: #6E97CD;
 }
 
 .section-title__sub {
-	color: #408F95;
+	color: #6E97CD;
 	font-size: 0.75rem;
 	font-weight: 400;
 	line-height: 1.5;
@@ -2724,13 +2725,13 @@ a:hover {
 }
 
 .single-body__date {
-	font-family: "Gotu", sans-serif;
+	font-family: "Cardo", serif;
 	font-size: 0.875rem;
 	line-height: 1.2857142857;
 }
 
 .single-body__title {
-	border-bottom: 1px solid #408F95;
+	border-bottom: 1px solid #6E97CD;
 	font-size: 1.5rem;
 	font-weight: 500;
 	line-height: 1;
@@ -2790,12 +2791,12 @@ a:hover {
 }
 
 .sitemap-nav__heading {
-	color: #0D2936;
+	color: #6E97CD;
 	position: relative;
 }
 
 .sitemap-nav__list li {
-	color: #0D2936;
+	color: #6E97CD;
 }
 
 .sitemap-nav__heading::before {
@@ -2851,7 +2852,6 @@ a:hover {
 .sub-mv__title {
 	color: #fff;
 	display: block; /* spanをブロック要素にして中央揃えを確実にします */
-	font-family: "Lato", sans-serif;
 	font-size: max(40px, min(6vw, 80px));
 	font-weight: 400;
 	line-height: 1.2;
@@ -2886,7 +2886,7 @@ a:hover {
 }
 
 .sub-price-list__container {
-	border: 1px solid #408F95;
+	border: 1px solid #6E97CD;
 	display: flex;
 	flex-direction: column;
 }
@@ -2898,7 +2898,7 @@ a:hover {
 }
 
 .sub-price-list__item:not(:first-child) {
-	border-top: 1px solid #408F95;
+	border-top: 1px solid #6E97CD;
 }
 
 .sub-price-list__items {
@@ -2906,7 +2906,7 @@ a:hover {
 }
 
 .sub-price-list__title-wrap {
-	background-color: #408F95;
+	background-color: #6E97CD;
 	display: flex;
 	justify-content: center;
 	padding: 0.5rem;
@@ -2939,7 +2939,7 @@ a:hover {
 
 .sub-price-list__course {
 	align-items: center;
-	border-right: 1px solid #408F95;
+	border-right: 1px solid #6E97CD;
 	display: flex;
 	flex-direction: column;
 	font-size: 1rem;
@@ -2969,7 +2969,7 @@ a:hover {
 .tab__menu-item {
 	background-color: #DDF0F1;
 	box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25);
-	color: #408F95;
+	color: #6E97CD;
 	font-size: 0.875rem;
 	margin-left: auto;
 	margin-right: auto;
@@ -2982,13 +2982,13 @@ a:hover {
 }
 
 .tab__menu-item:hover {
-	background-color: #408F95;
+	background-color: #6E97CD;
 	color: #fff;
 }
 
 .tab__menu-item.is-active {
 	background-color: #DDF0F1;
-	color: #408F95;
+	color: #6E97CD;
 }
 
 .tab__menu-item.is-active:nth-child(1) span::before {
@@ -2999,13 +2999,13 @@ a:hover {
 
 .tab__menu-item:nth-child(2) span::before {
 	-webkit-mask-image: url(../images/common/mini-icon-shark.svg);
-	background-color: #408F95;
+	background-color: #6E97CD;
 	mask-image: url(../images/common/mini-icon-shark.svg);
 }
 
 .tab__menu-item:nth-child(3) span::before {
 	-webkit-mask-image: url(../images/common/mini-icon-fish.svg);
-	background-color: #408F95;
+	background-color: #6E97CD;
 	mask-image: url(../images/common/mini-icon-fish.svg);
 }
 
@@ -3020,7 +3020,7 @@ a:hover {
 
 .tab__menu-item:nth-child(1) span::before {
 	-webkit-mask-image: url(../images/common/mini-icon-whale.svg);
-	background-color: #408F95;
+	background-color: #6E97CD;
 	mask-image: url(../images/common/mini-icon-whale.svg);
 }
 
@@ -3037,7 +3037,7 @@ a:hover {
 }
 
 .tab__content-inner {
-	border: 1px solid #408F95;
+	border: 1px solid #6E97CD;
 	margin-top: 1rem;
 	padding: 1.5rem;
 }
@@ -3054,7 +3054,7 @@ a:hover {
 }
 
 .tab__content-heading {
-	border-bottom: 1px solid #408F95;
+	border-bottom: 1px solid #6E97CD;
 	font-size: 1.5rem;
 	font-weight: 700;
 	line-height: 1;
@@ -3068,7 +3068,7 @@ a:hover {
 }
 
 .tab__menu-item.is-active {
-	background-color: #408F95;
+	background-color: #6E97CD;
 	color: #fff;
 }
 
@@ -3146,7 +3146,7 @@ a:hover {
 }
 
 .voice-card__head {
-	border-bottom: 1px solid #408F95;
+	border-bottom: 1px solid #6E97CD;
 	flex-grow: 1;
 	padding-bottom: 0.25rem;
 	width: -moz-fit-content;
@@ -3164,8 +3164,8 @@ a:hover {
 }
 
 .voice-card__category {
-	border: 1px solid #408F95;
-	color: #408F95;
+	border: 1px solid #6E97CD;
+	color: #6E97CD;
 	display: inline-block;
 	font-size: 0.75rem;
 	font-weight: 400;
@@ -3252,7 +3252,7 @@ a:hover {
 }
 
 .wp-pagenavi a {
-	color: #408F95;
+	color: #6E97CD;
 }
 
 .wp-pagenavi span.current,
@@ -3260,7 +3260,7 @@ a:hover {
 .wp-pagenavi .nextpostslink,
 .wp-pagenavi .previouspostslink {
 	align-items: center;
-	border: 1px solid #408F95;
+	border: 1px solid #6E97CD;
 	display: flex;
 	font-size: 1rem;
 	font-weight: 700;
@@ -3272,14 +3272,14 @@ a:hover {
 }
 
 .wp-pagenavi span.current {
-	background-color: #408F95;
+	background-color: #6E97CD;
 	color: #fff;
 }
 
 .wp-pagenavi a.page:hover,
 .wp-pagenavi .previouspostslink:hover,
 .wp-pagenavi .nextpostslink:hover {
-	background: #408F95;
+	background: #6E97CD;
 	color: #fff;
 	transition: 0.3s;
 }
@@ -3864,7 +3864,7 @@ html {
 .campaign__prev,
 .campaign__next {
 	background-color: #fff;
-	border: 1px solid #408F95;
+	border: 1px solid #6E97CD;
 	border-radius: 50%;
 	height: 5rem;
 	margin-top: 0; /*デフォルト打消し*/
@@ -3894,7 +3894,7 @@ html {
 
 .campaign__next:hover,
 .campaign__prev:hover {
-	background-color: #408F95;
+	background-color: #6E97CD;
 }
 
 .campaign__prev:hover::before,
@@ -3958,7 +3958,7 @@ html {
 }
 
 .contact__information {
-	border-right: 1px solid #408F95;
+	border-right: 1px solid #6E97CD;
 	padding-right: 5.125rem;
 }
 
@@ -4050,7 +4050,7 @@ html {
 
 .form__items {
 	align-items: flex-start;
-	border-bottom: 1px dotted #408F95;
+	border-bottom: 1px dotted #6E97CD;
 	display: flex;
 	justify-content: space-between;
 	padding-bottom: 1.5rem;
@@ -4369,7 +4369,7 @@ html {
 }
 
 .sub-price-list__container {
-	border: 1px solid #408F95;
+	border: 1px solid #6E97CD;
 	flex-direction: row;
 }
 
@@ -4578,6 +4578,18 @@ html {
 
 html {
 	font-size: 4.2666666667vw;
+}
+
+}
+
+@keyframes zoomUp {
+
+0% {
+	transform: scale(1);
+}
+
+100% {
+	transform: scale(1.15);
 }
 
 }

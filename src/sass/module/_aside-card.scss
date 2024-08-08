@@ -17,7 +17,7 @@
     text-align:center;
     font-weight:$medium;
     flex-grow:1;
-    border-bottom: 1px solid $main-green;
+    border-bottom: 1px solid $main-blue;
     padding-bottom:rem(8);
 }
 .aside-card__text{
@@ -38,15 +38,12 @@
     font-size: rem(20);
     line-height: 1;
     font-weight: $bold;
-    font-family: $number-font-family;
     text-decoration:line-through;
-    text-decoration-color: $red;
     text-decoration-thickness: rem(3);
 }
 .aside-card__discount-number{
     font-size: rem(32);
     line-height: 1;
     font-weight: $bold;
-    color:$main-green;
-    font-family: $number-font-family;
+    color:$main-blue;
 }

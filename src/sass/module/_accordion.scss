@@ -20,7 +20,7 @@
     }
 }
 .accordion__question {
-    background:$main-green;
+    background:$main-blue;
     color:$white;
     cursor: pointer;
     font-size: rem(16);
@@ -67,12 +67,12 @@
     transform: rotate(90deg);
 }
 .accordion__answer{
-    color:$font-color;
+
     font-size: rem(16);
-    border-top: 1px solid $main-green;
-    border-left: 1px solid $main-green;
-    border-right: 1px solid $main-green;
-    border-bottom: 1px solid $main-green;
+    border-top: 1px solid $main-blue;
+    border-left: 1px solid $main-blue;
+    border-right: 1px solid $main-blue;
+    border-bottom: 1px solid $main-blue;
     padding: rem(19) rem(16);
     @include mq('md'){
         padding: rem(40) ;

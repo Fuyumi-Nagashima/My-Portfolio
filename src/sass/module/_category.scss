@@ -19,9 +19,9 @@
     text-align: center;
     line-height: calc(22 / 14);
     font-weight: $regular;
-    color:$main-green;
+    color:$main-blue;
     background-color:$white;
-    border: 1px solid $main-green;
+    border: 1px solid $main-blue;
     padding:rem(5);
     text-transform: uppercase;
     transition: 0.3s;
@@ -31,11 +31,11 @@
     }
 }
 .category__item.is-active {
-    background:$main-green;
+    background:$main-blue;
     color:$white;
 }
 .category__item:hover{
     color:$white;
-    background-color:$main-green;
+    background-color:$main-blue;
     opacity: 1;
 }
