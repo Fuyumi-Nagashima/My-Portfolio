@@ -27,7 +27,7 @@
       <div class="header__inner">
         <h1 class="header__logo">
           <a class="header__logo-link" href="<?php echo esc_url(home_url('/')); ?>">
-            <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/latest-logo.svg" alt="codeupsのロゴ画像"/>
+            <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/logo-white.png" alt="海外留学のDream Quest"/>
           </a>
         </h1>
         <div class="header__hamburger hamburger u-mobile js-header-header__hamburger">

@@ -26,8 +26,8 @@
                     $sp_image = $sp_images["mv_sp_0$i"];
                     if ($pc_image && $sp_image) :
                 ?>
-                    <div class="swiper-slide slide-img fv__swiper-slide">
-                        <picture>
+                    <div class="swiper-slide">
+                        <picture class="fv__swiper-slide">
                             <source srcset="<?php echo esc_url($sp_image['sizes']['medium_large']); ?>"
                                 media="(max-width:767px)" />
                             <img src="<?php echo esc_url($pc_image['sizes']['large']); ?>"

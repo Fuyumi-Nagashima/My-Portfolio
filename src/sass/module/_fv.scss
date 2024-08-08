@@ -25,13 +25,12 @@
         transform: scale(1.15);
     }
 }
-.swiper-slide-active .fv__swiper-slide,
-.swiper-slide-duplicate-active .fv__swiper-slide,
-.swiper-slide-prev .fv__swiper-slide {
+.swiper-slide-active .fv__swiper-slide img,
+.swiper-slide-duplicate-active .fv__swiper-slide img,
+.swiper-slide-prev .fv__swiper-slide img {
   animation: zoomUp 7s linear 0s normal both;
 }
-
-.swiper-slide img {
+.fv__swiper-slide img {
     height: auto;
     width: 100%;
 }
