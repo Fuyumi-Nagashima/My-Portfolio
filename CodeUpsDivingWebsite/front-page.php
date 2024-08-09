@@ -10,7 +10,7 @@
   $contact = esc_url( home_url('/contact/'));
   ?>
 <main>
-    <div class="fv">
+    <div class="fv" id="js-fv">
         <div class="fv__inner">
             <div class="swiper fv__swiper js-fv__swiper">
                 <div class="swiper-wrapper fv__swiper-wrapper">
@@ -41,11 +41,35 @@
                 ?>
                 </div>
                 <div class="fv__title-wrap">
-                    <!-- <p class="fv__title-large">その挑戦が<br>夢へつながる</p> -->
+                    <p class="fv__title-small">その挑戦が<br>夢へ繋がる。</p>
+                </div>
+                <div class="fv__title-bottom">
+                    <p class="fv__title-big">dream&nbsp;quest&nbsp;for&nbsp;challenger</p>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- introduction -->
+    <section class="layout-introduction introduction">
+        <div class="introduction__inner inner">
+            <div class="introduction__logo">
+                <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/logo-blue.png" alt="海外留学のDream Quest"/>
+            </div>
+            <h2 class="introduction__lead">海外留学のDream Quest</h2>
+            <div class="introduction__text-wrap">
+                <p class="introduction__text">Dream Questは、あなたの夢探しの旅、<br>夢を追い求める旅をサポートします。</p>
+                <p class="introduction__text">独自プログラムと豊富なネットワークを活用し、<br>一度きりの人生で最高の挑戦となる<br class="u-mobile">海外留学を実現します。</p>
+                <p class="introduction__text">あなたの成長に繋がる貴重な経験を提供し、<br>安心のサポート体制で留学を全力で応援します。<br>Dream Questで、夢を現実にする第一歩を<br class="u-mobile">踏み出しましょう。</p>
+            </div>
+            <figure class="introduction__image-wrap">
+                <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/introduction-image.jpg" alt="オペラハウスとハーバーブリッジ"/>
+                <p class="introduction__marquee-text">dream&nbsp;quest&nbsp;for&nbsp;challenger</p>
+            </figure>
+        </div>
+    </section>
+
+
     
 <!-- campaign -->
 <section class="layout-campaign campaign">
@@ -417,4 +441,13 @@
         </div>
     </section>
 </main>
+<!-- 新しいローディング画面 -->
+<div id="loading-screen">
+    <div class="plane-icon" id="js-plane-icon"> 
+        <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/loading-airplane-img.png" alt="ローディング画面で下から上に動く飛行機" decoding="async" loading="eager"/>
+    </div> 
+    <div class="opening__logo" id="js-opening__logo">
+        <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/logo-blue.png" alt="海外留学のDream Quest" decoding="async" loading="eager"/>
+    </div>
+</div>
 <?php get_footer(); ?>

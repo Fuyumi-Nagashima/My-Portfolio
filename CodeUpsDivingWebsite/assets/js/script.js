@@ -37,6 +37,49 @@ jQuery(function ($) {
     }
   });
 
+  //headerの背景色変更
+  $(window).on('scroll', function () {
+    if ($('#js-fv').height() < $(window).scrollTop()) {
+      $('.header').addClass('change-color');
+      $('#js-header__logo-link').addClass('change-logo');
+    } else {
+      $('.header').removeClass('change-color');
+      $('#js-header__logo-link').removeClass('change-logo');
+    }
+  });
+  //ローディングアニメーション
+  $(function () {
+    // ローダー終了
+    function end_loader() {
+      $("#loading-screen").fadeOut(800, function () {
+        show_logo();
+      });
+    }
+
+    // 画像表示
+    function show_img() {
+      $("#js-plane-icon img").fadeIn(400).css("animation-delay", "3s");
+    }
+
+    // タイマー処理
+    $(window).on("load", function () {
+      // 画像表示
+      setTimeout(function () {
+        show_img();
+      }, 1000);
+      // ローディング画面
+      setTimeout(function () {
+        $("#js-opening__logo").fadeIn(3000);
+      }, 2000);
+      setTimeout(function () {
+        $("#js-opening").fadeOut(600);
+      }, 2500);
+      // ローダー終了
+      setTimeout(function () {
+        end_loader();
+      }, 5000); // アニメーションが完了するのを待つ
+    });
+  });
   //fvスライダー
   var swiper = new Swiper(".js-fv__swiper", {
     loop: true,

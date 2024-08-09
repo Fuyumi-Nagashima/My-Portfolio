@@ -22,6 +22,10 @@
     position: relative;
     overflow: hidden; 
 }
+.change-nav{
+    color:$sub-blue;
+    transition: all 0.3s 0s ease;
+}
 .pc-nav__link:hover{
     opacity:2;
 }

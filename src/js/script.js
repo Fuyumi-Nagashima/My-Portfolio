@@ -35,7 +35,18 @@ jQuery(function ($) {
           state = false;
         }
       });
-    
+
+      //headerの背景色変更
+      $(window).on('scroll',function() {
+        if($('#js-fv').height() < $(window).scrollTop()) {
+          $('.header').addClass('change-color');
+          $('#js-header__logo-link').addClass('change-logo');
+        } else {
+          $('.header').removeClass('change-color');
+          $('#js-header__logo-link').removeClass('change-logo');
+        }
+      });
+
       //fvスライダー
       const swiper = new Swiper(".js-fv__swiper", {
         loop: true,

@@ -26,7 +26,7 @@
     <header class="layout-header header js-header">
       <div class="header__inner">
         <h1 class="header__logo">
-          <a class="header__logo-link" href="<?php echo esc_url(home_url('/')); ?>">
+          <a class="header__logo-link" id="js-header__logo-link" href="<?php echo esc_url(home_url('/')); ?>">
             <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/logo-white.png" alt="海外留学のDream Quest"/>
           </a>
         </h1>
@@ -38,28 +38,28 @@
         <nav class="header__pc-nav pc-nav u-desktop">
           <ul class="pc-nav__items">
             <li class="pc-nav__item">
-              <a class="pc-nav__link" href="<?php echo $campaign; ?>">campaign<span>キャンペーン</span></a>
+              <a class="pc-nav__link js-pc-nav"  href="<?php echo $campaign; ?>">campaign</a>
             </li>
             <li class="pc-nav__item">
-              <a class="pc-nav__link" href="<?php echo $aboutus; ?>">about&nbsp;us<span>私たちについて</span></a>
+              <a class="pc-nav__link js-pc-nav"  href="<?php echo $aboutus; ?>">about&nbsp;us</a>
             </li>
             <li class="pc-nav__item">
-              <a class="pc-nav__link" href="<?php echo $information; ?>">information<span>ダイビング情報</span></a>
+              <a class="pc-nav__link js-pc-nav"  href="<?php echo $information; ?>">information</a>
             </li>
             <li class="pc-nav__item">
-              <a class="pc-nav__link" href="<?php echo $blog; ?>">blog<span>ブログ</span></a>
+              <a class="pc-nav__link js-pc-nav"  href="<?php echo $blog; ?>">blog</a>
             </li>
             <li class="pc-nav__item">
-              <a class="pc-nav__link" href="<?php echo $voice; ?>">voice<span>お客様の声</span></a>
+              <a class="pc-nav__link js-pc-nav"  href="<?php echo $voice; ?>">voice</a>
             </li>
             <li class="pc-nav__item">
-              <a class="pc-nav__link" href="<?php echo $price; ?>">price<span>料金一覧</span></a>
+              <a class="pc-nav__link js-pc-nav"  href="<?php echo $price; ?>">price</a>
             </li>
             <li class="pc-nav__item">
-              <a class="pc-nav__link" href="<?php echo $faq; ?>">faq<span>よくある質問</span></a>
+              <a class="pc-nav__link js-pc-nav"  href="<?php echo $faq; ?>">faq</a>
             </li>
             <li class="pc-nav__item">
-              <a class="pc-nav__link" href="<?php echo $contact; ?>">contact<span>お問い合わせ</span></a>
+              <a class="pc-nav__link js-pc-nav"  href="<?php echo $contact; ?>">contact</a>
             </li>
           </ul>
         </nav>
@@ -90,7 +90,6 @@
                   <p class="drawer-menu__heading"><a href="<?php echo $blog; ?>">ブログ</a></p>
                 </div>
               </div>
-
               <div class="drawer-menu__items">
                 <div class="drawer-menu__item">
                   <p class="drawer-menu__heading"><a href="<?php echo $voice; ?>">お客様の声</a></p>
