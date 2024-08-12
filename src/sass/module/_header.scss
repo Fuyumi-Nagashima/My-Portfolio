@@ -13,7 +13,7 @@
 }
 .change-color{
     background:$white;
-    transition: all 0.3s 0s ease;
+    transition: all 0.7s 0s ease;
 }
 .header__inner{
     padding-left: rem(15);
@@ -38,7 +38,7 @@
     height: inherit;
     display: flex;
     align-items: center;
-    transition:all 0.3s;
+    transition:all 0.7s;
 }
 //スクロールしたらヘッダーロゴの色を変える
 .header__logo-link{
@@ -61,7 +61,7 @@
 .header__logo-link.change-logo::before {
     z-index: 1;
     animation-name: fade;
-    animation-duration: 0.3s;
+    animation-duration: 0.7s;
     opacity: 1;
 }
 @keyframes fade{

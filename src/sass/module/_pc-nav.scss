@@ -21,10 +21,17 @@
     font-family: $english-font-family;
     position: relative;
     overflow: hidden; 
+    transition: all 0.7s 0s ease;
+}
+.pc-nav__link:hover{
+    color:#B3CBEC;
 }
 .change-nav{
     color:$sub-blue;
-    transition: all 0.3s 0s ease;
+    transition: all 0.7s 0s ease;
+}
+.change-nav:hover{
+    color:$main-blue;
 }
 .pc-nav__link:hover{
     opacity:2;
@@ -39,23 +46,4 @@
     text-align: center;
     line-height: calc(15/10);
     color: $white;
-}
-.pc-nav__link::before {
-    content: '';
-    position: absolute;
-    top: calc(100% + -23px);
-    width: 0;
-    height:rem(1);
-    background: white;
-    transition: all  0.3s ease;
-    
-}
-.pc-nav__link:hover::before{
-    width: calc(100% - rem(40)); 
-}
-.pc-nav__item:last-child .pc-nav__link:hover::before{
-    width: calc(100% - 20px); 
-}
-.pc-nav__item:nth-child(7) .pc-nav__link {
-    text-transform:uppercase;
 }

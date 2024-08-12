@@ -181,7 +181,7 @@ a:hover {
 }
 
 .layout-blog {
-	padding-top: 5rem;
+	margin-top: 5rem;
 }
 
 .layout-campaign {
@@ -242,6 +242,7 @@ a:hover {
 
 .layout-introduction {
 	margin-top: 4rem;
+	position: relative;
 }
 
 .layout-page-404 {
@@ -532,6 +533,12 @@ a:hover {
 	position: absolute;
 	top: -1.5625rem;
 	width: 7.5rem;
+}
+
+.layout-visa {
+	background-color: #F4F9FF;
+	margin-top: 8.75rem;
+	padding: 6.25rem 0;
 }
 
 .layout-voice {
@@ -895,13 +902,13 @@ a:hover {
 	padding-right: 21px;
 }
 
+.blog__cards {
+	margin-top: 1.5rem;
+}
+
 .blog__btn {
 	margin-top: 2.5rem;
 	text-align: center;
-}
-
-.blog__cards {
-	margin-top: 1.75rem;
 }
 
 .breadcrumb {
@@ -974,144 +981,54 @@ a:hover {
 }*/
 
 .btn {
-	align-items: center;
-	background-color: #6E97CD;
-	color: #fff;
-	color: white;
-	cursor: pointer;
-	display: inline-flex;
+	color: #274875; /*形状*/
+	display: inline-block;
 	font-family: "Cardo", serif;
-	font-size: 0.875rem;
-	font-weight: 400;
-	line-height: 1.5714285714;
-	margin-bottom: 0.25rem;
-	max-width: 12.625rem;
-	padding: 1rem 2.5rem;
+	font-size: 1rem;
+	font-weight: 700;
+	letter-spacing: 0.1em;
+	line-height: 1;
+	padding: 0 1.25rem; /*矢印と下線の基点とするためrelativeを指定*/
 	position: relative;
-	width: 100%;
-	z-index: 1;
 }
 
-.btn span::first-letter {
+.btn::first-letter {
 	text-transform: uppercase;
 }
+
+/*矢印と下線の形状*/
 
 .btn::before {
-	border: 1px solid #6E97CD;
+	background: #274875;
+	bottom: -0.875rem;
 	content: "";
-	height: 100%;
-	position: absolute;
-	right: -4px;
-	top: 4px;
-	width: 100%;
-	z-index: -999;
-}
-
-.btn span::first-letter {
-	text-transform: uppercase;
+	height: 0.0625rem;
+	left: 16%; /*絶対配置で下線の位置を決める*/
+	position: absolute; /*アニメーションの指定*/
+	transition: all 0.3s; /*下線の形状*/
+	width: 8.375rem;
 }
 
 .btn::after {
-	background: #fff;
-	border: 1px solid #6E97CD;
+	background: #274875;
+	bottom: -0.6875rem;
 	content: "";
-	height: 100%;
-	left: 0;
+	height: 0.0625rem; /*絶対配置で矢印の位置を決める*/
 	position: absolute;
-	top: 0;
-	transform: scale(0, 1);
-	transform-origin: left top;
-	transition: 0.2s cubic-bezier(0.45, 0, 0.55, 1);
-	width: 100%;
-	z-index: -10;
+	right: -17%;
+	transform: rotate(35deg); /*アニメーションの指定*/
+	transition: all 0.3s; /*矢印の形状*/
+	width: 0.625rem;
+}
+
+/*hoverした際の移動*/
+
+.btn:hover::before {
+	left: 1.9375rem;
 }
 
 .btn:hover::after {
-	transform: scale(1, 1);
-}
-
-.btn__arrow {
-	border-bottom: 1px solid #fff;
-	border-right: 1px solid #fff;
-	height: 0.375rem;
-	margin-left: 0.5rem;
-	transform: skew(45deg);
-	width: 2.5rem;
-}
-
-.btn:hover span {
-	color: #6E97CD;
-}
-
-.btn:hover .btn__arrow {
-	border-bottom: 1px solid #6E97CD;
-	border-right: 1px solid #6E97CD;
-	height: 0.375rem;
-	margin-left: 0.5rem;
-	transform: skew(45deg);
-	width: 2.5rem;
-}
-
-.btn:hover {
-	color: #6E97CD;
-	opacity: 1;
-	z-index: 10;
-}
-
-.btn--white {
-	background-color: #fff;
-	color: #6E97CD;
-}
-
-.btn--white::before {
-	border: 1px solid #fff;
-}
-
-.btn__arrow.btn__arrow--green {
-	border-bottom: 1px solid #6E97CD;
-	border-right: 1px solid #6E97CD;
-}
-
-.btn--white::after {
-	background-color: #6E97CD;
-	border: 1px solid #fff;
-}
-
-.btn--white:hover span {
-	color: #fff;
-}
-
-.btn--white:hover .btn__arrow--green {
-	border-bottom: 1px solid #fff;
-	border-right: 1px solid #fff;
-	height: 0.375rem;
-	margin-left: 0.5rem;
-	transform: skew(45deg);
-	width: 2.5rem;
-}
-
-.btn--white span::last-letter {
-	text-transform: uppercase; /* 最後の文字を大文字にする */
-}
-
-.btn__arrow {
-	border-bottom: 1px solid #fff;
-	border-right: 1px solid #fff;
-	height: 6px;
-	margin-left: 8px;
-	transform: skew(45deg);
-	transition: border-color 0.4s ease-in-out;
-	width: 40px;
-	z-index: 2; /* ボタンのテキストを最前面に */
-}
-
-.btn__arrow--contact {
-	left: 50%;
-	margin-left: 1.0625rem;
-	position: absolute;
-	top: 46%;
-	width: 2.5rem;
-	z-index: 2;
+	right: -2.0625rem;
 }
 
 .campaign-list {
@@ -1298,7 +1215,7 @@ a:hover {
 	background-color: #fff;
 	display: block;
 	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-	padding: 1rem 1rem 1.5rem;
+	padding: 1.5rem;
 }
 
 .card__image img {
@@ -1309,18 +1226,26 @@ a:hover {
 }
 
 .card__body {
-	margin-top: 1.125rem;
+	margin-top: 1.5rem;
 }
 
 .card__date {
-	font-family: "Cardo", serif;
-	font-size: 0.75rem;
-	line-height: 1.5;
+	font-size: 0.8125rem;
+	letter-spacing: 0.08em;
+	line-height: 1;
+	margin-left: 0.75rem;
 }
 
-.card__meta {
-	border-bottom: 1px solid #6E97CD;
-	padding-bottom: 0.25rem;
+.card__category {
+	background-color: #6E97CD;
+	color: #fff;
+	display: inline-block;
+	font-size: 0.75rem;
+	font-weight: 700;
+	line-height: 1;
+	padding: 0.375rem 1rem;
+	width: -moz-fit-content;
+	width: fit-content;
 }
 
 .card__text-body {
@@ -1328,25 +1253,21 @@ a:hover {
 }
 
 .card__title {
-	font-size: 1rem;
-	font-weight: 500;
+	font-size: 1.125rem;
+	font-weight: 700;
 	line-height: 1.5;
+	margin-top: 1rem;
 }
 
 .card__text {
 	font-size: 1rem;
+	font-weight: 400;
 	line-height: 1.5;
+	margin-top: 0.625rem;
 }
 
 .card:hover {
 	opacity: 1;
-}
-
-.card__image img {
-	-o-object-fit: cover;
-	aspect-ratio: 301/201;
-	height: 100%;
-	object-fit: cover;
 }
 
 /*下層ページ(ブログ詳細)のasideのサイドバーCSS*/
@@ -2263,7 +2184,7 @@ a:hover {
 
 .change-color {
 	background: #fff;
-	transition: all 0.3s 0s ease;
+	transition: all 0.7s 0s ease;
 }
 
 .header__inner {
@@ -2283,7 +2204,7 @@ a:hover {
 	align-items: center;
 	display: flex;
 	height: inherit;
-	transition: all 0.3s;
+	transition: all 0.7s;
 }
 
 .header__logo-link {
@@ -2306,7 +2227,7 @@ a:hover {
 }
 
 .header__logo-link.change-logo::before {
-	animation-duration: 0.3s;
+	animation-duration: 0.7s;
 	animation-name: fade;
 	opacity: 1;
 	z-index: 1;
@@ -2454,23 +2375,50 @@ a:hover {
 }
 
 .introduction__text {
+	font-family: "Noto Serif JP", serif;
 	font-size: 0.875rem;
 	font-weight: 400;
 	line-height: 1.5;
 }
 
 .introduction__image-wrap {
-	aspect-ratio: 345/200;
-	margin-left: auto;
-	margin-right: auto;
 	margin-top: 3rem;
 	position: relative;
 }
 
-.introduction__image-wrap img {
+.introduction__image {
+	aspect-ratio: 345/200;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.introduction__image img {
 	-o-object-fit: cover;
 	height: 100%;
 	object-fit: cover;
+}
+
+.introduction__marquee-area {
+	gap: 1rem;
+	left: 50%;
+	overflow: hidden;
+	position: absolute;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	width: 100vw;
+}
+
+.introduction__marquee-text {
+	animation: marquee 15s linear infinite;
+	color: #6E97CD;
+	display: inline-block;
+	font-family: "Cardo", serif;
+	font-size: clamp(2rem, 0.724rem + 5.45vw, 5.625rem);
+	font-weight: 400;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	transform: translateX(100%);
+	white-space: nowrap;
 }
 
 #loading-screen {
@@ -2674,11 +2622,20 @@ a:hover {
 	padding: 0 1.25rem;
 	position: relative;
 	text-transform: capitalize;
+	transition: all 0.7s 0s ease;
+}
+
+.pc-nav__link:hover {
+	color: #B3CBEC;
 }
 
 .change-nav {
 	color: #274875;
-	transition: all 0.3s 0s ease;
+	transition: all 0.7s 0s ease;
+}
+
+.change-nav:hover {
+	color: #6E97CD;
 }
 
 .pc-nav__link:hover {
@@ -2696,28 +2653,6 @@ a:hover {
 	line-height: 1.5;
 	margin-top: 0.25rem;
 	text-align: center;
-}
-
-.pc-nav__link::before {
-	background: white;
-	content: "";
-	height: 0.0625rem;
-	position: absolute;
-	top: calc(100% - 23px);
-	transition: all 0.3s ease;
-	width: 0;
-}
-
-.pc-nav__link:hover::before {
-	width: calc(100% - 2.5rem);
-}
-
-.pc-nav__item:last-child .pc-nav__link:hover::before {
-	width: calc(100% - 20px);
-}
-
-.pc-nav__item:nth-child(7) .pc-nav__link {
-	text-transform: uppercase;
 }
 
 .price-table {
@@ -2820,26 +2755,18 @@ a:hover {
 }
 
 .section-title__primary {
-	color: #6E97CD;
+	color: #333333;
 	font-family: "Cardo", serif;
 	font-size: 2rem;
-	font-weight: 400;
+	font-weight: 700;
 	line-height: 1.25;
 	text-transform: capitalize;
-}
-
-.section-title__primary span {
-	text-transform: lowercase;
-}
-
-.section-title__primary::first-letter {
-	color: #6E97CD;
 }
 
 .section-title__sub {
 	color: #6E97CD;
 	font-size: 0.75rem;
-	font-weight: 400;
+	font-weight: 500;
 	line-height: 1.5;
 	margin-top: 0.25rem;
 }
@@ -3251,6 +3178,54 @@ a:hover {
 	width: 100%;
 }
 
+.visa-card__image {
+	position: relative;
+}
+
+.visa-card__text-area {
+	margin-top: 1.5rem;
+}
+
+.visa-card__image-title {
+	bottom: 1rem;
+	color: #fff;
+	font-family: "Cardo", serif;
+	font-size: 1.5rem;
+	font-weight: 700;
+	left: 1rem;
+	letter-spacing: 0.05em;
+	line-height: 1;
+	position: absolute;
+}
+
+.visa-card__title {
+	font-size: 1.25rem;
+	text-align: center;
+}
+
+.visa-card__text {
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.5;
+	margin-top: 1rem;
+	text-align: left;
+}
+
+.visa-cards {
+	grid-gap: 2.1875rem;
+	display: grid;
+	gap: 2.1875rem;
+}
+
+.visa__cards {
+	margin-top: 3.5rem;
+}
+
+.visa__btn {
+	margin-top: 4rem;
+	text-align: center;
+}
+
 .voice-card {
 	background-color: #fff;
 	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
@@ -3335,7 +3310,7 @@ a:hover {
 	z-index: 2;
 }
 
-.voice-cards {
+.visa-cards {
 	grid-row-gap: 2.5rem;
 	display: grid;
 	row-gap: 2.5rem;
@@ -3490,31 +3465,7 @@ html {
 }
 
 .layout-blog {
-	padding-top: 6.25rem;
-	position: relative;
-}
-
-.layout-blog::after {
-	background: url(../images/common/top-blog-bg.jpg) no-repeat;
-	background-size: cover;
-	content: "";
-	height: 31.25rem;
-	left: 0;
-	position: absolute;
-	top: 0;
-	width: 100%;
-	z-index: -1;
-}
-
-.layout-blog::before {
-	background: url(../images/common/top-blog-icon.png) no-repeat;
-	background-size: cover;
-	content: "";
-	height: 12.5625rem;
-	left: calc(50% - min(43vw, 38.75rem));
-	position: absolute;
-	top: 3%;
-	width: 27.3125rem;
+	margin-top: 10rem;
 }
 
 .layout-campaign {
@@ -3546,6 +3497,17 @@ html {
 	margin-top: 10.25rem;
 	padding-bottom: 4.75rem;
 	padding-top: 6.75rem;
+}
+
+.layout-introduction::before {
+	background: url(../images/common/bg-airplane-img.png) no-repeat;
+	background-size: contain;
+	content: "";
+	height: 11.375rem;
+	left: 0;
+	position: absolute;
+	top: 20.375rem;
+	width: 13.875rem;
 }
 
 .layout-page-404 {
@@ -3875,16 +3837,12 @@ html {
 	padding-right: 1.5625rem;
 }
 
-.blog__btn {
-	margin-top: 5rem;
-}
-
 .blog__cards {
-	margin-top: 5rem;
+	margin-top: 2.5rem;
 }
 
-.section-title__primary--white::first-letter {
-	color: #fff;
+.blog__btn {
+	margin-top: 4rem;
 }
 
 .breadcrumb.breadcrumb--404 {
@@ -4028,6 +3986,10 @@ html {
 
 .no-posts__text {
 	font-size: 1.5rem;
+}
+
+.card__image img {
+	aspect-ratio: 280/180;
 }
 
 .cards {
@@ -4317,10 +4279,17 @@ html {
 }
 
 .introduction__image-wrap {
-	aspect-ratio: 711/399;
 	margin-top: 10rem;
+}
+
+.introduction__image {
+	aspect-ratio: 711/399;
 	max-width: 44.4375rem;
 	width: 100%;
+}
+
+.introduction__marquee-text {
+	font-size: 5.625rem;
 }
 
 #js-plane-icon {
@@ -4458,16 +4427,10 @@ html {
 	line-height: 1;
 }
 
-.section-title__primary--white {
-	color: #fff;
-}
-
 .section-title__sub {
+	font-size: 0.9375rem;
+	line-height: 1.5;
 	margin-top: 0.5rem;
-}
-
-.section-title__sub--white {
-	color: #fff;
 }
 
 .single-body__main {
@@ -4651,6 +4614,20 @@ html {
 	width: 27%;
 }
 
+.visa-card__image-title {
+	font-size: 2.5rem;
+}
+
+.visa-card__title {
+	font-size: 1.5rem;
+	font-weight: 700;
+	line-height: 1.5;
+}
+
+.visa-cards {
+	gap: 5rem;
+}
+
 .voice-card {
 	height: 24.75rem;
 	padding: 1.5rem;
@@ -4689,11 +4666,10 @@ html {
 	margin-top: 2.5rem;
 }
 
-.voice-cards {
+.visa-cards {
 	-moz-column-gap: 2.5rem;
 	column-gap: 2.5rem;
-	grid-template-columns: repeat(2, 1fr);
-	row-gap: 5rem;
+	grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
 }
 
 .voice__cards {
@@ -4774,6 +4750,14 @@ html {
 
 100% {
 	opacity: 1;
+}
+
+}
+
+@keyframes marquee {
+
+100% {
+	transform: translateX(-100%);
 }
 
 }

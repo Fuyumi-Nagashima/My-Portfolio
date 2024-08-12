@@ -1,0 +1,38 @@
+@use "global" as *;
+.visa-card__image {
+    position:relative;
+}
+.visa-card__text-area {
+    margin-top:rem(24);
+}
+.visa-card__image-title {
+    position:absolute;
+    bottom:rem(16);
+    left:rem(16);
+    color:$white;
+    font-size:rem(24);
+    font-weight:$bold;
+    font-family: $english-font-family;
+    line-height:1;
+    letter-spacing:0.05em;
+    @include mq('md'){
+    font-size:rem(40);
+}
+}
+.visa-card__title {
+    font-size: rem(20);
+    text-align:center;
+    @include mq('md'){
+    font-size: rem(24);
+    line-height: 1.5;
+    font-weight:$bold;   
+}
+}
+.visa-card__text {
+    font-size: rem(16);
+    line-height: 1.5;
+    font-weight:$regular;
+    text-align:left;
+    margin-top:rem(16);
+}
+

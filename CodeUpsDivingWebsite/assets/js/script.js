@@ -42,9 +42,12 @@ jQuery(function ($) {
     if ($('#js-fv').height() < $(window).scrollTop()) {
       $('.header').addClass('change-color');
       $('#js-header__logo-link').addClass('change-logo');
+      $('.js-pc-nav').addClass('change-nav');
     } else {
       $('.header').removeClass('change-color');
       $('#js-header__logo-link').removeClass('change-logo');
+      $('.js-pc-nav').removeClass('change-nav');
+
     }
   });
   //ローディングアニメーション

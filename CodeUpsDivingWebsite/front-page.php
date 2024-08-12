@@ -44,7 +44,7 @@
                     <p class="fv__title-small">その挑戦が<br>夢へ繋がる。</p>
                 </div>
                 <div class="fv__title-bottom">
-                    <p class="fv__title-big">dream&nbsp;quest&nbsp;for&nbsp;challenger</p>
+                    <p class="fv__title-big">dream&nbsp;quest&nbsp;for&nbsp;challengers</p>
                 </div>
             </div>
         </div>
@@ -62,16 +62,128 @@
                 <p class="introduction__text">独自プログラムと豊富なネットワークを活用し、<br>一度きりの人生で最高の挑戦となる<br class="u-mobile">海外留学を実現します。</p>
                 <p class="introduction__text">あなたの成長に繋がる貴重な経験を提供し、<br>安心のサポート体制で留学を全力で応援します。<br>Dream Questで、夢を現実にする第一歩を<br class="u-mobile">踏み出しましょう。</p>
             </div>
-            <figure class="introduction__image-wrap">
-                <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/introduction-image.jpg" alt="オペラハウスとハーバーブリッジ"/>
-                <p class="introduction__marquee-text">dream&nbsp;quest&nbsp;for&nbsp;challenger</p>
-            </figure>
+            <div class="introduction__image-wrap">
+                <figure class="introduction__image">
+                    <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/introduction-image.jpg" alt="オペラハウスとハーバーブリッジ"/>
+                </figure>
+                <div class="introduction__marquee-area">
+                    <p class="introduction__marquee-text">dream&nbsp;quest&nbsp;for&nbsp;challengers</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blogセクション -->
+    <section class="layout-blog blog">
+        <div class="blog__inner inner">
+            <div class="blog__section-title section-title">
+                <p class="section-title__primary">blog</p>
+                <h2 class="section-title__sub">留学ブログ</h2>
+            </div>
+            <div class="blog__cards cards">
+                <?php
+            $args = array(
+              'post_type'      => 'post', // 通常の投稿タイプを指定
+              'orderby'        => 'date', // 日付で並べ替え
+              'order'          => 'DESC', // 降順で並べ替え（最新の投稿が最初）
+              'posts_per_page' => 3       // 最新の投稿3件を取得
+            );
+            $the_query = new WP_Query($args);
+            ?>
+                <?php if ($the_query->have_posts()): while ($the_query->have_posts()): $the_query->the_post(); ?>
+                <a href="<?php the_permalink(); ?>" class="cards__item card">
+                    <figure class="card__image">
+                        <?php 
+                    if (has_post_thumbnail()) {
+                      the_post_thumbnail('full');
+                    } else {
+                      // 投稿の本文を取得
+                      $content = get_the_content();
+                      // 本文から最初の画像を抽出
+                      preg_match('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $content, $matches);
+                      // 画像があれば表示
+                      if (!empty($matches)) {
+                        echo $matches[0];
+                      }
+                    }
+                  ?>
+                    </figure>
+                    <?php
+                    $cat = get_the_category();
+                    $cat = $cat[0];
+                    ?>
+                    <div class="card__body">
+                        <div class="card__meta">
+                            <span class="card__category"><?php echo $cat->name; ?></span>
+                            <time class="card__date" datetime="<?php the_time('c'); ?>"><?php the_time('Y/m/d'); ?></time>
+                        </div>
+                        <div class="card__text-body">
+                            <h3 class="card__title"><?php the_title(); ?></h3>
+                            <p class="card__text">
+                                <?php echo wp_trim_words(get_the_content(), 60, '…'); ?>
+                            </p>
+                        </div>
+                    </div>
+                </a>
+                <?php endwhile; ?>
+                <?php wp_reset_postdata(); ?>
+                <?php endif; ?>
+            </div>
+            <div class="blog__btn">
+                <a href="<?php echo $blog; ?>" class="btn">view&nbsp;more </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 留学する目的(visaタイプ)から選ぶセクション -->
+    <section class="layout-visa visa">
+        <div class="visa__inner inner">
+            <div class="visa__section-title section-title">
+                <p class="section-title__primary">what&nbsp;purpose?</p>
+                <h2 class="section-title__sub">留学する目的で選ぶ</h2>
+            </div>
+            <div class="visa__cards visa-cards">
+                <div class="visa-cards__card visa-card">
+                    <figure class="visa-card__image">
+                        <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/studying-abroad.jpg" alt="オペラハウスとハーバーブリッジ"/>
+                        <p class="visa-card__image-title">studying&nbsp;abroad</p>
+                    </figure>
+                    <div class="visa-card__text-area">
+                        <h3 class="visa-card__title">語学留学</h3>
+                        <p class="visa-card__text">語学学校で語学を総合的に学びながら、生活の中で実践。ビジネス英語コース、各種試験対策コース、進学準備コースなど目的別コースも。</p>
+                    </div>
+                </div>
+                <div class="visa__card visa-card">
+                    <figure class="visa-card__image">
+                        <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/working-holiday.jpg" alt="オペラハウスとハーバーブリッジ"/>
+                        <p class="visa-card__image-title">working&nbsp;holiday</p>
+                    </figure>
+                    <div class="visa-card__text-area">
+                        <h3 class="visa-card__title">ワーキングホリデー</h3>
+                        <p class="visa-card__text">海外で1～2年間、「暮らす」「学ぶ」「働く」を同時に楽しめるワーキングホリデー。学校に通いながらアルバイトしたり、ボランティアやスポーツや旅行を堪能したりと、留学とは違う自由でアクティブな海外生活を楽しめます。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="visa__btn">
+                <a href="<?php echo $blog; ?>" class="btn">view&nbsp;more </a>
+            </div>
         </div>
     </section>
 
 
-    
-<!-- campaign -->
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- campaign -->
 <section class="layout-campaign campaign">
     <div class="campaign__inner inner">
         <div class="campaign__section-title section-title">
@@ -85,18 +197,18 @@
         </div>
         <!-- スライド-->
         <div class="campaign__swiper campaign-swiper">
-    <div class="swiper js-campaign-swiper">
-        <ul class="swiper-wrapper campaign-swiper__wrapper">
-            <?php
-             // クエリの設定
-            $args = array(
-                'post_type' => 'campaign', // カスタム投稿タイプ「campaign」
-                'orderby' => 'date', // 日付でソート
-                'order' => 'DESC',  // 降順（新しい順）
-                'posts_per_page' => -1 // すべての投稿を取得
-            );
-            $the_query = new WP_Query($args); // WP_Queryオブジェクトの生成
-            ?>
+            <div class="swiper js-campaign-swiper">
+                <ul class="swiper-wrapper campaign-swiper__wrapper">
+                <?php
+                // クエリの設定
+                $args = array(
+                    'post_type' => 'campaign', // カスタム投稿タイプ「campaign」
+                    'orderby' => 'date', // 日付でソート
+                    'order' => 'DESC',  // 降順（新しい順）
+                    'posts_per_page' => -1 // すべての投稿を取得
+                );
+                $the_query = new WP_Query($args); // WP_Queryオブジェクトの生成
+                ?>
             <?php if ($the_query->have_posts()): //投稿が存在する場合 ?>
                 <?php while ($the_query->have_posts()): $the_query->the_post();  // 投稿ループ ?>
                 <li class="swiper-slide campaign-swiper__slide page-campaign__card campaign-list"
@@ -242,66 +354,7 @@
             </div>
         </div>
     </section>
-    <!-- Blog -->
-    <section class="layout-blog blog">
-        <div class="blog__inner inner">
-            <div class="blog__section-title section-title">
-                <p class="section-title__primary section-title__primary--white">blog</p>
-                <h2 class="section-title__sub section-title__sub--white">ブログ</h2>
-            </div>
-            <div class="blog__cards cards">
-                <?php
-            $args = array(
-              'post_type'      => 'post', // 通常の投稿タイプを指定
-              'orderby'        => 'date', // 日付で並べ替え
-              'order'          => 'DESC', // 降順で並べ替え（最新の投稿が最初）
-              'posts_per_page' => 3       // 最新の投稿3件を取得
-            );
-            $the_query = new WP_Query($args);
-            ?>
-                <?php if ($the_query->have_posts()): while ($the_query->have_posts()): $the_query->the_post(); ?>
-                <a href="<?php the_permalink(); ?>" class="cards__item card">
-                    <figure class="card__image">
-                        <?php 
-                    if (has_post_thumbnail()) {
-                      the_post_thumbnail('full');
-                    } else {
-                      // 投稿の本文を取得
-                      $content = get_the_content();
-                      // 本文から最初の画像を抽出
-                      preg_match('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $content, $matches);
-                      // 画像があれば表示
-                      if (!empty($matches)) {
-                        echo $matches[0];
-                      }
-                    }
-                  ?>
-                    </figure>
-                    <div class="card__body">
-                        <div class="card__meta">
-                            <time class="card__date"
-                                datetime="<?php the_time('c'); ?>"><?php the_time('Y/m/d'); ?></time>
-                            <h3 class="card__title"><?php the_title(); ?></h3>
-                        </div>
-                        <div class="card__text-body">
-                            <p class="card__text">
-                                <?php echo wp_trim_words(get_the_content(), 90, '…'); ?>
-                            </p>
-                        </div>
-                    </div>
-                </a>
-                <?php endwhile; ?>
-                <?php wp_reset_postdata(); ?>
-                <?php endif; ?>
-            </div>
-            <div class="blog__btn">
-                <a href="<?php echo $blog; ?>" class="btn">
-                    <span>view&nbsp;more </span>
-                    <div class="btn__arrow"></div>
-                </a>
-            </div>
-        </div>
-    </section>
+    
     <!-- Voice -->
     <section class="layout-voice voice">
         <div class="voice__inner inner">

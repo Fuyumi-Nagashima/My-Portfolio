@@ -5,39 +5,25 @@
 }
 .section-title__primary{
     font-size: rem(32);
-    font-weight: $regular;
+    line-height:calc(40/32);
+    font-weight: $bold;
     font-family: $english-font-family;
-    color:$main-blue;
+    color:$black;
     text-transform: capitalize;
-    line-height: calc(40/32);
     @include mq('md'){
         font-size: rem(40);
-        line-height: 1;
+        line-height:1;
     }
-}
-.section-title__primary span{
-    text-transform: lowercase;
-}
-.section-title__primary--white{
-    @include mq('md'){
-        color:$white;
-    }
-}
-.section-title__primary::first-letter{
-    color:$main-blue;
 }
 .section-title__sub{
     font-size: rem(12);
-    line-height: calc(18/12);
+    line-height:calc(18/12);
     color:$main-blue;
-    font-weight:$regular ;
+    font-weight:$medium;
     margin-top:rem(4);
     @include mq('md'){
         margin-top: rem(8);
-    }
-}
-.section-title__sub--white{
-    @include mq('md'){
-        color:$white;
+        font-size: rem(15);
+        line-height:1.5;
     }
 }

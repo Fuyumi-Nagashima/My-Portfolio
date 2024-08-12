@@ -36,28 +36,57 @@
     font-size: rem(14);
     line-height:1.5;
     font-weight:$regular;
+    font-family: $second-font-family;
     @include mq('md'){
         font-size: rem(16);
     }
 }
-.introduction__image-wrap {
-    margin-inline:auto;
+.introduction__image-wrap{
     margin-top:rem(48);
-    aspect-ratio:345/200 ;
     position:relative;
+    @include mq('md'){
+        margin-top: rem(160);
+}
+}
+.introduction__image {
+    margin-inline:auto;
+    aspect-ratio:345/200 ;
     @include mq('md'){
         max-width:rem(711);
         width: 100%;
-        margin-top: rem(160);
         aspect-ratio:711/399;
     }
 }
-.introduction__image-wrap img{
+.introduction__image img{
     object-fit: cover;
     height: 100%;
 }
-.introduction__marquee-text {
-    
-
+.introduction__marquee-area{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    gap: 1rem;
+    overflow: hidden;
+    width: 100vw;
 }
-
+.introduction__marquee-text {
+    font-size:clamp(2rem, 0.724rem + 5.45vw, 5.625rem);
+    font-family:$english-font-family;
+    letter-spacing:0.1em;
+    font-weight: $regular;
+    color:$main-blue;
+    text-transform:uppercase;
+    display: inline-block;
+    white-space: nowrap;
+    animation: marquee 15s linear infinite;
+    transform: translateX(100%);
+    @include mq('md'){
+        font-size:rem(90);
+    }
+}
+@keyframes marquee {
+    100% {
+    transform: translateX(-100%);
+    }
+}

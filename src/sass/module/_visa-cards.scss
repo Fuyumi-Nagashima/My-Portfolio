@@ -1,0 +1,8 @@
+@use "global" as *;
+.visa-cards{
+    display:grid;
+    gap:rem(35);
+    @include mq('md'){
+    gap:rem(80);
+}
+}

@@ -2,4 +2,17 @@
 
 .layout-introduction{
     margin-top:rem(64);
+    position: relative;
+}
+.layout-introduction::before{
+    @include mq('md'){
+        position:absolute;
+        content: "";
+        left:0;
+        top:rem(326);
+        height:rem(182);
+        width:rem(222);
+        background:url(../images/common/bg-airplane-img.png) no-repeat;
+        background-size:contain;    
+    }
 }
