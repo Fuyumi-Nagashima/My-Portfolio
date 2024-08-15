@@ -1,0 +1,58 @@
+@use "global" as *;
+.office-table{
+    width:100%;
+    display:grid;
+    gap:rem(32);
+}
+.office-table__item{
+    margin-top:rem(10);
+    display: flex;
+    flex-direction: column;
+    gap:rem(8);
+}
+.office-table__head{
+    text-align:left;
+    font-size:rem(16);
+    line-height:1.5;
+    font-weight:$bold;
+    border-bottom:1px solid $main-blue;
+    padding-bottom:rem(8);
+}
+.office-table__course{
+    width:100%;
+    font-size: rem(14);
+    line-height: calc(24/14);
+    @include mq('md'){
+        font-size: rem(16);
+        line-height: 1.5;
+    }
+}
+.office-table__course::before{
+    display: inline-block;
+    width:rem(20);
+    height:rem(20);
+    content: "";
+    background:url('../images/common/map-icon.png') no-repeat;
+    background-size: contain;
+    vertical-align: top;
+    margin-right:rem(5);
+}
+.office-table__price{
+    width:100%;
+    font-size: rem(14);
+    line-height: calc(24/14);
+    @include mq('md'){
+        font-size: rem(16);
+        line-height: 1.5;
+    }
+}
+.office-table__price::before{
+    display: inline-block;
+    width:rem(20);
+    height:rem(20);
+    content: "";
+    background:url('../images/common/tel-icon.png') no-repeat;
+    background-size: contain;
+    vertical-align: top;
+    margin-right:rem(5);
+}

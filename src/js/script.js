@@ -8,7 +8,6 @@ jQuery(function ($) {
     $(".js-drawer a[href]").on("click", function () {
         $(".js-header-header__hamburger").trigger("click");
     });
-
     //768px以上でドロワーを非表示にする
     $(window).on('resize', function() {
       if (window.matchMedia("(min-width: 768px)").matches) {
@@ -35,18 +34,50 @@ jQuery(function ($) {
           state = false;
         }
       });
-
       //headerの背景色変更
       $(window).on('scroll',function() {
         if($('#js-fv').height() < $(window).scrollTop()) {
           $('.header').addClass('change-color');
           $('#js-header__logo-link').addClass('change-logo');
+          $('.js-pc-nav').addClass('change-nav');
         } else {
           $('.header').removeClass('change-color');
           $('#js-header__logo-link').removeClass('change-logo');
+          $('.js-pc-nav').removeClass('change-nav');
         }
       });
+      //ローディングアニメーション
+  $(function () {
+    // ローダー終了
+    function end_loader() {
+      $("#loading-screen").fadeOut(400, function () {
+        show_logo();
+      });
+    }
+    // 画像表示
+    function show_img() {
+      $("#js-plane-icon img").fadeIn(800).css("animation-delay", "1s");
+    }
 
+    // タイマー処理
+    $(window).on("load", function () {
+      // 画像表示
+      setTimeout(function () {
+        show_img();
+      }, 3000);
+      // ローディング画面
+      setTimeout(function () {
+        $("#js-opening__logo").fadeIn(3000);
+      }, 1000);
+      setTimeout(function () {
+        $("#js-opening").fadeOut(4000);
+      }, 3000);
+      // ローダー終了
+      setTimeout(function () {
+        end_loader();
+      }, 5000); // アニメーションが完了するのを待つ
+    });
+  });
       //fvスライダー
       const swiper = new Swiper(".js-fv__swiper", {
         loop: true,
@@ -58,7 +89,6 @@ jQuery(function ($) {
           },
           speed: 2000, // 2秒かけてフェード
         });
-    
       //campaignスライダー
       var topCampaign_swiper = new Swiper(".js-campaign-swiper", {
         loop: true,

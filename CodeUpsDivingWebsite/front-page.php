@@ -54,17 +54,21 @@
     <section class="layout-introduction introduction">
         <div class="introduction__inner inner">
             <div class="introduction__logo">
-                <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/logo-blue.png" alt="海外留学のDream Quest"/>
+                <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/logo-blue.png"
+                    alt="海外留学のDream Quest" />
             </div>
             <h2 class="introduction__lead">海外留学のDream Quest</h2>
             <div class="introduction__text-wrap">
                 <p class="introduction__text">Dream Questは、あなたの夢探しの旅、<br>夢を追い求める旅をサポートします。</p>
-                <p class="introduction__text">独自プログラムと豊富なネットワークを活用し、<br>一度きりの人生で最高の挑戦となる<br class="u-mobile">海外留学を実現します。</p>
-                <p class="introduction__text">あなたの成長に繋がる貴重な経験を提供し、<br>安心のサポート体制で留学を全力で応援します。<br>Dream Questで、夢を現実にする第一歩を<br class="u-mobile">踏み出しましょう。</p>
+                <p class="introduction__text">独自プログラムと豊富なネットワークを活用し、<br>一度きりの人生で最高の挑戦となる<br class="u-mobile">海外留学を実現します。
+                </p>
+                <p class="introduction__text">あなたの成長に繋がる貴重な経験を提供し、<br>安心のサポート体制で留学を全力で応援します。<br>Dream
+                    Questで、夢を現実にする第一歩を<br class="u-mobile">踏み出しましょう。</p>
             </div>
             <div class="introduction__image-wrap">
                 <figure class="introduction__image">
-                    <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/introduction-image.jpg" alt="オペラハウスとハーバーブリッジ"/>
+                    <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/introduction-image.jpg"
+                        alt="オペラハウスとハーバーブリッジ" />
                 </figure>
                 <div class="introduction__marquee-area">
                     <p class="introduction__marquee-text">dream&nbsp;quest&nbsp;for&nbsp;challengers</p>
@@ -115,7 +119,8 @@
                     <div class="card__body">
                         <div class="card__meta">
                             <span class="card__category"><?php echo $cat->name; ?></span>
-                            <time class="card__date" datetime="<?php the_time('c'); ?>"><?php the_time('Y/m/d'); ?></time>
+                            <time class="card__date"
+                                datetime="<?php the_time('c'); ?>"><?php the_time('Y/m/d'); ?></time>
                         </div>
                         <div class="card__text-body">
                             <h3 class="card__title"><?php the_title(); ?></h3>
@@ -145,7 +150,8 @@
             <div class="visa__cards visa-cards">
                 <div class="visa-cards__card visa-card">
                     <figure class="visa-card__image">
-                        <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/studying-abroad.jpg" alt="オペラハウスとハーバーブリッジ"/>
+                        <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/studying-abroad.jpg"
+                            alt="オペラハウスとハーバーブリッジ" />
                         <p class="visa-card__image-title">studying&nbsp;abroad</p>
                     </figure>
                     <div class="visa-card__text-area">
@@ -155,12 +161,15 @@
                 </div>
                 <div class="visa__card visa-card">
                     <figure class="visa-card__image">
-                        <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/working-holiday.jpg" alt="オペラハウスとハーバーブリッジ"/>
+                        <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/working-holiday.jpg"
+                            alt="オペラハウスとハーバーブリッジ" />
                         <p class="visa-card__image-title">working&nbsp;holiday</p>
                     </figure>
                     <div class="visa-card__text-area">
                         <h3 class="visa-card__title">ワーキングホリデー</h3>
-                        <p class="visa-card__text">海外で1～2年間、「暮らす」「学ぶ」「働く」を同時に楽しめるワーキングホリデー。学校に通いながらアルバイトしたり、ボランティアやスポーツや旅行を堪能したりと、留学とは違う自由でアクティブな海外生活を楽しめます。</p>
+                        <p class="visa-card__text">
+                            海外で1～2年間、「暮らす」「学ぶ」「働く」を同時に楽しめるワーキングホリデー。学校に通いながらアルバイトしたり、ボランティアやスポーツや旅行を堪能したりと、留学とは違う自由でアクティブな海外生活を楽しめます。
+                        </p>
                     </div>
                 </div>
             </div>
@@ -169,6 +178,101 @@
             </div>
         </div>
     </section>
+
+    <!-- 留学する国から選ぶセクション -->
+    <section class="layout-country country">
+        <div class="country__inner inner">
+            <div class="country__section-title section-title">
+                <p class="section-title__primary">which&nbsp;country?</p>
+                <h2 class="section-title__sub">留学する国から選ぶ</h2>
+            </div>
+            <!-- ここからギャラリー -->
+            <div class="country__gallery gallery">
+                <div class="gallery__inner">
+                    <ul class="gallery__list gallery-list">
+                        <li class="gallery-list__item js-modal-open" data-target="1">
+                            <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/gallery_aus.jpg" alt="船からシドニーのオペラハウスの全体像を見た景色"  >
+                            <p class="gallery-list__country-name">オーストラリア<span>australia</span></p>
+                        </li>
+                        <li class="gallery-list__item js-modal-open">
+                            <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/gallery_can.jpg" alt="カナダバンクーバーにあるエメラルドグリーンの湖が美しいバンフ国立公園の様子" target="2" class="js-modal-open">
+                            <p class="gallery-list__country-name">カナダ<span>canada</span></p>
+                        </li>
+                        <li class="gallery-list__item js-modal-open">
+                            <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/gallery_nz.jpg" alt="遠めから眺めたオークランドの街並み" target="3" class="js-modal-open" >
+                            <p class="gallery-list__country-name">ニュージーランド<span>new zealand</span></p>
+                        </li>
+                        <li class="gallery-list__item js-modal-open">
+                            <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/gallery_usa.jpg" alt="高層ビルが多数立ち並ぶアメリカの街並み" target="4" class="js-modal-open" >
+                            <p class="gallery-list__country-name">アメリカ<span>america</span></p>
+
+                        </li>
+                        <li class="gallery-list__item js-modal-open">
+                        <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/gallery_ire.jpg" alt="赤色の建物のテンプルバー" target="5" class="js-modal-open" >
+                        <p class="gallery-list__country-name">アイルランド<span>ireland</span></p>
+                        </li>
+                        <li class="gallery-list__item js-modal-open">
+                        <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/gallery_uk.jpg" alt="車やバスが走るレンガの建物に囲まれたイギリスの街並み" target="6" class="js-modal-open" >
+                        <p class="gallery-list__country-name">イギリス<span>england</span></p>
+                        </li>
+                    </ul>
+                </div><!-- gallery__inner -->
+            </div><!-- gallery -->
+        </div>
+        <!-- モーダル -->
+        <div class="gallery-list__modal modal js-modal" id="1">
+            <div class="modal__img">
+                <img src="" alt="省略">
+            </div>
+        </div>
+        <div class="country__btn">
+                <a href="<?php echo $blog; ?>" class="btn">view&nbsp;more </a>
+            </div>
+    </section>
+    <!-- office セクション -->
+    <section class="layout-office office">
+        <div class="office__inner inner">
+            <div class="office__section-title section-title">
+                <p class="section-title__primary">office</p>
+                <h2 class="section-title__sub">オフィス紹介</h2>
+            </div>
+            <div class="office__wrap">
+                <figure class="office__image-area">
+                    <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/office.jpg" alt="テーブルとイスが置かれたオフィス" >
+                </figure>
+                <div class="office__table office-table">
+                    <div class="office-table__content">
+                        <h3 class="office-table__head">東京（本社）</h3>
+                        <dl class="office-table__item-wrap">
+                            <div class="office-table__item">
+                                <dt class="office-table__course">〒530-0001 大阪府大阪市北区梅田2-5-8</dt>
+                                <dd class="office-table__price">065-652-5687</dd>
+                            </div>
+                        </dl>
+                    </div>    
+                    <div class="office-table__content">
+                        <h3 class="office-table__head">大阪</h3>
+                        <dl class="office-table__item-wrap">
+                            <div class="office-table__item">
+                                <dt class="office-table__course">〒530-0001 大阪府大阪市北区梅田2-5-8</dt>
+                                <dd class="office-table__price">065-652-5687</dd>
+                            </div>
+                        </dl>
+                    </div>    
+                    <div class="office-table__content">
+                        <h3 class="office-table__head">名古屋</h3>
+                        <dl class="office-table__item-wrap">
+                            <div class="office-table__item">
+                                <dt class="office-table__course">〒530-0001 大阪府大阪市北区梅田2-5-8</dt>
+                                <dd class="office-table__price">065-652-5687</dd>
+                            </div>
+                        </dl>
+                    </div>    
+                </div>
+            </div>
+        </div>
+    </section>
+        
 
 
 
@@ -184,22 +288,22 @@
 
 
     <!-- campaign -->
-<section class="layout-campaign campaign">
-    <div class="campaign__inner inner">
-        <div class="campaign__section-title section-title">
-            <p class="section-title__primary">campaign</p>
-            <h2 class="section-title__sub">キャンペーン</h2>
-        </div>
-        <!-- ボタン -->
-        <div class="campaign__btn-wrap">
-            <div class="swiper-button-prev campaign__prev js-campaign-arrow"></div>
-            <div class="swiper-button-next campaign__next js-campaign-arrow"></div>
-        </div>
-        <!-- スライド-->
-        <div class="campaign__swiper campaign-swiper">
-            <div class="swiper js-campaign-swiper">
-                <ul class="swiper-wrapper campaign-swiper__wrapper">
-                <?php
+    <section class="layout-campaign campaign">
+        <div class="campaign__inner inner">
+            <div class="campaign__section-title section-title">
+                <p class="section-title__primary">campaign</p>
+                <h2 class="section-title__sub">キャンペーン</h2>
+            </div>
+            <!-- ボタン -->
+            <div class="campaign__btn-wrap">
+                <div class="swiper-button-prev campaign__prev js-campaign-arrow"></div>
+                <div class="swiper-button-next campaign__next js-campaign-arrow"></div>
+            </div>
+            <!-- スライド-->
+            <div class="campaign__swiper campaign-swiper">
+                <div class="swiper js-campaign-swiper">
+                    <ul class="swiper-wrapper campaign-swiper__wrapper">
+                        <?php
                 // クエリの設定
                 $args = array(
                     'post_type' => 'campaign', // カスタム投稿タイプ「campaign」
@@ -209,23 +313,24 @@
                 );
                 $the_query = new WP_Query($args); // WP_Queryオブジェクトの生成
                 ?>
-            <?php if ($the_query->have_posts()): //投稿が存在する場合 ?>
-                <?php while ($the_query->have_posts()): $the_query->the_post();  // 投稿ループ ?>
-                <li class="swiper-slide campaign-swiper__slide page-campaign__card campaign-list"
-                    data-category="<?php echo get_the_terms(get_the_ID(), 'campaign_category')[0]->slug; ?>">
-                    <div class="campaign-list__link">
-                        <figure class="campaign-list__image campaign-list__image--sub-page">
-                            <picture>
-                                <?php if (has_post_thumbnail()) : ?>
-                                    <?php the_post_thumbnail('full'); ?>
-                                <?php else : ?>
-                                    <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/common/noimage.jpg')); ?>" alt="NoImage画像" loading="lazy">
-                                <?php endif; ?>
-                            </picture>
-                        </figure>
-                        <div class="campaign-list__body campaign-list__body--subpage">
-                            <span class="campaign-list__category">
-                                <?php
+                        <?php if ($the_query->have_posts()): //投稿が存在する場合 ?>
+                        <?php while ($the_query->have_posts()): $the_query->the_post();  // 投稿ループ ?>
+                        <li class="swiper-slide campaign-swiper__slide page-campaign__card campaign-list"
+                            data-category="<?php echo get_the_terms(get_the_ID(), 'campaign_category')[0]->slug; ?>">
+                            <div class="campaign-list__link">
+                                <figure class="campaign-list__image campaign-list__image--sub-page">
+                                    <picture>
+                                        <?php if (has_post_thumbnail()) : ?>
+                                        <?php the_post_thumbnail('full'); ?>
+                                        <?php else : ?>
+                                        <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/common/noimage.jpg')); ?>"
+                                            alt="NoImage画像" loading="lazy">
+                                        <?php endif; ?>
+                                    </picture>
+                                </figure>
+                                <div class="campaign-list__body campaign-list__body--subpage">
+                                    <span class="campaign-list__category">
+                                        <?php
                                 $taxonomy_terms = get_the_terms(get_the_ID(), 'campaign_category');
                                 if (!empty($taxonomy_terms)) {
                                     foreach ($taxonomy_terms as $taxonomy_term) {
@@ -233,11 +338,11 @@
                                     }
                                 }
                                 ?>
-                            </span>
-                            <h3 class="campaign-list__title "><?php the_title(); ?></h3>
-                            <p class="campaign-list__text campaign-list__text--subpage">全部コミコミ(お一人様)</p>
-                            <div class="campaign-list__price">
-                                <?php
+                                    </span>
+                                    <h3 class="campaign-list__title "><?php the_title(); ?></h3>
+                                    <p class="campaign-list__text campaign-list__text--subpage">全部コミコミ(お一人様)</p>
+                                    <div class="campaign-list__price">
+                                        <?php
                                 // ACFで追加したカスタムフィールドを取得
                                 $price_group = get_field('campaign_price-group');
                                 if ($price_group) {
@@ -251,29 +356,29 @@
                                     }
                                 }
                                 ?>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
+                        </li>
+                        <?php endwhile; ?>
+                    </ul>
+                    <!-- view more ボタン -->
+                    <div class="campaign__btn">
+                        <a href="<?php echo get_post_type_archive_link('campaign'); ?>" class="btn">
+                            <span>view&nbsp;more</span>
+                            <div class="btn__arrow"></div>
+                        </a>
                     </div>
-                </li>
-                <?php endwhile; ?>
-                </ul>
-                <!-- view more ボタン -->
-                <div class="campaign__btn">
-                    <a href="<?php echo get_post_type_archive_link('campaign'); ?>" class="btn">
-                        <span>view&nbsp;more</span>
-                        <div class="btn__arrow"></div>
-                    </a>
+                    <?php else: ?>
+                    <div class="campaign__no-posts no-posts">
+                        <p class="no-posts__text">投稿がありません。</p>
+                    </div>
+                    <?php endif; wp_reset_postdata();?>
                 </div>
-            <?php else: ?>
-                <div class="campaign__no-posts no-posts">
-                    <p class="no-posts__text">投稿がありません。</p>
-                </div>
-            <?php endif; wp_reset_postdata();?>
-    </div>
-</div>
+            </div>
 
-    </div>
-</section>
+        </div>
+    </section>
 
     </section>
     <!-- About us -->
@@ -354,7 +459,7 @@
             </div>
         </div>
     </section>
-    
+
     <!-- Voice -->
     <section class="layout-voice voice">
         <div class="voice__inner inner">
@@ -496,11 +601,13 @@
 </main>
 <!-- 新しいローディング画面 -->
 <div id="loading-screen">
-    <div class="plane-icon" id="js-plane-icon"> 
-        <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/loading-airplane-img.png" alt="ローディング画面で下から上に動く飛行機" decoding="async" loading="eager"/>
-    </div> 
+    <div class="plane-icon" id="js-plane-icon">
+        <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/loading-airplane-img.png"
+            alt="ローディング画面で下から上に動く飛行機" decoding="async" loading="eager" />
+    </div>
     <div class="opening__logo" id="js-opening__logo">
-        <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/logo-blue.png" alt="海外留学のDream Quest" decoding="async" loading="eager"/>
+        <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/logo-blue.png" alt="海外留学のDream Quest"
+            decoding="async" loading="eager" />
     </div>
 </div>
 <?php get_footer(); ?>

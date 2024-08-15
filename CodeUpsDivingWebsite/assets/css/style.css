@@ -156,10 +156,6 @@ a:hover {
 	opacity: 0.8;
 }
 
-.layout-about-gallery {
-	margin-top: 2.5rem;
-}
-
 .layout-about {
 	margin-top: 5rem;
 }
@@ -202,6 +198,10 @@ a:hover {
 	right: 4%;
 	top: -4%;
 	width: 6.8125rem;
+}
+
+.layout-country {
+	padding: 5rem 0;
 }
 
 .layout-footer {
@@ -537,8 +537,8 @@ a:hover {
 
 .layout-visa {
 	background-color: #F4F9FF;
-	margin-top: 8.75rem;
-	padding: 6.25rem 0;
+	margin-top: 4.375rem;
+	padding: 5rem 0;
 }
 
 .layout-voice {
@@ -1453,6 +1453,15 @@ a:hover {
 	text-align: center;
 }
 
+.country__gallery {
+	margin-top: 2.5rem;
+}
+
+.country__btn {
+	margin-top: 4rem;
+	text-align: center;
+}
+
 .header__drawer-menu {
 	background: #6E97CD;
 	display: none;
@@ -2126,6 +2135,31 @@ a:hover {
 
 .gallery-list__item {
 	cursor: pointer;
+	position: relative;
+}
+
+.gallery-list__country-name {
+	bottom: 0.625rem;
+	color: #fff;
+	font-size: 0.875rem;
+	font-weight: 700;
+	letter-spacing: 0;
+	line-height: 1.5;
+	position: absolute;
+	right: 0.625rem;
+	text-align: right;
+}
+
+.gallery-list__country-name span {
+	color: #fff;
+	display: block;
+	font-family: "Cardo", serif;
+	font-size: 1.75rem;
+	font-weight: 700;
+	letter-spacing: 0.05em;
+	line-height: 1;
+	margin-top: 0.5rem;
+	text-transform: uppercase;
 }
 
 .gallery-list__item:nth-of-type(6n+1),
@@ -2451,6 +2485,67 @@ a:hover {
 	z-index: 9999;
 }
 
+.office-table {
+	grid-gap: 2rem;
+	display: grid;
+	gap: 2rem;
+	width: 100%;
+}
+
+.office-table__item {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	margin-top: 0.625rem;
+}
+
+.office-table__head {
+	border-bottom: 1px solid #6E97CD;
+	font-size: 1rem;
+	font-weight: 700;
+	line-height: 1.5;
+	padding-bottom: 0.5rem;
+	text-align: left;
+}
+
+.office-table__course {
+	font-size: 0.875rem;
+	line-height: 1.7142857143;
+	width: 100%;
+}
+
+.office-table__course::before {
+	background: url("../images/common/map-icon.png") no-repeat;
+	background-size: contain;
+	content: "";
+	display: inline-block;
+	height: 1.25rem;
+	margin-right: 0.3125rem;
+	vertical-align: top;
+	width: 1.25rem;
+}
+
+.office-table__price {
+	font-size: 0.875rem;
+	line-height: 1.7142857143;
+	width: 100%;
+}
+
+.office-table__price::before {
+	background: url("../images/common/tel-icon.png") no-repeat;
+	background-size: contain;
+	content: "";
+	display: inline-block;
+	height: 1.25rem;
+	margin-right: 0.3125rem;
+	vertical-align: top;
+	width: 1.25rem;
+}
+
+.office__table {
+	margin-top: 2.5rem;
+}
+
 .page-404-breadcrumb {
 	margin-top: 5rem;
 	padding: 0.5625rem 0;
@@ -2504,10 +2599,6 @@ a:hover {
 
 .page-contact-footer {
 	margin-top: 9rem;
-}
-
-.page-gallery__gallery {
-	margin-top: 2.5rem;
 }
 
 .page-sitemap__title {
@@ -2653,39 +2744,6 @@ a:hover {
 	line-height: 1.5;
 	margin-top: 0.25rem;
 	text-align: center;
-}
-
-.price-table {
-	grid-gap: 2.5rem;
-	display: grid;
-	gap: 2.5rem;
-	width: 100%;
-}
-
-.price-table__item {
-	display: flex;
-	justify-content: space-between;
-	margin-top: 0.5rem;
-}
-
-.price-table__head {
-	border-bottom: 1px solid #6E97CD;
-	font-size: 1rem;
-	font-weight: 700;
-	line-height: 1.5;
-	padding-bottom: 0.25rem;
-	text-align: left;
-}
-
-.price-table__course {
-	font-size: 0.875rem;
-	line-height: 1.7142857143;
-	width: 80%;
-}
-
-.price-table__price {
-	font-size: 0.875rem;
-	line-height: 1.7142857143;
 }
 
 .price__image {
@@ -3433,22 +3491,6 @@ html {
 	font-size: 1.4814814815vw;
 }
 
-.layout-about-gallery {
-	margin-top: 7.5rem;
-	position: relative;
-}
-
-.layout-about-gallery::before {
-	background: url(../images/common/contact-icon.png) no-repeat;
-	background-size: contain;
-	content: "";
-	height: 8.625rem;
-	position: absolute;
-	right: calc(50% - min(48vw, 40.125rem));
-	top: -4%;
-	width: 18.8125rem;
-}
-
 .layout-about {
 	margin-top: 8.75rem;
 }
@@ -3482,6 +3524,10 @@ html {
 	right: calc(50% - min(48vw, 41.375rem));
 	top: -10%;
 	width: 18.8125rem;
+}
+
+.layout-country {
+	padding: 8.75rem 0;
 }
 
 .layout-footer {
@@ -3704,6 +3750,11 @@ html {
 	left: calc(50% - min(43vw, 38.9375rem));
 	top: -7%;
 	width: 18.8125rem;
+}
+
+.layout-visa {
+	margin-top: 8.75rem;
+	padding: 6.25rem 0;
 }
 
 .layout-voice {
@@ -4071,6 +4122,10 @@ html {
 	padding-top: 0;
 }
 
+.country__gallery {
+	margin-top: 5rem;
+}
+
 .header__drawer-menu {
 	display: none;
 }
@@ -4193,6 +4248,16 @@ html {
 	grid-row: span 1;
 }
 
+.gallery-list__country-name {
+	bottom: 2.5rem;
+	font-size: 1.125rem;
+	right: 2.5rem;
+}
+
+.gallery-list__country-name span {
+	font-size: 2rem;
+}
+
 .gallery-list__item:nth-of-type(6n+1),
 .gallery-list__item:nth-of-type(6n+6) {
 	grid-column: span 5;
@@ -4304,6 +4369,25 @@ html {
 	width: 100%;
 }
 
+.office-table__course {
+	font-size: 1rem;
+	line-height: 1.5;
+}
+
+.office-table__price {
+	font-size: 1rem;
+	line-height: 1.5;
+}
+
+.office__table {
+	margin-top: 0;
+}
+
+.office__wrap {
+	align-items: center;
+	display: flex;
+}
+
 .page-404-breadcrumb {
 	margin-top: 5.625rem;
 }
@@ -4349,10 +4433,6 @@ html {
 	max-width: 43.75rem;
 }
 
-.page-gallery__gallery {
-	margin-top: 5rem;
-}
-
 .page-thanks__container {
 	margin-top: 9.375rem;
 }
@@ -4384,16 +4464,6 @@ html {
 #js-pagetop {
 	bottom: 20px;
 	right: 20px;
-}
-
-.price-table__course {
-	font-size: 1rem;
-	line-height: 1.5;
-}
-
-.price-table__price {
-	font-size: 1rem;
-	line-height: 1.5;
 }
 
 .price__image {

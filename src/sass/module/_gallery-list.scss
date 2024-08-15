@@ -9,9 +9,40 @@
 }
 .gallery-list__item {
     cursor: pointer;
+    position: relative;
     @include mq('md'){
         grid-column: span 6;
         grid-row: span 1;
+    }
+}
+.gallery-list__country-name{
+    font-size:rem(14);
+    position:absolute;
+    bottom:rem(10);
+    right:rem(10);
+    font-weight:$bold;
+    color:$white;
+    text-align:right;
+    line-height:1.5;
+    letter-spacing:0;
+    @include mq('md'){
+    font-size:rem(18);
+      bottom:rem(40);
+      right:rem(40);
+    }
+}
+.gallery-list__country-name span{
+    display: block;
+    font-size:rem(28);
+    color:$white;
+    text-transform: uppercase;
+    font-family:$english-font-family;
+    letter-spacing:0.05em;
+    font-weight:$bold;
+    line-height:1;
+    margin-top:rem(8);
+    @include mq('md'){
+        font-size:rem(32);
     }
 }
 //縦長画像の比率

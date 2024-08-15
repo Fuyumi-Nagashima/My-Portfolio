@@ -1,0 +1,13 @@
+@use "global" as *;
+.office__table{
+    margin-top:rem(40);
+    @include mq('md'){
+    margin-top:0;
+    }
+}
+.office__wrap{
+    @include mq('md'){
+        display:flex;
+        align-items:center;
+    }
+}
