@@ -166,3 +166,35 @@
     margin-top:rem(16);
     text-align: center;
 }
+
+//ポートフォリオのswiperのコード
+.campaign-swiper {
+    position: relative;
+}
+
+.campaign-swiper .swiper-slide {
+    opacity: .3; /* 左右のスライドを薄くする */
+    transform: scale(.8);
+    transition: .8s;
+}
+
+.campaign-swiper .swiper-slide-active {
+    opacity: 1; /* 中央のスライドは薄くしない */
+  transform: scale(1); /* 中央のスライドは小さくしない */
+  z-index: 1; /* 中央のスライドを一番上にする */
+}
+
+// .campaign-swiper .campaign-swiper img {
+//     width: 100%;
+//     aspect-ratio: 300/180;
+//     object-fit: cover;
+// }
+
+// .service-swiper .swiper-pagination {
+//     bottom: prem(-48);
+// }
+
+// .service-swiper .swiper-pagination .swiper-pagination-bullet {
+//     border: 1px solid #333;
+//     background: #fff9ee;
+// }

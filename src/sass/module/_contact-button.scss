@@ -1,44 +1,55 @@
 @use "global" as *; 
 .contact-button{
     display: inline-block;
-    max-width:rem(414);
+    max-width:rem(240);
     width: 100%;
     padding: rem(20) 0;
+    font-size: rem(18);
+    line-height: 1;
     border: 1px solid #274875;
     border-radius:50px;
     background-color:$sub-blue ;
-    font-size: rem(20);
-    line-height:1.5;
-    letter-spacing:normal;
     color: $white;
     font-weight:$bold;
     /* スタイル用 */
     position: relative;
     transition: .3s;
+    @include mq('md'){
+        max-width:rem(414);
+        width: 100%;
+        padding: rem(20) 0;
+        font-size: rem(20);
+        line-height:1.5;
+    }
 }
 .contact-button:before,
 .contact-button:after {
-    position: absolute;
-    top: 50%;
-    right: rem(30);
-    height:rem(1);
-    background:$white;
-    content: '';
-    transition: transform 0.3s ease;  /* 追加: 滑らかな移動のためのトランジション */
+        position: absolute;
+        top: 50%;
+        right: rem(30);
+        height:rem(1);
+        background:$white;
+        content: '';
+        transition: transform 0.3s ease;  /* 追加: 滑らかな移動のためのトランジション */
 }
 .contact-button:hover:before,
 .contact-button:hover:after {
+    @include mq('md'){
     background-color:$sub-blue;
+    }
 }
 .contact-button:before {
+    @include mq('md'){
     width:rem(56);
     transform: translateY(-50%);
+    }
 }
-
 .contact-button:after {
+    @include mq('md'){
     width:rem(9);
     transform: translateY(-50%) rotate(45deg);
     transform-origin: right center;
+    }
 }
 .contact-button:hover{
     background-color:$white ;

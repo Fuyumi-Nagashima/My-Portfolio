@@ -13,51 +13,6 @@
   $terms_of_service = esc_url( home_url('/terms-of-service/'));
   $sitemap = esc_url( home_url('/sitemap/'));
   ?>
-<?php if (!is_404()) : ?>
-<section class="layout-contact contact">
-    <div class="contact__inner inner">
-        <div class="contact__container">
-            <div class="contact__information">
-                <div class="contact__logo">
-                    <a class="contact__logo-link" href="<?php echo esc_url(home_url('/')); ?>">
-                        <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/contact-logo.svg"
-                            alt="codeupsのロゴ画像" />
-                    </a>
-                </div>
-                <div class="contact__address-wrap">
-                    <address>
-                        <ul class="contact__shop-information">
-                            <li class="contact__address">沖縄県那覇市1-1</li>
-                            <li class="contact__tel">TEL:0120-000-0000</li>
-                            <li class="contact__business-hour">営業時間:8:30-19:00</li>
-                            <li class="contact__holiday">定休日:毎週火曜日</li>
-                        </ul>
-                    </address>
-                    <div class="contact__map">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14158.645744855052!2d153.01206371956383!3d-27.47979778424914!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b915a0c3a9a0799%3A0xabd7ca3589cf6825!2z44Kq44O844K544OI44Op44Oq44KiIOOCr-OCpOODvOODs-OCuuODqeODs-ODiSDjgrXjgqbjgrnjg7vjg5bjg6rjgrnjg5njg7Mg44K144Km44K544O744OQ44Oz44Kv!5e0!3m2!1sja!2sjp!4v1710529102997!5m2!1sja!2sjp"
-                            style="border:0;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div>
-                </div>
-            </div>
-            <div class="contact__form-area">
-                <div class="contact__section-title section-title">
-                    <h2 class="section-title__primary section-title__primary--contact">contact</h2>
-                    <p class="section-title__sub section-title__sub--contact">お問い合わせ</p>
-                </div>
-                <a class="contact__text">ご予約・お問い合わせはコチラ</a>
-                <div class="contact__btn">
-                    <a href="<?php echo $contact; ?>" class="btn">
-                        <span>contact&nbsp;us</span>
-                        <div class="btn__arrow"></div>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<?php endif; ?>
 <?php
 $footer_class = 'layout-footer footer';
 if (is_404()) {
@@ -155,6 +110,10 @@ if (is_404()) {
         </div>
     </div>
 </footer>
+<!-- 追従バナー(フローティングバナー) -->
+<div class="floating" id="js-floating">
+    <a href="#contact" class="floating__link"><span>お問い合わせ</span></a>
+</div>
 <!-- TOPへ戻るボタン -->
 <a class="pagetop" id="js-pagetop" href="#">
     <div class="pagetop__button">

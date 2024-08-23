@@ -89,27 +89,37 @@ jQuery(function ($) {
           },
           speed: 2000, // 2秒かけてフェード
         });
+
       //campaignスライダー
-      var topCampaign_swiper = new Swiper(".js-campaign-swiper", {
+      var service_swiper = new Swiper(".js-campaign-swiper", {
         loop: true,
-        speed: 3000,
-        slidesPerView: "auto",
-        spaceBetween: 24,
+        speed: 1800,
+        slidesPerView:2,
+        centeredSlides: true,
         autoplay: {
-          delay: 3000, 
-          disableOnInteraction: false,
+            delay: 5000,
+            disableOnInteraction: false,// 矢印をクリックしても自動再生を止めない
         },
         breakpoints: {
-          768: {
-            slidesPerView: "auto",
-            spaceBetween: 40,
+            768: {
+              spaceBetween: 25,
+                slidesPerView: 3,
+            },
+            1023: {
+              spaceBetween: 25,
+              slidesPerView: 5
+            }
           },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
         },
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-      });
+    });
+        // navigation: {
+          // nextEl: ".swiper-button-next",
+          // prevEl: ".swiper-button-prev",
+        // },
+     
     
       //色壁が出て写真が出てくるアニメーション,
       var box = $(".information__image,.voice-card__image,.price__image"),
@@ -138,7 +148,19 @@ jQuery(function ($) {
         });
       });
 
-    //ページトップへ戻るボタン
+//追従バナー(フローティングバナー)
+      const floating = $("#js-floating, #js-pagetop");
+      floating.hide();
+    
+      $(window).on("scroll", function () {
+        if ($(this).scrollTop() > 70) {
+          floating.fadeIn(300);
+        } else {
+          floating.fadeOut(300);
+        }
+      });
+
+//ページトップへ戻るボタン
   const pageTop = $("#js-pagetop");
   pageTop.hide();
   $(window).scroll(function () {
@@ -272,7 +294,4 @@ $(document).ready(function() {
     $('.js-panel').eq(index).addClass('is-active');
   });
 });
-
-
-
 });

@@ -275,14 +275,15 @@
     <!-- 無料カウンセリング誘導セクション -->
     <div class="layout-contact contact">
         <div class="contact__image">
-        <div class="contact__text-area">
-            <h2 class="contact__title">無料カウンセリング</h2>
-            <p class="contact__text">Dream Questでは【無料相談、無料サポート】を行っています！<br>まずはカウンセリングのご予約をメールフォームよりお願いします。<br>どんなこともお気軽にご相談ください！</p>
-            <div class="contact__btn">
-                <a href="#" class="contact-button"><span>お申込みはこちら</span></a>
+            <div class="contact__text-area">
+                <h2 class="contact__title">無料カウンセリング</h2>
+                <p class="contact__text">Dream Questでは<br class="u-mobile">【無料相談、無料サポート】を行っています！<br>まずはカウンセリングのご予約を<br class="u-mobile">メールフォームよりお願いします。<br>どんなこともお気軽にご相談ください！</p>
+                <div class="contact__btn">
+                    <a href="<?php echo $contact; ?>" class="contact-button"><span>お申込みはこちら</span></a>
+                </div>
             </div>
         </div>
-        </div>
+        <p class="contact__lead">dream&nbsp;quest&nbsp;for&nbsp;you</p>
     </div>
 
 
@@ -301,7 +302,7 @@
 
     <!-- campaign -->
     <section class="layout-campaign campaign">
-        <div class="campaign__inner inner">
+        <div class="campaign__inner">
             <div class="campaign__section-title section-title">
                 <p class="section-title__primary">campaign</p>
                 <h2 class="section-title__sub">キャンペーン</h2>

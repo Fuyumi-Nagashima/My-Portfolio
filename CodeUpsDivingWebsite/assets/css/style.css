@@ -1153,6 +1153,22 @@ a:hover {
 	text-align: center;
 }
 
+.campaign-swiper {
+	position: relative;
+}
+
+.campaign-swiper .swiper-slide {
+	opacity: 0.3; /* 左右のスライドを薄くする */
+	transform: scale(0.8);
+	transition: 0.8s;
+}
+
+.campaign-swiper .swiper-slide-active {
+	opacity: 1; /* 中央のスライドは薄くしない */
+	transform: scale(1); /* 中央のスライドは小さくしない */
+	z-index: 1; /* 中央のスライドを一番上にする */
+}
+
 .campaign-swiper__wrapper {
 	padding-bottom: 0.625rem;
 	padding-left: 0.125rem;
@@ -1162,16 +1178,23 @@ a:hover {
 	width: 17.5rem;
 }
 
-.campaign__inner {
-	margin: auto;
-	width: 100%;
-}
+/*.campaign__inner{
+    margin: auto;
+    width: 100%;
+    @include mq(md){
+        padding: 0 rem(25);
+    }
+}*/
 
-.campaign__swiper {
-	margin-right: calc(50% - 50vw);
-	margin-top: 1.6875rem;
-	overflow-x: hidden;
-}
+/*.campaign__swiper {
+    margin-right: calc(50% - 50vw);
+    overflow-x:hidden;
+    // width: 100vw;
+    margin-top:rem(27);
+    @include mq('md'){
+            margin-top:rem(40);
+    }
+}*/
 
 .campaign__btn {
 	margin-top: 1.875rem;
@@ -1207,11 +1230,22 @@ a:hover {
 	padding: 1.5rem;
 }
 
+.card__image {
+	cursor: pointer;
+	overflow: hidden;
+	width: 100%;
+}
+
 .card__image img {
 	-o-object-fit: cover;
 	aspect-ratio: 301/201;
 	height: 100%;
 	object-fit: cover;
+	transition: transform 0.6s ease; /* ゆっくり変化させる */
+}
+
+.card__image:hover img {
+	transform: scale(1.1); /* 拡大 */
 }
 
 .card__body {
@@ -1366,11 +1400,10 @@ a:hover {
 	border-radius: 50px;
 	color: #fff;
 	display: inline-block;
-	font-size: 1.25rem;
+	font-size: 1.125rem;
 	font-weight: 700;
-	letter-spacing: normal;
-	line-height: 1.5;
-	max-width: 25.875rem;
+	line-height: 1;
+	max-width: 15rem;
 	padding: 1.25rem 0; /* スタイル用 */
 	position: relative;
 	transition: 0.3s;
@@ -1386,22 +1419,6 @@ a:hover {
 	right: 1.875rem;
 	top: 50%;
 	transition: transform 0.3s ease; /* 追加: 滑らかな移動のためのトランジション */
-}
-
-.contact-button:hover:before,
-.contact-button:hover:after {
-	background-color: #274875;
-}
-
-.contact-button:before {
-	transform: translateY(-50%);
-	width: 3.5rem;
-}
-
-.contact-button:after {
-	transform: translateY(-50%) rotate(45deg);
-	transform-origin: right center;
-	width: 0.5625rem;
 }
 
 .contact-button:hover {
@@ -1436,10 +1453,11 @@ a:hover {
 }
 
 .contact__image {
-	background-image: url(../images/common/counselling_bg.jpg);
-	background-repeat: no-repeat; /* 背景の繰り返し設定 */
+	background-image: url(../images/common/counselling_bg-SP2.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
 	background-size: cover;
-	padding: 4.9375rem 0; /* 画像のサイズ指定 */
+	padding: 4.9375rem 1.25rem;
 }
 
 .contact__text-area {
@@ -1447,28 +1465,39 @@ a:hover {
 	border-radius: 10px;
 	margin-left: auto;
 	margin-right: auto;
-	max-width: 45.625rem;
-	padding: 4.5rem 0;
+	max-width: 31.25rem;
+	padding: 2rem 0;
 	text-align: center;
 }
 
 .contact__title {
 	color: #274875;
-	font-size: 2.5rem;
+	font-size: 1.5rem;
 	font-weight: 500;
 	line-height: 1.5;
 }
 
 .contact__text {
-	font-size: 1rem;
+	font-size: 0.875rem;
 	font-weight: 400;
 	line-height: 2;
-	margin-top: 2rem;
+	margin-top: 1rem;
+	margin-top: 1.75rem;
 }
 
 .contact__btn {
-	margin-top: 2.5rem;
+	margin-top: 1.125rem;
+}
+
+.contact__lead {
+	color: #ECF3FB;
+	font-family: "Cardo", serif;
+	font-size: clamp(1.25rem, -0.29rem + 6.57vw, 5.625rem);
+	font-weight: 400;
+	letter-spacing: 0.1em;
+	line-height: 1;
 	text-align: center;
+	text-transform: uppercase;
 }
 
 .country__gallery {
@@ -1571,6 +1600,56 @@ a:hover {
 
 .drawer-menu__sns li {
 	width: 1.5rem;
+}
+
+.floating {
+	bottom: 0;
+	position: fixed;
+	width: 95%; /*355(floating__linkのwidth)÷375(SPカンプサイズ)×100*/
+	z-index: 10;
+}
+
+.floating__link {
+	align-items: center;
+	background-color: pink;
+	border-bottom: 10px solid brown;
+	border-radius: 0px 20px 0px 0px;
+	color: #fff;
+	display: block;
+	display: flex;
+	font-size: 1rem;
+	font-weight: 700;
+	justify-content: center;
+	line-height: 1.2;
+	padding-bottom: 0.625rem;
+	padding-top: 1.625rem;
+	text-align: center;
+	transition: all 0.3s 0s ease;
+	width: 95%; /*355(floating__linkのwidth)÷375(SPカンプサイズ)×100*/
+}
+
+.floating__link:hover {
+	opacity: 1;
+}
+
+/*PCのときの追従バナー：ホバーした後のボタンCSS*/
+
+.floating__link span {
+	padding-left: 2.6875rem; /*icon-mail画像横幅サイズ35px＋icon-mailとお問い合わせの余白が8pxで合計43px*/
+	position: relative;
+}
+
+.floating__link span::before {
+	background-image: url(../images/common/mail-icon-white.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+	content: "";
+	height: 2.1875rem;
+	left: 0;
+	position: absolute; /*挿入画像の設定はここ*/
+	top: 40%;
+	transform: translateY(-50%);
+	width: 2.1875rem;
 }
 
 .footer-nav__items {
@@ -3997,14 +4076,6 @@ html {
 	width: 20.875rem;
 }
 
-.campaign__inner {
-	max-width: 70.625rem;
-}
-
-.campaign__swiper {
-	margin-top: 2.5rem;
-}
-
 .campaign__btn {
 	margin-top: 4.125rem;
 }
@@ -4097,12 +4168,114 @@ html {
 	width: 10.125rem;
 }
 
+.contact-button {
+	font-size: 1.25rem;
+	line-height: 1.5;
+	max-width: 25.875rem;
+	padding: 1.25rem 0;
+	width: 100%;
+}
+
+.contact-button:hover:before,
+.contact-button:hover:after {
+	background-color: #274875;
+}
+
+.contact-button:before {
+	transform: translateY(-50%);
+	width: 3.5rem;
+}
+
+.contact-button:after {
+	transform: translateY(-50%) rotate(45deg);
+	transform-origin: right center;
+	width: 0.5625rem;
+}
+
+.contact__image {
+	background-image: url(../images/common/counselling_bg.jpg);
+	padding: 4.9375rem 0;
+}
+
+.contact__text-area {
+	max-width: 45.625rem;
+	padding: 4.5rem 0;
+}
+
+.contact__title {
+	font-size: 2.5rem;
+}
+
+.contact__text {
+	font-size: 1rem;
+	margin-top: 2rem;
+}
+
+.contact__btn {
+	margin-top: 2.5rem;
+	text-align: center;
+}
+
 .country__gallery {
 	margin-top: 5rem;
 }
 
 .header__drawer-menu {
 	display: none;
+}
+
+.floating {
+	bottom: 9.375rem;
+	right: 0;
+	width: 6.25rem;
+}
+
+.floating__link {
+	background: linear-gradient(184.53deg, #FDAC61 0.6%, #C4491B 99.38%);
+	border-bottom: 0px;
+	border-radius: 20px 0px 0px 20px;
+	border-right: 5px solid #B9A69E;
+	box-shadow: -4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+	color: #fff;
+	font-size: 1rem;
+	height: 21rem;
+	letter-spacing: 0.2em;
+	line-height: 1.4166666667;
+	position: relative;
+	width: 6.25rem;
+	writing-mode: vertical-rl;
+	z-index: 10;
+}
+
+.floating__link::before {
+	background: linear-gradient(222deg, #A48F87 0%, #3F322E 100%);
+	border-radius: 20px 0px 0px 20px;
+	border-right: 5px solid #B9A69E;
+	content: "";
+	height: 21rem;
+	left: 0;
+	position: absolute;
+	top: 0;
+	transition: all 0.3s;
+	width: 6.25rem;
+	z-index: -1;
+}
+
+.floating__link span {
+	padding-left: 0px;
+	padding-top: 3.5rem;
+}
+
+.floating__link span::before {
+	height: 3rem;
+	left: 50%;
+	top: 0;
+	transform: translateX(-50%);
+	width: 3rem;
+}
+
+.floating__link:hover::before {
+	opacity: 0;
 }
 
 .footer-nav__content {
@@ -4326,10 +4499,6 @@ html {
 	aspect-ratio: 711/399;
 	max-width: 44.4375rem;
 	width: 100%;
-}
-
-.introduction__marquee-text {
-	font-size: 5.625rem;
 }
 
 #js-plane-icon {

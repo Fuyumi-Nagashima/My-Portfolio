@@ -66,7 +66,7 @@
     top:50%;
     left:50%;
     transform: translate(-50%, -50%);
-    gap: 1rem;
+    gap: rem(16);
     overflow: hidden;
     width: 100vw;
 }
@@ -81,9 +81,6 @@
     white-space: nowrap;
     animation: marquee 15s linear infinite;
     transform: translateX(100%);
-    @include mq('md'){
-        font-size:rem(90);
-    }
 }
 @keyframes marquee {
     100% {
