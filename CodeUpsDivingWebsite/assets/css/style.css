@@ -189,17 +189,6 @@ a:hover {
 	position: relative;
 }
 
-.layout-contact::before {
-	background: url(../images/common/contact-icon.png) no-repeat;
-	background-size: contain;
-	content: "";
-	height: 3.125rem;
-	position: absolute;
-	right: 4%;
-	top: -4%;
-	width: 6.8125rem;
-}
-
 .layout-country {
 	padding: 5rem 0;
 }
@@ -1371,81 +1360,110 @@ a:hover {
 	opacity: 1;
 }
 
-.inner.contact__inner {
-	padding-left: 40px;
-	padding-right: 40px;
+.contact-button {
+	background-color: #274875;
+	border: 1px solid #274875;
+	border-radius: 50px;
+	color: #fff;
+	display: inline-block;
+	font-size: 1.25rem;
+	font-weight: 700;
+	letter-spacing: normal;
+	line-height: 1.5;
+	max-width: 25.875rem;
+	padding: 1.25rem 0; /* スタイル用 */
+	position: relative;
+	transition: 0.3s;
+	width: 100%;
 }
 
-.contact__logo {
-	border-bottom: 1px solid #6E97CD;
-	padding-bottom: 0.375rem;
+.contact-button:before,
+.contact-button:after {
+	background: #fff;
+	content: "";
+	height: 0.0625rem;
+	position: absolute;
+	right: 1.875rem;
+	top: 50%;
+	transition: transform 0.3s ease; /* 追加: 滑らかな移動のためのトランジション */
 }
 
-.contact__logo-link {
-	display: block;
-	margin: auto;
+.contact-button:hover:before,
+.contact-button:hover:after {
+	background-color: #274875;
 }
 
-.contact__logo-link img {
-	height: 4.0625rem;
-	margin: auto;
-	max-width: 100%;
-	width: 10.875rem;
+.contact-button:before {
+	transform: translateY(-50%);
+	width: 3.5rem;
 }
 
-.contact__container {
-	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+.contact-button:after {
+	transform: translateY(-50%) rotate(45deg);
+	transform-origin: right center;
+	width: 0.5625rem;
 }
 
-.contact__address-wrap {
-	align-items: center;
-	display: flex;
-	flex-direction: column;
-	gap: 1rem;
-	margin-top: 1rem;
+.contact-button:hover {
+	background-color: #fff;
+	border: 1px solid #274875;
+	color: #274875;
+	opacity: 1;
+}
+
+/*メールアイコンの設置*/
+
+.contact-button span {
+	padding-left: 2.4375rem; /*icon-mail画像横幅サイズ21px＋icon-mailとお問い合わせの余白が18pxで合計*/
+	position: relative;
+}
+
+.contact-button span::before {
+	background-image: url(../images/common/mail-icon-white.png);
+	background-repeat: no-repeat;
+	background-size: cover, 0 0;
+	content: "";
+	height: 1.3125rem;
+	left: 0;
+	position: absolute; /*挿入画像の設定はここ*/
+	top: 50%;
+	transform: translateY(-50%);
+	width: 1.3125rem;
+}
+
+.contact-button span:hover::before {
+	background-image: url(../images/common/mail-blue.png);
+}
+
+.contact__image {
+	background-image: url(../images/common/counselling_bg.jpg);
+	background-repeat: no-repeat; /* 背景の繰り返し設定 */
+	background-size: cover;
+	padding: 4.9375rem 0; /* 画像のサイズ指定 */
+}
+
+.contact__text-area {
+	background-color: rgba(255, 255, 255, 0.8);
+	border-radius: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 45.625rem;
+	padding: 4.5rem 0;
 	text-align: center;
 }
 
-.contact__shop-information {
-	display: flex;
-	flex-direction: column;
-	font-size: 1rem;
-	font-style: normal;
-	gap: 0.25rem;
+.contact__title {
+	color: #274875;
+	font-size: 2.5rem;
+	font-weight: 500;
 	line-height: 1.5;
 }
 
-.contact__map {
-	aspect-ratio: 295/160;
-	width: 18.4375rem;
-}
-
-.contact__map iframe {
-	height: 100%;
-	width: 18.4375rem;
-}
-
-.contact__form-area {
-	padding-top: 2.5rem;
-}
-
-.contact__section-title h2 {
-	font-size: 5rem;
-	line-height: 0.9;
-	margin-left: -0.375rem;
-}
-
-.contact__section-title.section-title__sub {
-	margin-top: 0.25rem;
-}
-
 .contact__text {
-	color: #6E97CD;
-	display: block;
-	font-size: 0.875rem;
-	line-height: 1.2857142857;
-	margin-top: 0.5rem;
-	text-align: center;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 2;
+	margin-top: 2rem;
 }
 
 .contact__btn {
@@ -2486,9 +2504,9 @@ a:hover {
 }
 
 .office-table {
-	grid-gap: 2rem;
+	grid-gap: 1.25rem;
 	display: grid;
-	gap: 2rem;
+	gap: 1.25rem;
 	width: 100%;
 }
 
@@ -2542,8 +2560,28 @@ a:hover {
 	width: 1.25rem;
 }
 
+.office__wrap {
+	margin-top: 1.75rem;
+}
+
+.office__image-area img {
+	-o-object-fit: cover;
+	aspect-ratio: 345/227;
+	display: block;
+	height: 100%;
+	object-fit: cover;
+	width: 100%;
+}
+
+.office-table__head {
+	font-size: 1rem;
+	font-weight: 700;
+	line-height: 1.5;
+	text-align: left;
+}
+
 .office__table {
-	margin-top: 2.5rem;
+	margin-top: 1.25rem;
 }
 
 .page-404-breadcrumb {
@@ -3519,13 +3557,6 @@ html {
 	margin-top: 8.75rem;
 }
 
-.layout-contact::before {
-	height: 8.625rem;
-	right: calc(50% - min(48vw, 41.375rem));
-	top: -10%;
-	width: 18.8125rem;
-}
-
 .layout-country {
 	padding: 8.75rem 0;
 }
@@ -4066,62 +4097,6 @@ html {
 	width: 10.125rem;
 }
 
-.inner.contact__inner {
-	padding-left: 1.5625rem;
-	padding-right: 1.5625rem;
-}
-
-.contact__logo-link img {
-	max-width: 12.5rem;
-	width: 100%;
-}
-
-.section-title__sub.section-title__sub--contact {
-	font-size: 0.75rem;
-	line-height: 1.5;
-	margin-top: 0;
-}
-
-.contact__container {
-	align-items: center;
-	box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.25);
-	display: flex;
-	filter: none; /* filter プロパティをリセット */
-	padding: 5rem 7rem 5rem 3.125rem;
-}
-
-.contact__information {
-	border-right: 1px solid #6E97CD;
-	padding-right: 5.125rem;
-}
-
-.contact__address-wrap {
-	align-items: flex-start;
-	flex-direction: row;
-	gap: 1.3125rem;
-	margin-top: 1.5rem;
-	margin-top: 1.5rem;
-	text-align: left;
-}
-
-.contact__shop-information {
-	width: 9.125rem;
-}
-
-.contact__map {
-	aspect-ratio: 273/148;
-	width: 17.0625rem;
-}
-
-.contact__map iframe {
-	width: 17.0625rem;
-}
-
-.contact__form-area {
-	margin-left: 5rem;
-	padding-top: 0;
-}
-
 .country__gallery {
 	margin-top: 5rem;
 }
@@ -4369,6 +4344,10 @@ html {
 	width: 100%;
 }
 
+.office-table {
+	gap: 2rem;
+}
+
 .office-table__course {
 	font-size: 1rem;
 	line-height: 1.5;
@@ -4379,13 +4358,29 @@ html {
 	line-height: 1.5;
 }
 
-.office__table {
-	margin-top: 0;
-}
-
 .office__wrap {
 	align-items: center;
 	display: flex;
+	margin-top: 2.5rem;
+}
+
+.office__image-area {
+	max-width: 37.625rem;
+	width: 100%;
+}
+
+.office__image-area img {
+	aspect-ratio: 602/401;
+}
+
+.office__table {
+	margin-left: 2.5rem;
+}
+
+.office__table {
+	margin-top: 0;
+	max-width: 25rem;
+	width: 100%;
 }
 
 .page-404-breadcrumb {
@@ -4756,6 +4751,21 @@ a.page.larger.u-desktop {
 
 }
 
+@media (min-width: 768px) {
+
+a[href*="tel:"] {
+	-webkit-text-decoration: none;
+	cursor: default;
+	pointer-events: none;
+	text-decoration: none;
+}
+
+.form__btn {
+	margin-top: 40px;
+}
+
+}
+
 @media screen and (min-width: 768px) and (min-width: 768px) {
 
 .form__items {
@@ -4764,10 +4774,10 @@ a.page.larger.u-desktop {
 
 }
 
-@media (min-width: 768px) {
+@media screen and (min-width: 1024px) {
 
-.form__btn {
-	margin-top: 40px;
+.office__table {
+	margin-left: 4.875rem;
 }
 
 }

@@ -226,8 +226,8 @@
             </div>
         </div>
         <div class="country__btn">
-                <a href="<?php echo $blog; ?>" class="btn">view&nbsp;more </a>
-            </div>
+            <a href="<?php echo $blog; ?>" class="btn">view&nbsp;more </a>
+        </div>
     </section>
     <!-- office セクション -->
     <section class="layout-office office">
@@ -245,8 +245,8 @@
                         <h3 class="office-table__head">東京（本社）</h3>
                         <dl class="office-table__item-wrap">
                             <div class="office-table__item">
-                                <dt class="office-table__course">〒530-0001 大阪府大阪市北区梅田2-5-8</dt>
-                                <dd class="office-table__price">065-652-5687</dd>
+                                <dt class="office-table__course">〒151-0051 東京都渋谷区千駄ヶ谷</dt>
+                                <dd class="office-table__price"><a href="tel:065-652-1234">065-652-1234</a></dd>
                             </div>
                         </dl>
                     </div>    
@@ -255,7 +255,7 @@
                         <dl class="office-table__item-wrap">
                             <div class="office-table__item">
                                 <dt class="office-table__course">〒530-0001 大阪府大阪市北区梅田2-5-8</dt>
-                                <dd class="office-table__price">065-652-5687</dd>
+                                <dd class="office-table__price"><a href="tel:065-652-5678">065-652-5678</a></dd>
                             </div>
                         </dl>
                     </div>    
@@ -263,8 +263,8 @@
                         <h3 class="office-table__head">名古屋</h3>
                         <dl class="office-table__item-wrap">
                             <div class="office-table__item">
-                                <dt class="office-table__course">〒530-0001 大阪府大阪市北区梅田2-5-8</dt>
-                                <dd class="office-table__price">065-652-5687</dd>
+                                <dt class="office-table__course">〒530-0001 愛知県名古屋市中村区平池町5</dt>
+                                <dd class="office-table__price"><a href="tel:065-652-4567">065-652-4567</a></dd>
                             </div>
                         </dl>
                     </div>    
@@ -272,7 +272,19 @@
             </div>
         </div>
     </section>
-        
+    <!-- 無料カウンセリング誘導セクション -->
+    <div class="layout-contact contact">
+        <div class="contact__image">
+        <div class="contact__text-area">
+            <h2 class="contact__title">無料カウンセリング</h2>
+            <p class="contact__text">Dream Questでは【無料相談、無料サポート】を行っています！<br>まずはカウンセリングのご予約をメールフォームよりお願いします。<br>どんなこともお気軽にご相談ください！</p>
+            <div class="contact__btn">
+                <a href="#" class="contact-button"><span>お申込みはこちら</span></a>
+            </div>
+        </div>
+        </div>
+    </div>
+
 
 
 

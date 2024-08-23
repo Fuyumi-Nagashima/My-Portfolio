@@ -1,0 +1,69 @@
+@use "global" as *; 
+.contact-button{
+    display: inline-block;
+    max-width:rem(414);
+    width: 100%;
+    padding: rem(20) 0;
+    border: 1px solid #274875;
+    border-radius:50px;
+    background-color:$sub-blue ;
+    font-size: rem(20);
+    line-height:1.5;
+    letter-spacing:normal;
+    color: $white;
+    font-weight:$bold;
+    /* スタイル用 */
+    position: relative;
+    transition: .3s;
+}
+.contact-button:before,
+.contact-button:after {
+    position: absolute;
+    top: 50%;
+    right: rem(30);
+    height:rem(1);
+    background:$white;
+    content: '';
+    transition: transform 0.3s ease;  /* 追加: 滑らかな移動のためのトランジション */
+}
+.contact-button:hover:before,
+.contact-button:hover:after {
+    background-color:$sub-blue;
+}
+.contact-button:before {
+    width:rem(56);
+    transform: translateY(-50%);
+}
+
+.contact-button:after {
+    width:rem(9);
+    transform: translateY(-50%) rotate(45deg);
+    transform-origin: right center;
+}
+.contact-button:hover{
+    background-color:$white ;
+    border:1px solid $sub-blue;
+    color:$sub-blue;
+    opacity:1;
+}
+
+/*メールアイコンの設置*/
+.contact-button span{
+    position: relative;
+    padding-left:rem(39) ;/*icon-mail画像横幅サイズ21px＋icon-mailとお問い合わせの余白が18pxで合計*/  
+}
+.contact-button span::before{/*挿入画像の設定はここ*/
+    position: absolute;
+    content: "";
+    background-image: url(../images/common/mail-icon-white.png);
+    background-size:cover,0 0;
+    background-repeat: no-repeat;
+    width:rem(21) ;
+    height: rem(21);
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+.contact-button span:hover::before{
+    background-image: url(../images/common/mail-blue.png);
+}

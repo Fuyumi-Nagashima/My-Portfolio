@@ -10,7 +10,7 @@ function add_favicon() {
 // Googleフォントの設定
 add_action('wp_enqueue_scripts', 'add_google_fonts');
 function add_google_fonts() {
-    wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Zen+Kaku+Gothic+New&family=Cardo:ital,wght@0,400;0,700;1,400&family=Noto+Serif+JP:wght@200..900&display=swap');
+    wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Noto+Serif+JP:wght@200..900&family=Zen+Kaku+Gothic+New&display=swap');
 }
 
 

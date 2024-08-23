@@ -116,6 +116,13 @@ select::-ms-expand {
   display: none;
 }
 
+@media (min-width: 768px) {
+  a[href*="tel:"] {
+  pointer-events: none;
+  cursor: default;
+  text-decoration: none;
+  }
+  }
 /* ホバー */
 a {
   text-decoration: none;

@@ -2,7 +2,10 @@
 .office-table{
     width:100%;
     display:grid;
+    gap:rem(20);
+    @include mq('md'){
     gap:rem(32);
+    }
 }
 .office-table__item{
     margin-top:rem(10);
