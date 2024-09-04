@@ -34,7 +34,7 @@
 }
 .introduction__text {
     font-size: rem(14);
-    line-height:1.5;
+    line-height:2;
     font-weight:$regular;
     font-family: $second-font-family;
     @include mq('md'){

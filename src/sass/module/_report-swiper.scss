@@ -1,0 +1,37 @@
+@use "global" as *;
+.report-swiper__wrapper{
+    padding-bottom:rem(10);
+    padding-left:rem(2);
+}
+.report-swiper__slide{
+    width: rem(280);
+    opacity: .3; /* 左右のスライドを薄くする */
+    overflow:hidden;
+    transition:  transform 0.6s;
+    @include mq('md'){
+        width: rem(340);
+    }
+}
+//ポートフォリオのswiperのコード
+.report-swiper {
+    position: relative;
+}
+.report-swiper .swiper-slide{
+    transform: scale(.9);
+    transition: 1s;
+    opacity: .4;
+}
+.report-swiper .swiper-slide-active{
+    opacity: 1;
+    z-index: 1;
+    transform: scale(1);
+}
+.report-swiper .report-swiper img {
+    width: 100%;
+    aspect-ratio: 300/180;
+    object-fit: cover;
+}
+.report-swiper__contents{
+    padding:rem(40) 0;
+    margin:rem(50) 0;
+}

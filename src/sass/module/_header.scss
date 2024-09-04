@@ -11,6 +11,10 @@
         height:rem(99) ;
     }
 }
+.header.is-active{
+    background-color:$main-blue;
+    transition:0.5s;
+}
 .change-color{
     background:$white;
     transition: all 0.7s 0s ease;
@@ -74,7 +78,7 @@
 }
 .header__logo img{
     width:rem(102); 
-    height:rem(38);
+    height:rem(50);
     @include mq('md'){
         width:rem(160);
         height:rem(79);
@@ -123,4 +127,8 @@
     top:rem(12);
     transform: translateX(-5px) rotate(-38deg);
     width: rem(40); 
+}
+/*ハンバーガーメニューの線の色を変える*/
+.change-hamburger span{
+    background-color: $main-blue;  
 }

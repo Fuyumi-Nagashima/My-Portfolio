@@ -1,0 +1,98 @@
+@use "global" as *;
+
+.report__btn{
+    text-align:center;
+    margin-top: rem(30);
+    @include mq('md'){
+    margin-top: rem(66);
+}
+}
+
+//swiperのボタン
+//swipeナビボタンのデフォルト矢印打消し
+.report__next::after,
+.report__prev::after {
+    content: "";
+}
+.report__btn-wrap{
+    @include mq('md'){
+        display:flex;
+        position:absolute;
+        right:rem(180);
+        top:rem(100);
+        height:rem(50);
+    }   
+}
+.report__next {
+    @include mq('md'){
+        margin-left: rem(24);
+    }
+}
+.report__prev,
+.report__next{
+    @include mq('md'){
+        position: initial;
+        margin-top:0;/*デフォルト打消し*/
+        width: rem(50);
+        height:rem(50);
+        background-color:$main-blue;
+        border-radius: 50%;
+        transition: all 0.3s; 
+    }   
+}
+.report__prev::after,
+.report__next::after {
+    @include mq('md'){
+        content: "";
+        position: absolute;
+        width: rem(9);
+        height: rem(16);
+        background-size: contain;
+        background-repeat:no-repeat;
+    }
+    
+} 
+.report__prev::after {
+    @include mq('md'){
+        background-image:url(../images/common/voice-vector-before-white.png);
+    }
+}
+.report__next::after {
+    @include mq('md'){
+        background-image:url(../images/common/voice-vector-next-white.png);
+    }
+    
+}
+.report__next:hover,
+.report__prev:hover{
+    @include mq('md'){
+        background-color:$white;
+        border:1px solid $main-blue;
+    }
+    
+}
+.report__prev:hover::after{
+    @include mq('md'){
+    background-image:url(../images/common/voice-vector-before-blue.png);
+    }
+}
+.report__next:hover::after{
+    @include mq('md'){
+    background-image:url(../images/common/voice-vector-next-blue.png);
+    }
+}
+.report__no-posts {
+    margin-top: rem(24);
+    margin-inline: auto;
+    @include mq(md){
+        margin-top: rem(40);
+    }
+}
+
+.no-posts__text {
+    font-size: rem(16);
+    @include mq(md){
+        font-size: rem(24);
+    }
+}
+  

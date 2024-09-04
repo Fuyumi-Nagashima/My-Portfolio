@@ -24,7 +24,7 @@ if (is_404()) {
         <div class="footer__top">
             <div class="footer__logo">
                 <a class="footer__logo-link" href="<?php echo esc_url(home_url('/')); ?>">
-                    <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/footer-logo.png"
+                    <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/logo-white.png"
                         alt="codeupsのロゴ画像" />
                 </a>
             </div>
@@ -106,7 +106,7 @@ if (is_404()) {
             </div>
         </div>
         <div class="footer__copyright">
-            <small>copyright © 2021 - 2023 codeUps LLC. all rights reserved.</small>
+            <small>copyright © 2024 dream quest. all rights reserved.</small>
         </div>
     </div>
 </footer>

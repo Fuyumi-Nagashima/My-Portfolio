@@ -1,8 +1,11 @@
 @use "global" as *;
-.layout-campaign{
+.layout-report{
     margin-top:rem(40);
+    padding: rem(100) 0 rem(60) 0;
+    background:#F7F5F2;
     @include mq('md'){
     margin-top:rem(120);
     position:relative;
+    padding: rem(100) 0 rem(60) 0;
     }
 }

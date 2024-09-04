@@ -66,58 +66,34 @@
         <div class="header__drawer-menu drawer-menu u-mobile js-drawer">
           <div class="drawer-menu__inner">
             <div class="drawer-menu__content">
-              <div class="drawer-menu__items">
                 <div class="drawer-menu__item">
-                  <p class="drawer-menu__heading"><a href="<?php echo $campaign; ?>">キャンペーン</a></p>
+                  <a class="drawer-menu__heading" href="<?php echo $campaign; ?>">Blog<span>（留学ブログ）</span></a>
+                </div>
+                <div class="drawer-menu__item">
+                  <a class="drawer-menu__heading" href="<?php echo $information; ?>">Visa<span>（目的から選ぶ）</span></a>
                   <ul class="drawer-menu__navi">
-                    <li><a href="<?php echo $campaign_category_license; ?>">ライセンス取得</a></li>
-                    <li><a href="<?php echo $campaign_category_experience; ?>">貸切体験ダイビング</a></li>
-                    <li><a href="<?php echo $campaign_category_fundiving; ?>">ファンダイビング</a></li>
+                    <li><a href="<?php echo $information; ?>?id=tab1">短期留学</a></li>
+                    <li><a href="<?php echo $information; ?>?id=tab3">長期留学</a></li>
+                    <li><a href="<?php echo $information; ?>?id=tab2">ワーキングホリデー</a></li>
                   </ul>
                 </div>
                 <div class="drawer-menu__item">
-                  <p class="drawer-menu__heading"><a href="<?php echo $aboutus; ?>">私たちについて</a></p>
+                  <a class="drawer-menu__heading" href="<?php echo $blog; ?>">Country<span>（国から選ぶ）</span></a>
                 </div>
                 <div class="drawer-menu__item">
-                  <p class="drawer-menu__heading"><a href="<?php echo $information; ?>">ダイビング情報</a></p>
-                  <ul class="drawer-menu__navi">
-                    <li><a href="<?php echo $information; ?>?id=tab1">ライセンス講習</a></li>
-                    <li><a href="<?php echo $information; ?>?id=tab3">体験ダイビング</a></li>
-                    <li><a href="<?php echo $information; ?>?id=tab2">ファンダイビング</a></li>
-                  </ul>
+                  <a class="drawer-menu__heading" href="<?php echo $voice; ?>">Voice<span>（体験レポート）</span></a></a>
                 </div>
                 <div class="drawer-menu__item">
-                  <p class="drawer-menu__heading"><a href="<?php echo $blog; ?>">ブログ</a></p>
-                </div>
-              </div>
-              <div class="drawer-menu__items">
-                <div class="drawer-menu__item">
-                  <p class="drawer-menu__heading"><a href="<?php echo $voice; ?>">お客様の声</a></p>
+                  <a class="drawer-menu__heading" href="<?php echo $faq; ?>">Faq<span>（よくある質問）</span></a>
                 </div>
                 <div class="drawer-menu__item">
-                  <p class="drawer-menu__heading"><a href="<?php echo $price; ?>">料金一覧</a></p>
-                  <ul class="drawer-menu__navi">
-                    <li><a href="<?php echo $price; ?>">ライセンス講習</a></li>
-                    <li><a href="<?php echo $price; ?>">体験ダイビング</a></li>
-                    <li><a href="<?php echo $price; ?>">ファンダイビング</a></li>
-                  </ul>
+                  <a class="drawer-menu__heading" href="<?php echo  $contact; ?>">Contact<span>（留学相談予約）</span></a>
                 </div>
-                <div class="drawer-menu__item">
-                  <p class="drawer-menu__heading"><a href="<?php echo $faq; ?>">よくある質問</a></p>
+                <div class="drawer-menu__item drawer-menu__item--sub-heading">
+                  <a href="<?php echo  $privacy_policy; ?>">プライバシーポリシー</a>
+                  <a href="<?php echo  $terms_of_service; ?>">利用規約</a>
+                  <a href="<?php echo  $site_map; ?>">サイトマップ</a>
                 </div>
-                <div class="drawer-menu__item">
-                  <p class="drawer-menu__heading"><a href="<?php echo  $privacy_policy; ?>">プライバシー<br>ポリシー</a></p>
-                </div>
-                <div class="drawer-menu__item">
-                  <p class="drawer-menu__heading"><a href="<?php echo  $terms_of_service; ?>">利用規約</a></p>
-                </div>
-                <div class="drawer-menu__item">
-                  <p class="drawer-menu__heading"><a href="<?php echo  $contact; ?>">お問い合わせ</a></p>
-                </div>
-                <div class="drawer-menu__item">
-                  <p class="drawer-menu__heading"><a href="<?php echo  $site_map; ?>">サイトマップ</a></p>
-                </div>
-              </div>
             </div>
           </div>
         </div>

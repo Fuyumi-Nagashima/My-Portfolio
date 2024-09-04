@@ -151,7 +151,7 @@
                 <div class="visa-cards__card visa-card">
                     <figure class="visa-card__image">
                         <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/studying-abroad.jpg"
-                            alt="オペラハウスとハーバーブリッジ" />
+                            alt="外国人と2人の日本人女性がディスカッションをしている" />
                         <p class="visa-card__image-title">studying&nbsp;abroad</p>
                     </figure>
                     <div class="visa-card__text-area">
@@ -162,7 +162,7 @@
                 <div class="visa__card visa-card">
                     <figure class="visa-card__image">
                         <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/working-holiday.jpg"
-                            alt="オペラハウスとハーバーブリッジ" />
+                            alt="カフェで女性が働いている" />
                         <p class="visa-card__image-title">working&nbsp;holiday</p>
                     </figure>
                     <div class="visa-card__text-area">
@@ -300,38 +300,37 @@
 
 
 
-    <!-- campaign -->
-    <section class="layout-campaign campaign">
-        <div class="campaign__inner">
-            <div class="campaign__section-title section-title">
-                <p class="section-title__primary">campaign</p>
-                <h2 class="section-title__sub">キャンペーン</h2>
+    <!-- 留学体験レポートセクション(voice) -->
+    <section class="layout-report report">
+        <div class="report__inner">
+            <div class="report__section-title section-title">
+                <p class="section-title__primary">voice</p>
+                <h2 class="section-title__sub">留学体験レポート</h2>
             </div>
             <!-- ボタン -->
-            <div class="campaign__btn-wrap">
-                <div class="swiper-button-prev campaign__prev js-campaign-arrow"></div>
-                <div class="swiper-button-next campaign__next js-campaign-arrow"></div>
+            <div class="report__btn-wrap">
+                <div class="swiper-button-prev report__prev js-report-arrow"></div>
+                <div class="swiper-button-next report__next js-report-arrow"></div>
             </div>
             <!-- スライド-->
-            <div class="campaign__swiper campaign-swiper">
-                <div class="swiper js-campaign-swiper">
-                    <ul class="swiper-wrapper campaign-swiper__wrapper">
+            <div class="report__swiper report-swiper">
+                <div class="swiper js-report-swiper report-swiper__contents">
+                    <ul class="swiper-wrapper report-swiper__wrapper">
                         <?php
-                // クエリの設定
-                $args = array(
-                    'post_type' => 'campaign', // カスタム投稿タイプ「campaign」
-                    'orderby' => 'date', // 日付でソート
-                    'order' => 'DESC',  // 降順（新しい順）
-                    'posts_per_page' => -1 // すべての投稿を取得
-                );
-                $the_query = new WP_Query($args); // WP_Queryオブジェクトの生成
-                ?>
+                        // クエリの設定
+                        $args = array(
+                            'post_type' => 'voice', // カスタム投稿タイプ「campaign」
+                            'orderby' => 'date', // 日付でソート
+                            'order' => 'DESC',  // 降順（新しい順）
+                            'posts_per_page' => -1 // すべての投稿を取得する場合は「-1」
+                        );
+                        $the_query = new WP_Query($args); // WP_Queryオブジェクトの生成
+                        ?>
                         <?php if ($the_query->have_posts()): //投稿が存在する場合 ?>
                         <?php while ($the_query->have_posts()): $the_query->the_post();  // 投稿ループ ?>
-                        <li class="swiper-slide campaign-swiper__slide page-campaign__card campaign-list"
-                            data-category="<?php echo get_the_terms(get_the_ID(), 'campaign_category')[0]->slug; ?>">
-                            <div class="campaign-list__link">
-                                <figure class="campaign-list__image campaign-list__image--sub-page">
+                        <li class="swiper-slide report-swiper__slide page-campaign__card report-list">
+                            <div class="report-list__link">
+                                <figure class="report-list__image report-list__image--sub-page">
                                     <picture>
                                         <?php if (has_post_thumbnail()) : ?>
                                         <?php the_post_thumbnail('full'); ?>
@@ -341,55 +340,45 @@
                                         <?php endif; ?>
                                     </picture>
                                 </figure>
-                                <div class="campaign-list__body campaign-list__body--subpage">
-                                    <span class="campaign-list__category">
-                                        <?php
-                                $taxonomy_terms = get_the_terms(get_the_ID(), 'campaign_category');
-                                if (!empty($taxonomy_terms)) {
-                                    foreach ($taxonomy_terms as $taxonomy_term) {
-                                        echo '<span>' . esc_html($taxonomy_term->name) . '</span>';
-                                    }
-                                }
-                                ?>
+                                <div class="report-list__body report-list__body--subpage">
+                                    <span class="report-category">
+                                        <?php $personalInfo = get_field('voice_profile'); if ($personalInfo) :?>
+                                            <?php echo esc_html($personalInfo['profile_name']); ?>・<?php echo esc_html($personalInfo['profile_age']); ?>
+
+                                        <?php endif; ?>
                                     </span>
-                                    <h3 class="campaign-list__title "><?php the_title(); ?></h3>
-                                    <p class="campaign-list__text campaign-list__text--subpage">全部コミコミ(お一人様)</p>
-                                    <div class="campaign-list__price">
-                                        <?php
-                                // ACFで追加したカスタムフィールドを取得
-                                $price_group = get_field('campaign_price-group');
-                                if ($price_group) {
-                                    $price_before = !empty($price_group['price_before']) ? $price_group['price_before'] : '';
-                                    $price_after = !empty($price_group['price_after']) ? $price_group['price_after'] : '';
-                                    if ($price_before) {
-                                        echo '<p class="campaign-list__number">¥' . number_format((float)$price_before) . '</p>';
+                                    <h3 class="report-list__title "><?php the_title(); ?></h3>
+                                    <p class="report-list__text report-list__text--subpage">
+                                    <?php 
+                                    $text = get_field('voice_text');
+                                    $text = strip_tags($text);
+                                    if(mb_strlen($text) > 50 ) {
+                                        $content= mb_substr($text,0,50) ;
+                                        echo $content. '...';
+                                    } else {
+                                        echo $text;
                                     }
-                                    if ($price_after) {
-                                        echo '<p class="campaign-list__discount-number">¥' . number_format((float)$price_after) . '</p>';
-                                    }
-                                }
-                                ?>
-                                    </div>
+                                    ?>
+                                    </p>
                                 </div>
                             </div>
                         </li>
                         <?php endwhile; ?>
                     </ul>
                     <!-- view more ボタン -->
-                    <div class="campaign__btn">
+                    <div class="report__btn">
                         <a href="<?php echo get_post_type_archive_link('campaign'); ?>" class="btn">
                             <span>view&nbsp;more</span>
                             <div class="btn__arrow"></div>
                         </a>
                     </div>
                     <?php else: ?>
-                    <div class="campaign__no-posts no-posts">
+                    <div class="report__no-posts no-posts">
                         <p class="no-posts__text">投稿がありません。</p>
                     </div>
                     <?php endif; wp_reset_postdata();?>
                 </div>
             </div>
-
         </div>
     </section>
 
@@ -532,79 +521,6 @@
             </div>
             <div class="voice__btn">
                 <a href="<?php echo $voice; ?>" class="btn">
-                    <span>view&nbsp;more </span>
-                    <div class="btn__arrow"></div>
-                </a>
-            </div>
-        </div>
-    </section>
-    <!-- Price -->
-    <section class="layout-price price">
-        <div class="price__inner inner">
-            <div class="price__section-title section-title">
-                <p class="section-title__primary">price</p>
-                <h2 class="section-title__sub">料金一覧</h2>
-            </div>
-            <div class="price__wrapper">
-                <div class="price__image color">
-                    <picture>
-                        <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/top-price-sp.webp"
-                            media="(max-width:767px)" type="image/webp">
-                        <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/top-price-sp.jpg"
-                            media="(max-width:767px)">
-                        <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/top-price-pc.webp"
-                            type="image/webp">
-                        <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/top-price-pc.jpg"
-                            alt="赤色の複数の熱帯魚が海の中で泳いでいる様子">
-                    </picture>
-                </div>
-
-                <div class="price__table price-table">
-                    <?php
-            // 固定ページ「料金一覧」のIDを指定
-            $page_id = 213;
-
-            // SCFを使ってカスタムフィールドからプラン情報を取得
-            $plans = [
-              1 => [
-                'title' => SCF::get('plan_1', $page_id),
-                'courses' => SCF::get('course-1', $page_id)
-              ],
-              2 => [
-                'title' => SCF::get('plan_2', $page_id),
-                'courses' => SCF::get('course-2', $page_id)
-              ],
-              3 => [
-                'title' => SCF::get('plan_3', $page_id),
-                'courses' => SCF::get('course-3', $page_id)
-              ],
-              4 => [
-                'title' => SCF::get('plan_4', $page_id),
-                'courses' => SCF::get('course-4', $page_id)
-              ],
-            ];
-
-            foreach ($plans as $plan_id => $plan) :
-              if (!empty($plan['title'])) :
-          ?>
-                    <div class="price-table__content">
-                        <h3 class="price-table__head"><?php echo esc_html($plan['title']); ?></h3>
-                        <dl class="price-table__item-wrap">
-                            <?php foreach ($plan['courses'] as $course) : ?>
-                            <div class="price-table__item">
-                                <dt class="price-table__course"><?php echo esc_html($course['course_' . $plan_id]); ?>
-                                </dt>
-                                <dd class="price-table__price">
-                                    &yen;<?php echo esc_html($course['price_' . $plan_id]); ?></dd>
-                            </div>
-                            <?php endforeach; ?>
-                        </dl>
-                    </div>
-                    <?php endif; endforeach; ?>
-                </div>
-            </div>
-            <div class="price__btn">
-                <a href="<?php echo $price; ?>" class="btn">
                     <span>view&nbsp;more </span>
                     <div class="btn__arrow"></div>
                 </a>

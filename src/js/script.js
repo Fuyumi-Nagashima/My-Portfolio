@@ -40,10 +40,12 @@ jQuery(function ($) {
           $('.header').addClass('change-color');
           $('#js-header__logo-link').addClass('change-logo');
           $('.js-pc-nav').addClass('change-nav');
+          $('.js-header-header__hamburger').addClass('change-hamburger');
         } else {
           $('.header').removeClass('change-color');
           $('#js-header__logo-link').removeClass('change-logo');
           $('.js-pc-nav').removeClass('change-nav');
+          $('.js-header-header__hamburger').removeClass('change-hamburger');
         }
       });
       //ローディングアニメーション
@@ -91,23 +93,32 @@ jQuery(function ($) {
         });
 
       //campaignスライダー
-      var service_swiper = new Swiper(".js-campaign-swiper", {
-        loop: true,
-        speed: 1800,
-        slidesPerView:2,
+      var service_swiper = new Swiper(".js-report-swiper", {
         centeredSlides: true,
+        loop: true,
+        speed:3000,
+        slidesPerView: 1.5,
+        spaceBetween: 30,
         autoplay: {
-            delay: 5000,
+            delay:3000,
             disableOnInteraction: false,// 矢印をクリックしても自動再生を止めない
         },
         breakpoints: {
             768: {
               spaceBetween: 25,
-                slidesPerView: 3,
+              slidesPerView: 2.75,
             },
-            1023: {
+            1080: {
               spaceBetween: 25,
-              slidesPerView: 5
+              slidesPerView: 3.25,
+            },
+            1280: {
+              spaceBetween: 25,
+              slidesPerView: 3.75,
+            },
+            1920:{
+              spaceBetween: 25,
+              slidesPerView:5,
             }
           },
         pagination: {
@@ -115,12 +126,7 @@ jQuery(function ($) {
             clickable: true,
         },
     });
-        // navigation: {
-          // nextEl: ".swiper-button-next",
-          // prevEl: ".swiper-button-prev",
-        // },
-     
-    
+        
       //色壁が出て写真が出てくるアニメーション,
       var box = $(".information__image,.voice-card__image,.price__image"),
         speed = 700;
