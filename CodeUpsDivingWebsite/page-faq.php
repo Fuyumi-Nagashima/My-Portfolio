@@ -1,5 +1,4 @@
 <?php get_header(); ?>
-
 <main>
   <!-- 下層ページのmv -->
   <section class="layout-page-faq-mv sub-mv">

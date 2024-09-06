@@ -15,33 +15,30 @@
     text-align: center;
     padding:rem(9) rem(16);
     font-size:rem(14);
-    background-color:#DDF0F1;
-    color:$main-blue; 
+    background-color:$main-blue;
+    color:$white; 
     transition:0.3s ease-in-out;
     box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25);
-    z-index:10;//あしらいをタブより上にもってくるため
+    display: flex;
+    justify-content: center;
+    align-items: center;
     @include mq('md'){
     padding:rem(29) rem(0) rem(29) rem(0);
     line-height:1;
     display:inline-block;
     font-size:rem(24);
+    letter-spacing: 0.1em;
     max-width:rem(300);
     width:100%;
     }
 }
 .tab__menu-item:hover{
-    background-color:$main-blue;
+    background-color:$sub-blue;
     color:$white; 
 }
-.tab__menu-item.is-active{
-    background-color:#DDF0F1;
-    color:$main-blue; 
-}
-.tab__menu-item span{
-    @include mq('md'){
-        position:relative;
-        padding-left:rem(72)
-    }
+.tab__menu-item.is-active {
+    background-color:$sub-blue;
+    color:$white;
 }
 .tab__menu-item span::before{
     @include mq('md'){
@@ -139,10 +136,6 @@
     margin-top:rem(8);
     font-size:rem(16);
     line-height:calc(24/16);
-}
-.tab__menu-item.is-active {
-    background-color:$main-blue;
-    color:$white;
 }
 .tab__content-item.is-active{
     display:block;

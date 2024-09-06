@@ -1,0 +1,7 @@
+@use "global" as *;
+.layout-page-visa{
+    margin-top:rem(121);
+    @include mq('md'){
+        margin-top:rem(150);
+    }
+}

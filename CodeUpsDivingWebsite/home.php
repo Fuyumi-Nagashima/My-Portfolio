@@ -15,11 +15,12 @@
             } ?>
           </div>
         </div>
-      <!-- ブログ詳細ページ -->
+      <!-- ブログ一覧ページ -->
       <div class="layout-two-column two-column">
         <div class="two-column__inner inner">
             <div class="two-column__flex">
               <div class="two-column__main">
+              <h2 class="aside-wrapper__title"><span>最新記事一覧</span></h2>
                 <div class="two-column__cards cards cards--2column">
                 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
                 <a href="<?php the_permalink(); ?>" class="cards__item card">
@@ -41,12 +42,20 @@
                     </figure>
                     <div class="card__body">
                       <div class="card__meta">
+                        <!-- カテゴリーと投稿日時の表示の追加 -->
+                        <?php
+                        $cat = get_the_category();
+                        if (!empty($cat)) {
+                        $cat = $cat[0];
+                        echo '<span class="card__category">' . esc_html($cat->name) . '</span>';
+                        }
+                        ?>
                         <time class="card__date" datetime="<?php the_time('c'); ?>"><?php the_time('Y/m/d') ?></time>
                         <h3 class="card__title"><?php the_title(); ?></h3>
                       </div>
                       <div class="card__text-body">
                         <p class="card__text">
-                          <?php echo wp_trim_words(get_the_content(), 90, '…'); ?>
+                          <?php echo wp_trim_words(get_the_content(), 50, '…'); ?>
                         </p>
                       </div>
                     </div>

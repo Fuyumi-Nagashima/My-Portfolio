@@ -22,7 +22,7 @@
             } ?>
         </div>
     </div>
-    <!-- ブログ一覧ページ -->
+    <!-- ブログ詳細ページ -->
     <section class="two-column layout-two-column">
         <div class="two-column__inner inner">
             <div class="two-column__flex">

@@ -9,7 +9,7 @@
   <?php 
   $campaign = esc_url( home_url('/campaign/'));
   $aboutus = esc_url( home_url('/aboutus/'));
-  $information = esc_url( home_url('/information/'));
+  $visa = esc_url( home_url('/visa/'));
   $blog = esc_url( home_url('/blog/'));
   $voice = esc_url( home_url('/voice/'));
   $price = esc_url( home_url('/price/'));
@@ -44,10 +44,10 @@
               <a class="pc-nav__link js-pc-nav"  href="<?php echo $aboutus; ?>">about&nbsp;us</a>
             </li>
             <li class="pc-nav__item">
-              <a class="pc-nav__link js-pc-nav"  href="<?php echo $information; ?>">information</a>
+              <a class="pc-nav__link js-pc-nav"  href="<?php echo $visa; ?>">目的から選ぶ</a>
             </li>
             <li class="pc-nav__item">
-              <a class="pc-nav__link js-pc-nav"  href="<?php echo $blog; ?>">blog</a>
+              <a class="pc-nav__link js-pc-nav"  href="<?php echo $blog; ?>">留学ブログ</a>
             </li>
             <li class="pc-nav__item">
               <a class="pc-nav__link js-pc-nav"  href="<?php echo $voice; ?>">voice</a>
@@ -56,7 +56,7 @@
               <a class="pc-nav__link js-pc-nav"  href="<?php echo $price; ?>">price</a>
             </li>
             <li class="pc-nav__item">
-              <a class="pc-nav__link js-pc-nav"  href="<?php echo $faq; ?>">faq</a>
+              <a class="pc-nav__link js-pc-nav"  href="<?php echo $faq; ?>">よくある質問</a>
             </li>
             <li class="pc-nav__item">
               <a class="pc-nav__link js-pc-nav"  href="<?php echo $contact; ?>">contact</a>

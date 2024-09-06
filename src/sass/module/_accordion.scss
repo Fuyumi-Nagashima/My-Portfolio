@@ -6,13 +6,6 @@
         margin-inline: auto;
     }
 }
-/*.accordion{
-    display: grid;
-    gap:rem(40);
-    @include mq('md'){
-        gap: rem(34);
-    }
-}*/
 .accordion__item + .accordion__item {
     margin-top:rem(40) ;
     @include mq('md'){
@@ -20,7 +13,7 @@
     }
 }
 .accordion__question {
-    background:$main-blue;
+    background:$sub-blue;
     color:$white;
     cursor: pointer;
     font-size: rem(16);
@@ -69,10 +62,10 @@
 .accordion__answer{
 
     font-size: rem(16);
-    border-top: 1px solid $main-blue;
-    border-left: 1px solid $main-blue;
-    border-right: 1px solid $main-blue;
-    border-bottom: 1px solid $main-blue;
+    border-top: 1px solid $sub-blue;
+    border-left: 1px solid $sub-blue;
+    border-right: 1px solid $sub-blue;
+    border-bottom: 1px solid $sub-blue;
     padding: rem(19) rem(16);
     @include mq('md'){
         padding: rem(40) ;

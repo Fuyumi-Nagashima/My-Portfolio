@@ -154,22 +154,6 @@ a:hover {
 	margin-top: 5rem;
 }
 
-.layout-two-column {
-	margin-top: 3.25rem;
-	position: relative;
-}
-
-.layout-two-column::before {
-	background: url(../images/common/top-voice-icon01.png) no-repeat;
-	background-size: contain;
-	content: "";
-	height: 3.4375rem;
-	left: 4%;
-	position: absolute;
-	top: -1.5625rem;
-	width: 7.5rem;
-}
-
 .layout-blog {
 	margin-top: 5rem;
 }
@@ -207,7 +191,8 @@ a:hover {
 }
 
 .layout-home-mv {
-	background-image: url(../images/common/under-page-blog-sp-mv.jpg);
+	background-image: url(../images/common/sydney-background.jpeg);
+	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
 	height: 28.75rem;
@@ -317,7 +302,8 @@ a:hover {
 }
 
 .layout-page-faq-mv {
-	background-image: url(../images/common/page-faq-sp-mv.jpg);
+	background-image: url(../images/common/ireland-background.jpeg);
+	background-position: bottom;
 	background-repeat: no-repeat;
 	background-size: cover;
 	height: 28.75rem;
@@ -326,40 +312,6 @@ a:hover {
 .layout-page-faq {
 	margin-top: 3.25rem;
 	position: relative;
-}
-
-.layout-page-faq::before {
-	background: url(../images/common/top-voice-icon01.png) no-repeat;
-	background-size: contain;
-	content: "";
-	height: 3.4375rem;
-	left: 4%;
-	position: absolute;
-	top: -1.5625rem;
-	width: 7.5rem;
-}
-
-.layout-page-information-mv {
-	background-image: url(../images/common/page-information-sp-mv.jpg);
-	background-repeat: no-repeat;
-	background-size: cover;
-	height: 28.75rem;
-}
-
-.layout-page-information {
-	margin-top: 7.5625rem;
-	position: relative;
-}
-
-.layout-page-information::before {
-	background: url(../images/common/top-voice-icon01.png) no-repeat;
-	background-size: contain;
-	content: "";
-	height: 3.4375rem;
-	left: 4%;
-	position: absolute;
-	top: -5.8125rem;
-	width: 7.5rem;
 }
 
 .layout-page-price-mv {
@@ -398,6 +350,17 @@ a:hover {
 	position: absolute;
 	top: -1.5625rem;
 	width: 7.5rem;
+}
+
+.layout-page-visa-mv {
+	background-image: url(../images/common/canada-background.jpeg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 28.75rem;
+}
+
+.layout-page-visa {
+	margin-top: 7.5625rem;
 }
 
 .layout-page-voice-mv {
@@ -520,6 +483,10 @@ a:hover {
 	width: 7.5rem;
 }
 
+.layout-two-column {
+	margin-top: 3.25rem;
+}
+
 .layout-visa {
 	background-color: #F4F9FF;
 	margin-top: 4.375rem;
@@ -609,20 +576,12 @@ a:hover {
 	width: 100%;
 }
 
-/*.accordion{
-    display: grid;
-    gap:rem(40);
-    @include mq('md'){
-        gap: rem(34);
-    }
-}*/
-
 .accordion__item + .accordion__item {
 	margin-top: 2.5rem;
 }
 
 .accordion__question {
-	background: #6E97CD;
+	background: #274875;
 	color: #fff;
 	cursor: pointer;
 	font-size: 1rem;
@@ -663,10 +622,10 @@ a:hover {
 }
 
 .accordion__answer {
-	border-bottom: 1px solid #6E97CD;
-	border-left: 1px solid #6E97CD;
-	border-right: 1px solid #6E97CD;
-	border-top: 1px solid #6E97CD;
+	border-bottom: 1px solid #274875;
+	border-left: 1px solid #274875;
+	border-right: 1px solid #274875;
+	border-top: 1px solid #274875;
 	font-size: 1rem;
 	padding: 1.1875rem 1rem;
 }
@@ -791,20 +750,6 @@ a:hover {
 	font-size: 1.5rem;
 	font-weight: 400;
 	line-height: 1.9;
-	padding-left: 3.625rem;
-	position: relative;
-}
-
-.aside-wrapper__title span::before {
-	background-image: url(../images/common/underpage-blog-title-icon.png);
-	background-repeat: no-repeat;
-	background-size: contain;
-	content: "";
-	height: 3.125rem;
-	left: 0;
-	position: absolute;
-	width: 3.125rem;
-	z-index: 1;
 }
 
 .aside-wrapper__title {
@@ -820,7 +765,7 @@ a:hover {
 	left: 0;
 	position: absolute;
 	top: 0;
-	width: 0.5rem;
+	width: 0.125rem;
 }
 
 .aside-wrapper__image img {
@@ -3126,10 +3071,6 @@ a:hover {
 }
 
 .sub-mv__title span {
-	text-transform: capitalize;
-}
-
-.sub-mv__title--faq span {
 	text-transform: uppercase;
 }
 
@@ -3233,10 +3174,13 @@ a:hover {
 }
 
 .tab__menu-item {
-	background-color: #DDF0F1;
+	align-items: center;
+	background-color: #6E97CD;
 	box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25);
-	color: #6E97CD;
+	color: #fff;
+	display: flex;
 	font-size: 0.875rem;
+	justify-content: center;
 	margin-left: auto;
 	margin-right: auto;
 	min-width: 6.375rem;
@@ -3244,17 +3188,16 @@ a:hover {
 	text-align: center;
 	transition: 0.3s ease-in-out;
 	width: 100%;
-	z-index: 10;
 }
 
 .tab__menu-item:hover {
-	background-color: #6E97CD;
+	background-color: #274875;
 	color: #fff;
 }
 
 .tab__menu-item.is-active {
-	background-color: #DDF0F1;
-	color: #6E97CD;
+	background-color: #274875;
+	color: #fff;
 }
 
 .tab__menu-item.is-active:nth-child(1) span::before {
@@ -3333,11 +3276,6 @@ a:hover {
 	margin-top: 0.5rem;
 }
 
-.tab__menu-item.is-active {
-	background-color: #6E97CD;
-	color: #fff;
-}
-
 .tab__content-item.is-active {
 	animation: panel-show 0.9s ease-in-out forwards;
 	display: block;
@@ -3395,6 +3333,10 @@ a:hover {
 	margin-top: 5rem;
 	max-width: 18.375rem;
 	width: 100%;
+}
+
+.two-column__cards {
+	margin-top: 1.5rem;
 }
 
 .visa-card__image {
@@ -3656,17 +3598,6 @@ html {
 	margin-top: 8.75rem;
 }
 
-.layout-two-column {
-	margin-top: 9.375rem;
-}
-
-.layout-two-column::before {
-	height: 8.625rem;
-	left: calc(50% - min(43vw, 38.9375rem));
-	top: -4.1875rem;
-	width: 18.8125rem;
-}
-
 .layout-blog {
 	margin-top: 10rem;
 }
@@ -3684,7 +3615,6 @@ html {
 }
 
 .layout-home-mv {
-	background-image: url(../images/common/under-page-blog-pc-mv.jpg);
 	height: 34.25rem;
 }
 
@@ -3765,35 +3695,11 @@ html {
 }
 
 .layout-page-faq-mv {
-	background-image: url(../images/common/page-faq-pc-mv.jpg);
 	height: 34.25rem;
 }
 
 .layout-page-faq {
 	margin-top: 9.375rem;
-}
-
-.layout-page-faq::before {
-	height: 8.625rem;
-	left: calc(50% - min(43vw, 38.9375rem));
-	top: -4.1875rem;
-	width: 18.8125rem;
-}
-
-.layout-page-information-mv {
-	background-image: url(../images/common/page-information-pc-mv.jpg);
-	height: 34.25rem;
-}
-
-.layout-page-information {
-	margin-top: 9.375rem;
-}
-
-.layout-page-information::before {
-	height: 8.625rem;
-	left: calc(50% - min(43vw, 38.9375rem));
-	top: -4.1875rem;
-	width: 18.8125rem;
 }
 
 .layout-page-price-mv {
@@ -3817,6 +3723,15 @@ html {
 	left: calc(50% - min(43vw, 64.9375rem));
 	top: -55%;
 	width: 18.8125rem;
+}
+
+.layout-page-visa-mv {
+	background-image: url(../images/common/canada-background.jpeg);
+	height: 34.25rem;
+}
+
+.layout-page-visa {
+	margin-top: 9.375rem;
 }
 
 .layout-page-voice-mv {
@@ -3905,6 +3820,10 @@ html {
 	left: calc(50% - min(43vw, 38.9375rem));
 	top: -7%;
 	width: 18.8125rem;
+}
+
+.layout-two-column {
+	margin-top: 6.25rem;
 }
 
 .layout-visa {
@@ -4786,15 +4705,11 @@ html {
 .tab__menu-item {
 	display: inline-block;
 	font-size: 1.5rem;
+	letter-spacing: 0.1em;
 	line-height: 1;
 	max-width: 18.75rem;
 	padding: 1.8125rem 0rem 1.8125rem 0rem;
 	width: 100%;
-}
-
-.tab__menu-item span {
-	padding-left: 4.5rem;
-	position: relative;
 }
 
 .tab__menu-item span::before {
