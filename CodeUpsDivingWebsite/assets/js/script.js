@@ -229,8 +229,6 @@ jQuery(function ($) {
   $('.asideblog-list__month').click(function () {
     $(this).children('ul').slideToggle();
   });
-  //最初の年数の矢印を開いた状態にする
-  $(".asideblog-lists__list:first-of-type .asideblog-list__year").addClass("open");
   //年代をクリックしたら中身が出たり隠れたりする
   $('.js-asideblog-list__year,.js-asideblog-list__month').on('click', function () {
     $(this).toggleClass('open');

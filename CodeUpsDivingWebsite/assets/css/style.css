@@ -301,6 +301,14 @@ a:hover {
 	z-index: -1;
 }
 
+.layout-page-country-mv {
+	background-image: url(../images/common/uk-background.jpeg);
+	background-position: bottom;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 28.75rem;
+}
+
 .layout-page-faq-mv {
 	background-image: url(../images/common/ireland-background.jpeg);
 	background-position: bottom;
@@ -337,6 +345,13 @@ a:hover {
 	width: 7.5rem;
 }
 
+.layout-page-report-mv {
+	background-image: url(../images/common/university-background.jpeg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 28.75rem;
+}
+
 .layout-page-thanks {
 	position: relative;
 }
@@ -361,13 +376,6 @@ a:hover {
 
 .layout-page-visa {
 	margin-top: 7.5625rem;
-}
-
-.layout-page-voice-mv {
-	background-image: url(../images/common/page-voice-sp-mv.jpg);
-	background-repeat: no-repeat;
-	background-size: cover;
-	height: 28.75rem;
 }
 
 .layout-page-voice {
@@ -802,7 +810,7 @@ a:hover {
 .asideblog-list__month::before {
 	border-color: transparent transparent transparent #6E97CD;
 	border-style: solid;
-	border-width: 12px 0 12px 20.8px;
+	border-width: 10px 0 10px 16px;
 	content: "";
 	display: inline-block;
 	height: 0;
@@ -816,7 +824,7 @@ a:hover {
 }
 
 .asideblog-list ul {
-	display: block;
+	display: none;
 }
 
 .asideblog-list__month ul {
@@ -1034,6 +1042,7 @@ a:hover {
 /*下層ページ(ブログ詳細)のasideのサイドバーCSS*/
 
 .card--sidebar {
+	align-items: flex-start;
 	display: flex;
 	gap: 1rem;
 	padding: 1.125rem;
@@ -1041,6 +1050,7 @@ a:hover {
 
 .card__image--sidebar {
 	cursor: pointer;
+	flex-shrink: 0; /*画像が縦に伸びないように固定*/
 	overflow: hidden;
 	width: 46%;
 }
@@ -1070,6 +1080,16 @@ a:hover {
 }
 
 .card__body--sidebar {
+	flex-grow: 1; /* テキスト部分が残りのスペースを埋める */
+	margin-top: 0;
+}
+
+.card__date--sidebar {
+	margin-left: 0;
+}
+
+.card__title--sidebar {
+	font-size: 0.75rem;
 	margin-top: 0;
 }
 
@@ -2495,30 +2515,23 @@ a:hover {
 	position: relative;
 }
 
-/*.page-campaign-cards{
-    display:grid;
-    row-gap:rem(40);
-    margin-top:rem(40);
-    grid-template-columns: repeat(1, 1fr);
-    margin-right:rem(33);
-    margin-left:rem(33);
-    // margin-inline:auto;
-    @include mq('md'){
-        grid-template-columns: repeat(2, 1fr);
-        column-gap:rem(40);
-        row-gap:rem(80);
-        max-width:rem(1080);
-        margin-right:0;
-        margin-left:0;
-    }
-}*/
-
-/*.page-campaign__wp-pagenavi{
-    margin-top:rem(80);
-}*/
-
 .page-contact-footer {
 	margin-top: 9rem;
+}
+
+.page-report__category-wrap {
+	margin-top: 3.125rem;
+}
+
+.page-report__lists {
+	grid-gap: 2.5rem;
+	display: grid;
+	gap: 2.5rem;
+	margin-top: 2.5rem;
+}
+
+.page-report__wp-pagenavi {
+	margin-top: 5rem;
 }
 
 .page-sitemap__title {
@@ -2934,6 +2947,62 @@ a:hover {
 	line-height: 1.5;
 	margin-top: 0.25rem;
 }
+
+/*テキストでは@use "global" as *;*/
+
+/*servicesの細かな指定はここから*/
+
+.service__item:not(:first-child) {
+	margin-top: 2.5rem;
+}
+
+.services__heading {
+	display: inline-block;
+	font-size: 1.5rem;
+	font-weight: 500;
+	line-height: 1.4583333333;
+	position: relative;
+	text-transform: capitalize;
+}
+
+.services__heading::after {
+	background: linear-gradient(79deg, #145DA0 5.78%, #83BFD2 94.88%);
+	content: "";
+	display: inline-block;
+	height: 1px;
+	margin-left: 0.5rem; /*文字と線の間の余白*/
+	position: absolute;
+	right: -8rem; /*文字と線の間の余白(8px)と線の長さ(120px)を足した数*/
+	top: 50%;
+	transform: translateY(-50%);
+	width: 7.5rem;
+}
+
+.services__item:nth-child(2) .services__heading::after {
+	right: -5.9375rem;
+	width: 5.4375rem;
+}
+
+.services__text {
+	font-size: 1rem;
+	line-height: 1.5;
+	margin-top: 2.5rem;
+}
+
+.services__image {
+	aspect-ratio: 335/251;
+	filter: drop-shadow(3px 3px 10px rgba(0, 0, 0, 0.25));
+	margin-top: 2.5rem;
+	max-width: 100%;
+}
+
+.services__image img {
+	-o-object-fit: cover;
+	height: 100%;
+	object-fit: cover;
+}
+
+/*ここからPCの画像が交互に挿入されているところの指定*/
 
 .single-body__date {
 	font-family: "Cardo", serif;
@@ -3500,11 +3569,11 @@ a:hover {
 }
 
 .wp-pagenavi .previouspostslink {
-	margin-right: 2.5rem;
+	margin-right: 0.625rem;
 }
 
 .wp-pagenavi .nextpostslink {
-	margin-left: 2.5rem;
+	margin-left: 0.625rem;
 }
 
 .wp-pagenavi a {
@@ -3517,6 +3586,7 @@ a:hover {
 .wp-pagenavi .previouspostslink {
 	align-items: center;
 	border: 1px solid #6E97CD;
+	border-radius: 50px;
 	display: flex;
 	font-size: 1rem;
 	font-weight: 700;
@@ -3542,38 +3612,7 @@ a:hover {
 
 .wp-pagenavi .nextpostslink,
 .wp-pagenavi .previouspostslink {
-	position: relative;
-}
-
-.wp-pagenavi .nextpostslink::before,
-.wp-pagenavi .previouspostslink::before {
-	content: "";
-	height: 1rem;
-	position: absolute;
-	width: 0.5rem;
-}
-
-.wp-pagenavi .previouspostslink::before {
-	background: url(../images/common/page-voice-angle-blue.png) no-repeat;
-	background-size: contain;
-	transform: scale(-1, 1);
-}
-
-.wp-pagenavi .nextpostslink::before {
-	background: url(../images/common/page-voice-angle-blue.png) no-repeat;
-	background-size: contain;
-}
-
-.wp-pagenavi .previouspostslink:hover::before {
-	background: url(../images/common/page-voice-angle-white.png) no-repeat;
-	background-size: contain;
-	transform: scale(1, 1);
-}
-
-.wp-pagenavi .nextpostslink:hover::before {
-	background: url(../images/common/page-voice-angle-white.png) no-repeat;
-	background-size: contain;
-	transform: scale(-1, 1);
+	width: 6.25rem;
 }
 
 a.page.larger.u-desktop {
@@ -3694,6 +3733,10 @@ html {
 	width: 18.8125rem;
 }
 
+.layout-page-country-mv {
+	height: 34.25rem;
+}
+
 .layout-page-faq-mv {
 	height: 34.25rem;
 }
@@ -3718,6 +3761,10 @@ html {
 	width: 18.8125rem;
 }
 
+.layout-page-report-mv {
+	height: 34.25rem;
+}
+
 .layout-page-thanks::before {
 	height: 8.625rem;
 	left: calc(50% - min(43vw, 64.9375rem));
@@ -3732,11 +3779,6 @@ html {
 
 .layout-page-visa {
 	margin-top: 9.375rem;
-}
-
-.layout-page-voice-mv {
-	background-image: url(../images/common/page-voice-pc-mv.jpg);
-	height: 34.25rem;
 }
 
 .layout-page-voice {
@@ -4423,6 +4465,15 @@ html {
 	max-width: 43.75rem;
 }
 
+.page-report__category-wrap {
+	margin-top: 6.25rem;
+}
+
+.page-report__lists {
+	gap: 3.75rem 2.5rem;
+	grid-template-columns: repeat(3, 1fr);
+}
+
 .page-thanks__container {
 	margin-top: 9.375rem;
 }
@@ -4595,6 +4646,41 @@ html {
 	font-size: 0.9375rem;
 	line-height: 1.5;
 	margin-top: 0.5rem;
+}
+
+.service__item:not(:first-child) {
+	margin-top: 5rem;
+}
+
+.services__item:nth-child(2) .services__heading::after {
+	right: -8rem;
+	width: 7.5rem;
+}
+
+.services__text {
+	width: 38.75rem;
+}
+
+.services__image {
+	aspect-ratio: 420/315;
+	margin-top: 0;
+	width: 26.25rem;
+}
+
+.services__item {
+	display: flex;
+}
+
+.services__item:nth-child(even) {
+	flex-direction: row-reverse;
+}
+
+.services__item:nth-child(even) .services__image {
+	margin-right: 2.5rem;
+}
+
+.services__item:nth-child(odd) .services__image {
+	margin-left: 2.5rem;
 }
 
 .single-body__main {
@@ -4838,6 +4924,14 @@ html {
 
 .voice__btn {
 	margin-top: 5rem;
+}
+
+.wp-pagenavi .previouspostslink {
+	margin-right: 2.5rem;
+}
+
+.wp-pagenavi .nextpostslink {
+	margin-left: 2.5rem;
 }
 
 a.page.larger.u-desktop {

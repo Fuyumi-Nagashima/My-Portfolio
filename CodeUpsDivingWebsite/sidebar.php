@@ -27,8 +27,8 @@
                 </figure>
                 <div class="card__body card__body--sidebar">
                     <div class="card__meta card__meta--sidebar">
-                        <time class="card__date" datetime="<?php the_time('c'); ?>"><?php the_time('Y.m.d'); ?></time>
-                        <h3 class="card__title"><?php the_title(); ?></h3>
+                        <time class="card__date card__date--sidebar" datetime="<?php the_time('c'); ?>"><?php the_time('Y.m.d'); ?></time>
+                        <h3 class="card__title card__title--sidebar"><?php the_title(); ?></h3>
                     </div>
                 </div>
             </a>
@@ -42,11 +42,11 @@
 
     <!-- 口コミセクション -->
     <div class="aside-wrapper__review aside-review">
-        <h2 class="aside-wrapper__title"><span>口コミ</span></h2>
+        <h2 class="aside-wrapper__title"><span>留学体験レポート</span></h2>
         <article class="aside-review__content">
             <?php
                 $args = array(
-                    'post_type'      => 'voice',
+                    'post_type'      => 'report',
                     'posts_per_page' => 1,
                     'orderby'        => 'rand'
                 );
@@ -64,21 +64,26 @@
             </figure>
             <div class="aside-review__textarea">
                 <p class="aside-review__profile">
-                    <?php
-                        $personalInfo = get_field('profile');
-                        if ($personalInfo) :
-                            echo esc_html($personalInfo['profile_age']) . '代(' . esc_html($personalInfo['profile_gender']) . ')';
-                        endif;
-                        ?>
+                <?php $personalInfo = get_field('voice_profile'); if ($personalInfo) : ?>
+                    <?php echo esc_html($personalInfo['profile_name']); ?>・<?php echo esc_html($personalInfo['profile_age']); ?>
+                <?php endif; ?>
                 </p>
-                <h3 class="aside-review__title">
-                    <?php //ACFを使用しカスタムフィールドの値を表示するための関数で投稿に「title」というカスタムフィールドがあり、その値を表示するときの関数
-                        the_field('title'); 
-                        ?>
-                </h3>
+                <h3 class="report-list__title "><?php the_title(); ?></h3>
+                      <p class="report-list__text report-list__text--subpage">
+                          <?php 
+                          $text = get_field('voice_text');
+                          $text = strip_tags($text);
+                          if(mb_strlen($text) > 50) {
+                              $content = mb_substr($text, 0, 50);
+                              echo $content . '...';
+                          } else {
+                              echo $text;
+                          }
+                          ?>
+                      </p>
             </div>
             <div class="aside-review__btn">
-                <a href="<?php echo get_post_type_archive_link('voice'); ?>" class="btn">
+                <a href="<?php echo get_post_type_archive_link('report'); ?>" class="btn">
                     <span>view&nbsp;more </span>
                     <div class="btn__arrow"></div>
                 </a>

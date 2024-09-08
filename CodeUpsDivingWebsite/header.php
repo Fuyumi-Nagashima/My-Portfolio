@@ -11,7 +11,7 @@
   $aboutus = esc_url( home_url('/aboutus/'));
   $visa = esc_url( home_url('/visa/'));
   $blog = esc_url( home_url('/blog/'));
-  $voice = esc_url( home_url('/voice/'));
+  $report = esc_url( home_url('/report/'));
   $price = esc_url( home_url('/price/'));
   $faq = esc_url( home_url('/faq/'));
   $contact = esc_url( home_url('/contact/'));
@@ -50,7 +50,7 @@
               <a class="pc-nav__link js-pc-nav"  href="<?php echo $blog; ?>">留学ブログ</a>
             </li>
             <li class="pc-nav__item">
-              <a class="pc-nav__link js-pc-nav"  href="<?php echo $voice; ?>">voice</a>
+              <a class="pc-nav__link js-pc-nav"  href="<?php echo $report; ?>">体験レポート</a>
             </li>
             <li class="pc-nav__item">
               <a class="pc-nav__link js-pc-nav"  href="<?php echo $price; ?>">price</a>
@@ -81,7 +81,7 @@
                   <a class="drawer-menu__heading" href="<?php echo $blog; ?>">Country<span>（国から選ぶ）</span></a>
                 </div>
                 <div class="drawer-menu__item">
-                  <a class="drawer-menu__heading" href="<?php echo $voice; ?>">Voice<span>（体験レポート）</span></a></a>
+                  <a class="drawer-menu__heading" href="<?php echo $report; ?>">Report<span>（体験レポート）</span></a></a>
                 </div>
                 <div class="drawer-menu__item">
                   <a class="drawer-menu__heading" href="<?php echo $faq; ?>">Faq<span>（よくある質問）</span></a>

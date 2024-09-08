@@ -19,7 +19,7 @@
     width:0;
     height:0;
     border-style:solid;
-    border-width:12px 0 12px 20.8px;
+    border-width:10px 0 10px 16px;
     border-color: transparent transparent transparent $main-blue;  
     transition: transform .3s;
     display: inline-block;
@@ -30,7 +30,7 @@
     transform: rotate(90deg);
 }
 .asideblog-list ul{
-    display:block;
+    display:none;
 }
 .asideblog-list__month ul{
     display:none;

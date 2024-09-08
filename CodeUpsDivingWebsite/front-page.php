@@ -319,7 +319,7 @@
                         <?php
                         // クエリの設定
                         $args = array(
-                            'post_type' => 'voice', // カスタム投稿タイプ「campaign」
+                            'post_type' => 'voice', // カスタム投稿タイプ「voice」
                             'orderby' => 'date', // 日付でソート
                             'order' => 'DESC',  // 降順（新しい順）
                             'posts_per_page' => -1 // すべての投稿を取得する場合は「-1」

@@ -44,7 +44,6 @@
                   endwhile; 
                 endif; ?>
                     </div><!-- two-column__article single-body -->
-
                     <?php 
                     $prev = get_previous_post(); // 直前の投稿の情報を取得
                     $prev_url = $prev ? get_permalink($prev->ID) : null; // 直前の投稿のパーマリンク（URL）を取得
@@ -53,10 +52,13 @@
                 ?>
                     <div class="two-column__wp-pagenavi wp-pagenavi" role="navigation">
                         <?php if($prev): ?>
-                        <a class="previouspostslink" rel="prev" href="<?php echo $prev_url; ?>"></a>
+                        <a class="previouspostslink" rel="prev" href="<?php echo $prev_url; ?>">前へ</a>
                         <?php endif; ?>
+
+                        <a class="homepostslink" href="<?php echo get_post_type_archive_link('/'); ?>">一覧へ戻る</a>
+
                         <?php if($next): ?>
-                        <a class="nextpostslink" rel="next" href="<?php echo $next_url; ?>"></a>
+                        <a class="nextpostslink" rel="next" href="<?php echo $next_url; ?>">次へ</a>
                         <?php endif; ?>
                     </div>
                 </div> <!-- two-column__main -->

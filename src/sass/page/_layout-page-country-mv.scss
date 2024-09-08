@@ -1,0 +1,11 @@
+@use "global" as *;
+.layout-page-country-mv{
+    height:rem(460);
+    background-image: url(../images/common/uk-background.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    @include mq('md'){
+    height:rem(548);
+}
+}

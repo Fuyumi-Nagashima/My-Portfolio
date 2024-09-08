@@ -66,6 +66,7 @@
 /*下層ページ(ブログ詳細)のasideのサイドバーCSS*/
 .card--sidebar{
     display:flex;
+    align-items:flex-start;
     gap:rem(16);
     padding: rem(18);
 }
@@ -73,6 +74,7 @@
     width:46%;
     cursor:pointer;
     overflow:hidden;
+    flex-shrink:0;/*画像が縦に伸びないように固定*/
 }
 .card__image--sidebar img{
     aspect-ratio: 121/90;
@@ -93,6 +95,14 @@
     transform: scale(1.1); 
 }
 .card__body--sidebar{
+    margin-top:0;
+    flex-grow:1;/* テキスト部分が残りのスペースを埋める */
+}
+.card__date--sidebar{
+    margin-left:0;
+}
+.card__title--sidebar{
+    font-size: rem(12);
     margin-top:0;
 }
 .card__meta--sidebar{
