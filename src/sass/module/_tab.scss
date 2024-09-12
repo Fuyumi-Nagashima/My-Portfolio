@@ -5,28 +5,28 @@
     gap:rem(19);
     cursor: pointer;
     @include mq('md'){
-        column-gap:rem(90);
+        column-gap:rem(32);
     }
 }
 .tab__menu-item{
     min-width:rem(102);
     width: 100%;
+    border-radius: 10px 10px 0px 0px;
     margin-inline: auto;
     text-align: center;
     padding:rem(9) rem(16);
     font-size:rem(14);
-    background-color:$main-blue;
-    color:$white; 
+    background-color:#F8F4EE;
+    color:$sub-blue; 
     transition:0.3s ease-in-out;
-    box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25);
     display: flex;
     justify-content: center;
     align-items: center;
     @include mq('md'){
-    padding:rem(29) rem(0) rem(29) rem(0);
+    padding:rem(28) rem(0) rem(28) rem(0);
     line-height:1;
     display:inline-block;
-    font-size:rem(24);
+    font-size:rem(20);
     letter-spacing: 0.1em;
     max-width:rem(300);
     width:100%;
@@ -40,66 +40,14 @@
     background-color:$sub-blue;
     color:$white;
 }
-.tab__menu-item span::before{
-    @include mq('md'){
-        content: "";
-        position: absolute;
-        mask-size: contain;
-        mask-repeat: no-repeat;
-        mask-position: center;
-        height:rem(64);
-        width:rem(64);
-        left: 0;
-        top: 50%;
-        transform: translateY(-50%);
-    }
-}
-.tab__menu-item.is-active:nth-child(1) span::before {
-    mask-image: url(../images/common/mini-icon-whale.svg);
-    background-color:$white;
-}
-.tab__menu-item:nth-child(2) span::before{
-    mask-image: url(../images/common/mini-icon-shark.svg);
-    background-color:$main-blue;
-}
-.tab__menu-item:nth-child(3) span::before {
-    mask-image: url(../images/common/mini-icon-fish.svg);
-    background-color:$main-blue;
-}
-
-//ホバーしたらSVGの色を変える
-.tab__menu-item:nth-child(1):hover span::before {
-    background-color:$white;
-}
-.tab__menu-item:nth-child(2):hover span::before,
-.tab__menu-item:nth-child(3):hover span::before {
-    background-color:$white;
-}
-//タブ切り替えしたらアイコンのsvg画像の色を変える
-.tab__menu-item:nth-child(1) span::before {
-    mask-image: url(../images/common/mini-icon-whale.svg);
-    background-color:$main-blue;
-}
-.tab__menu-item.is-active:nth-child(2) span::before  {
-    -webkit-mask-image: url(../images/common/mini-icon-shark.svg);
-    background-color:$white;
-    mask-image: url(../images/common/mini-icon-shark.svg);
-}
-.tab__menu-item.is-active:nth-child(3) span::before  {
-    -webkit-mask-image: url(../images/common/mini-icon-fish.svg);
-    background-color:$white;
-    mask-image: url(../images/common/mini-icon-fish.svg);
-}
 .tab__content-inner {
-    margin-top: rem(16);
-    border: 1px solid $main-blue;
+    border: 1px solid $sub-blue;
     padding: rem(24);
-    @include mq('md'){
-    margin-top: rem(24);    
+    @include mq('md'){ 
         display: flex;
         justify-content: space-between;
         align-items: center;
-        gap: rem(48);
+        gap: rem(40) rem(30);
     }
 }
 .tab__content-body{
@@ -127,13 +75,13 @@
     line-height:1;
     font-weight:$bold;
     border-bottom: 1px solid $main-blue;
-    padding-bottom:rem(8);
+    padding-bottom:rem(16);
     @include mq('md'){
         font-weight:$medium;
     }
 }
 .tab__content-text{
-    margin-top:rem(8);
+    margin-top:rem(16);
     font-size:rem(16);
     line-height:calc(24/16);
 }

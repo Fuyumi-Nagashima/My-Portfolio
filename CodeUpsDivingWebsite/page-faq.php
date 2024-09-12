@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 <main>
   <!-- 下層ページのmv -->
-  <section class="layout-page-faq-mv sub-mv">
+  <section class="layout-page-faq-mv sub-mv" id="js-sub-mv" >
     <div class="sub-mv__page-header">
       <h2 class="sub-mv__title sub-mv__title--faq">
         <span>faq</span>
@@ -19,6 +19,7 @@
 
   <div class="layout-page-faq page-faq">
     <div class="page-faq__inner inner">
+      <p class="page-faq__heading">よくお寄せいただく<br class="u-mobile">ご質問と回答をご紹介します。</p>
       <div class="page-faq__container accordion">
         <ul class="accordion__list">
           <?php
@@ -27,7 +28,7 @@
           if ($faq_group) :
             foreach ($faq_group as $item) :
           ?>
-          <li class="accordion__item">
+          <li class="accordion__item js-fade">
             <dt class="accordion__question js-accordion-title"><?php echo esc_html($item['faq_question']); ?></dt>
             <dd class="accordion__answer">
               <p><?php echo esc_html($item['faq_answer']); ?></p>

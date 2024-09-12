@@ -3,6 +3,7 @@
 .layout-introduction{
     margin-top:rem(64);
     position: relative;
+    overflow: hidden;
 }
 .layout-introduction::before{
     @include mq('md'){

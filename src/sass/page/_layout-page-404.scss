@@ -11,17 +11,16 @@
 .layout-page-404::before{
     content: '';
     position:absolute;
-    background-image: url(../images/common/404image.png);
+    background-image: url(../images/common/bg-airplane-img-white.png);
     background-size: contain;
     background-repeat:no-repeat;
-    width: rem(345);
-    height: rem(345);
-    top:-10%;
-    left:4%;
+    width: rem(100);
+    height: rem(100);
+    top:3%;
+    left:0;
     @include mq('md'){
-        top: -6%;
-        width:rem(698);
-        height:rem(698);
-        left: calc(50% - min(38vw, 541px));
+        top: 32%;
+        width:rem(250);
+        height:rem(250);
     }
 }

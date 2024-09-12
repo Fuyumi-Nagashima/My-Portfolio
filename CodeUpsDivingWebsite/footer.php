@@ -1,110 +1,82 @@
 <!-- footer -->
 <!-- Contact -->
 <?php 
-  $campaign = esc_url( home_url('/campaign/'));
-  $aboutus = esc_url( home_url('/aboutus/'));
-  $information = esc_url( home_url('/information/'));
-  $blog = esc_url( home_url('/blog/'));
-  $voice = esc_url( home_url('/voice/'));
-  $price = esc_url( home_url('/price/'));
-  $faq = esc_url( home_url('/faq/'));
-  $contact = esc_url( home_url('/contact/'));
-  $privacy_policy = esc_url( home_url('/privacy-policy/'));
-  $terms_of_service = esc_url( home_url('/terms-of-service/'));
-  $sitemap = esc_url( home_url('/sitemap/'));
-  ?>
+$visa = esc_url( home_url('/visa/'));
+$blog = esc_url( home_url('/blog/'));
+$report = esc_url( home_url('/report/'));
+$faq = esc_url( home_url('/faq/'));
+$contact = esc_url( home_url('/contact/'));
+$terms_of_service = esc_url( home_url('/terms-of-service/'));
+$privacy_policy = esc_url( home_url('/privacypolicy/'));
+$country = esc_url(home_url("/country"));  
+?>
 <?php
 $footer_class = 'layout-footer footer';
-if (is_404()) {
+if (is_404() || is_page('contact')) {
     $footer_class .= ' layout-footer--no-margin';
 }
 ?>
 <footer class="<?php echo $footer_class; ?>">
     <div class="footer__inner inner">
-        <div class="footer__top">
-            <div class="footer__logo">
-                <a class="footer__logo-link" href="<?php echo esc_url(home_url('/')); ?>">
-                    <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/logo-white.png"
-                        alt="codeupsのロゴ画像" />
-                </a>
+        <div class="footer__wrap">
+            <div class="footer__content">
+                <div class="footer__information">
+                    <div class="footer__logo">
+                        <a class="footer__logo-link" href="<?php echo esc_url(home_url('/')); ?>">
+                            <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/logo-white.png" alt="海外留学のDream Quest" />
+                        </a>
+                    </div>
+                    <ul class="footer__sns">
+                        <li>
+                            <a href="https://www.facebook.com/login/?locale=ja_JP" target="_blank" rel="noopener noreferrer"><img
+                            src="<?php echo get_theme_file_uri(); ?>/assets/images/common/facebook-icon.png"
+                            alt="facebook" /></a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><img
+                            src="<?php echo get_theme_file_uri(); ?>/assets/images/common/instagram-icon.png"
+                            alt="instagram" /></a>
+                        </li>
+                        <li>
+                            <a href="https://x.com/home?lang=ja" target="_blank" rel="noopener noreferrer"><img
+                            src="<?php echo get_theme_file_uri(); ?>/assets/images/common/x-logo.png"
+                            alt="x" /></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer__nav footer-nav ">
+                    <ul class="footer-nav__items">
+                        <li class="footer-nav__item">
+                            <a href="<?php echo $blog; ?>" class="footer-nav__heading"><span>留学ブログ</span></a>
+                        </li>
+                        <li class="footer-nav__item">
+                            <a class="footer-nav__heading" href="<?php echo $visa; ?>">目的から選ぶ</a>
+                        </li>
+                        <li class="footer-nav__item">
+                            <a class="footer-nav__heading" href="<?php echo $country; ?>">国から選ぶ</a>
+                        </li>
+                        <li class="footer-nav__item">
+                            <a class="footer-nav__heading" href="<?php echo $report; ?>">体験レポート</a>
+                        </li>
+                        <li class="footer-nav__item">
+                            <a class="footer-nav__heading" href="<?php echo $faq; ?>">よくある質問</a>
+                        </li>
+                        <li class="footer-nav__item">
+                            <a class="footer-nav__heading" href="<?php echo $contact; ?>">お問い合わせ</a>
+                        </li>
+                        <li class="footer-nav__item">
+                            <a class="footer-nav__heading" href="<?php echo $privacy_policy; ?>">プライバシーポリシー</a>
+                        </li>
+                        <li class="footer-nav__item">
+                            <a class="footer-nav__heading" href="<?php echo $terms_of_service; ?>">利用規約</a>
+                        </li>
+                    </ul>
+                </div><!--footer__nav footer-nav-->
+            </div><!--footer__content-->
+            <div class="footer__map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12963.333809015348!2d139.69696296798497!3d35.68110269102823!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188cc0a43ae8a3%3A0xfd90ae6c3a216ecd!2z44CSMTUxLTAwNTEg5p2x5Lqs6YO95riL6LC35Yy65Y2D6aeE44Kx6LC3!5e0!3m2!1sja!2sjp!4v1726036307117!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
-            <ul class="footer__sns">
-                <li>
-                    <a href="https://www.facebook.com/login/?locale=ja_JP" target="_blank"
-                        rel="noopener noreferrer"><img
-                            src="<?php echo get_theme_file_uri(); ?>/assets/images/common/FacebookLogo.png"
-                            alt="facebookのアイコン" /></a>
-                </li>
-                <li>
-                    <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><img
-                            src="<?php echo get_theme_file_uri(); ?>/assets/images/common/InstagramLogo.png"
-                            alt="instagramのアイコン" /></a>
-                </li>
-            </ul>
-        </div>
-        <div class="footer__nav footer-nav">
-            <div class="footer-nav__content">
-                <div class="footer-nav__items item01">
-                    <div class="footer-nav__item">
-                        <a href="<?php echo $campaign; ?>" class="footer-nav__heading"><span>キャンペーン</span></a>
-                        <ul class="footer-nav__list">
-                            <li><a href="<?php echo $campaign_category_license; ?>">ライセンス取得</a></li>
-                            <li><a href="<?php echo $campaign_category_experience; ?>">貸切体験ダイビング</a></li>
-                            <li><a href="<?php echo $campaign_category_fundiving; ?>">ファンダイビング</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-nav__item">
-                        <p class="footer-nav__heading"><a href="<?php echo $aboutus; ?>">私たちについて</a></p>
-                    </div>
-                </div>
-
-                <div class="footer-nav__items item02">
-                    <div class="footer-nav__item">
-                        <a href="<?php echo $information; ?>" class="footer-nav__heading">ダイビング情報</a>
-                        <ul class="footer-nav__list">
-                            <li><a href="<?php echo $information; ?>?id=tab1">ライセンス講習</a></li>
-                            <li><a href="<?php echo $information; ?>?id=tab3">体験ダイビング</a></li>
-                            <li><a href="<?php echo $information; ?>?id=tab2">ファンダイビング</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-nav__item">
-                        <p class="footer-nav__heading"><a href="<?php echo $blog; ?>">ブログ</a></p>
-                    </div>
-                </div>
-
-                <div class="footer-nav__items item03">
-                    <div class="footer-nav__item">
-                        <p class="footer-nav__heading"><a href="<?php echo $voice; ?>">お客様の声</a></p>
-                    </div>
-                    <div class="footer-nav__item">
-                        <p class="footer-nav__heading"><a href="<?php echo $price; ?>">料金一覧</a></p>
-                        <ul class="footer-nav__list">
-                            <li><a href="<?php echo $price; ?>">ライセンス講習</a></li>
-                            <li><a href="<?php echo $price; ?>">体験ダイビング</a></li>
-                            <li><a href="<?php echo $price; ?>">ファンダイビング</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="footer-nav__items item04">
-                    <div class="footer-nav__item">
-                        <p class="footer-nav__heading"><a href="<?php echo $faq; ?>">よくある質問</a></p>
-                    </div>
-                    <div class="footer-nav__item">
-                        <p class="footer-nav__heading"><a href="<?php echo $privacy_policy; ?>">プライバシー<br
-                                    class="u-mobile">ポリシー</a></p>
-                    </div>
-                    <div class="footer-nav__item">
-                        <p class="footer-nav__heading"><a href="<?php echo $terms_of_service; ?>">利用規約</a></p>
-                    </div>
-                    <div class="footer-nav__item">
-                        <p class="footer-nav__heading"><a href="<?php echo $contact; ?>">お問い合わせ</a></p>
-                    </div>
-                    <div class="footer-nav__item">
-                        <p class="footer-nav__heading"><a href="<?php echo $sitemap; ?>">サイトマップ</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
+        </div><!--footer__warp-->
         <div class="footer__copyright">
             <small>copyright © 2024 dream quest. all rights reserved.</small>
         </div>
@@ -112,7 +84,7 @@ if (is_404()) {
 </footer>
 <!-- 追従バナー(フローティングバナー) -->
 <div class="floating" id="js-floating">
-    <a href="#contact" class="floating__link"><span>お問い合わせ</span></a>
+    <a href="<?php echo $contact; ?>" class="floating__link"><span>お問い合わせ</span></a>
 </div>
 <!-- TOPへ戻るボタン -->
 <a class="pagetop" id="js-pagetop" href="#">

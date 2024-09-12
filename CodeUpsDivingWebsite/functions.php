@@ -1,12 +1,5 @@
 <?php
 // functions.phpのコード
-
-// ファビコンの設定
-add_action('wp_head', 'add_favicon');
-function add_favicon() {
-    echo '<link rel="icon" href="#" />';
-}
-
 // Googleフォントの設定
 add_action('wp_enqueue_scripts', 'add_google_fonts');
 function add_google_fonts() {
@@ -93,14 +86,7 @@ add_filter('use_block_editor_for_post',function($use_block_editor,$post){
  * @param int $position メニューの位置
  */
 
-/*SCF::add_options_page(
-	'ギャラリー画像',
-	'ギャラリー画像',
-	'manage_options',
-	'gallery-option',
-	'dashicons-format-gallery',
-	11
-);*/
+
 SCF::add_options_page(
 	'よくある質問',
 	'よくある質問',
@@ -109,14 +95,14 @@ SCF::add_options_page(
 	'dashicons-format-status',
 	11
 );
-/*SCF::add_options_page(
-	'MVスライダー',
-	'MVスライダー',
+SCF::add_options_page(
+	'国紹介',
+	'国紹介',
 	'manage_options',
-	'mv-option',
-	'dashicons-format-gallery',
+	'country-option',
+	'dashicons-admin-site',
 	11
-);*/
+);
 
 // Contact Form 7で自動挿入されるPタグ、brタグを削除
 add_filter('wpcf7_autop_or_not', 'wpcf7_autop_return_false');
@@ -144,7 +130,7 @@ function custom_cf7_redirect() {
 }
 add_action('wp_footer', 'custom_cf7_redirect');
 
-//footer.phpの中にあるContactセクションのmargin-topの余白を消すためのコード
+//footer.phpの中にあるContactセクションと404ページのmargin-topを打ち消す
 function add_custom_body_class($classes) {
     if (is_404()) {
         $classes[] = 'is-404';
@@ -253,46 +239,6 @@ function Change_menulabel() {
     add_action( 'init', 'Change_objectlabel' );
     add_action( 'admin_menu', 'Change_menulabel' );
 
-
-
-
-    // add_filter( 'show_admin_bar', '__return_false' );
-
-    function custom_cf7_form_tag($tag) {
-        if ($tag['name'] != 'campaign-select') {
-            return $tag;
-        }
-    
-        $args = array(
-            'post_type'      => 'campaign',
-            'posts_per_page' => -1,
-            'orderby'        => 'date',
-            'order'          => 'DESC'
-        );
-    
-        $query = new WP_Query($args);
-        $options = array();
-    
-        if ($query->have_posts()) {
-            while ($query->have_posts()) {
-                $query->the_post();
-                $options[] = array('value' => get_the_title(), 'label' => get_the_title());
-            }
-            wp_reset_postdata();
-        }
-    
-        // Create dropdown options
-        $tag['raw_values'] = array_map(function($option) {
-            return $option['value'];
-        }, $options);
-    
-        $tag['values'] = $tag['raw_values'];
-        $tag['labels'] = $tag['values'];
-    
-        return $tag;
-    }
-    add_filter('wpcf7_form_tag', 'custom_cf7_form_tag', 10, 2);
-
 /*================================================================
     管理画面の投稿一覧にアイキャッチ画像を表示
 ================================================================ */
@@ -349,14 +295,14 @@ function add_custom_widget() {
     $html .= '<p>クリックすると投稿と編集ページに移動します</p>';
     $html .= '<div class="widget-icons">';
     $html .= '<a href="edit.php"><div class="widget-icon"><span class="dashicons dashicons-admin-post"></span><p>『ブログ』投稿</p></div></a>';
-    $html .= '<a href="edit.php?post_type=campaign"><div class="widget-icon"><span class="dashicons dashicons-clock"></span><p>『キャンペーン』投稿</p></div></a>';
+    $html .= '<a href="post.php?page=country-option"><div class="widget-icon"><span class="dashicons dashicons-admin-site-alt"></span><p>『国紹介』編集</p></div></a>';
     $html .= '<a href="edit.php?post_type=voice"><div class="widget-icon"><span class="dashicons dashicons-smiley"></span><p>『お客様の声』投稿</p></div></a>';
     $html .= '<a href="post.php?page=faq-option"><div class="widget-icon"><span class="dashicons dashicons-editor-help"></span><p>『よくある質問』編集</p></div></a>';
     $html .= '</div>'; // divタグを閉じる
     $html .= '</div>'; // divタグを閉じる
     echo $html;
-  }
-  
+}
+
   // 基本設定リンクを表示するウィジェットを追加する関数
   function add_basic_settings_widget() {
     $html = ''; // 変数を初期化

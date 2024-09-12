@@ -1,0 +1,11 @@
+@use "global" as *;
+.js-fade {
+    transition: 0.8s ease-in-out;
+    transform: translateY(100px);
+    opacity: 0;
+}
+//JSで追加されるクラス
+.js-fade.fade-in{
+    transform: translateY(0);
+    opacity: 1.0;
+}

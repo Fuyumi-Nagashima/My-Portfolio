@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 <!-- 下層ページのmv -->
 <main>
-      <section class="layout-page-visa-mv sub-mv">
+      <section class="layout-page-visa-mv sub-mv"  id="js-sub-mv">
         <div class="sub-mv__page-header">
           <h2 class="sub-mv__title">
             <span>visa</span>
@@ -20,7 +20,7 @@
       </div>
       <!-- Visaタイプの紹介 -->
       <div class="layout-page-visa page-visa">
-        <div class="page-information__inner inner">
+        <div class="page-visa__inner inner">
           <!-- タブ -->
           <div class="page-visa__container tab">
             <ul class="tab__menu">

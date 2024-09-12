@@ -12,24 +12,22 @@
     }
 }
 .page-404__title{
-    font-size:rem(80);
+    font-size:rem(30);
     letter-spacing:0.5em;
-    text-indent:0.5em;
+    text-indent:0.3em;
     color:$white;
     line-height:calc(96/80);
     font-weight: $regular;
     @include mq('md'){
-        font-size:rem(160);
-        line-height:calc(192/160);
+        // font-size:rem(160);
+        // line-height:calc(192/160);
     }
 }
 .page-404__text{
     font-size: rem(16);
     line-height:calc(24/16);
     color:$white;
-    @include  mq('md'){
-        margin-top:rem(24);
-    }
+    margin-top:rem(24);
 }
 .page-404__btn{
     margin-top:rem(40);

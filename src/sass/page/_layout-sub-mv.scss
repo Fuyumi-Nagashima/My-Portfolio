@@ -1,11 +1,10 @@
 @use "global" as *;
 .layout-sub-mv{
     height:rem(460);
-    background-image: url(../images/common/underpage-mv-SP.jpg);
+    background-image: url(../images/common/student-at-school-bg.jpeg);
     background-repeat: no-repeat;
     background-size: cover;
     @include mq('md'){
     height:rem(548);
-    background-image: url(../images/common/underpage-mv-PC.jpg);
 }
 }

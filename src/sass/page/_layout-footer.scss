@@ -1,22 +1,8 @@
 @use "global" as *;
 .layout-footer{
-    margin-top:rem(95);
-    @include mq('md'){ 
-        margin-top:rem(160);
-        
-    }
+    margin-top:rem(56);
 }
 
 .layout-footer--no-margin {
     margin-top: 0 !important;
 }
-//404.phpのときだけlayout-footerのmarginを消す
-/*.layout-footer.layout-footer--404{
-    margin-top:0;
-}*/
-
-
-// 404ページのときだけ .layout-footer の margin-top を 0 にする
-/*body.footer-404 .layout-footer {
-    margin-top: 0 !important;
-}*/

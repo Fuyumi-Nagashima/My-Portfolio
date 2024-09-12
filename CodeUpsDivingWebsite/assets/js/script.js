@@ -37,7 +37,10 @@ jQuery(function ($) {
   });
   //headerの背景色変更
   $(window).on('scroll', function () {
-    if ($('#js-fv').height() < $(window).scrollTop()) {
+    var fvHeight = $('#js-fv').length ? $('#js-fv').height() : 0;
+    var subMvHeight = $('#js-sub-mv').length ? $('#js-sub-mv').height() : 0;
+    var triggerHeight = fvHeight || subMvHeight;
+    if (triggerHeight < $(window).scrollTop()) {
       $('.header').addClass('change-color');
       $('#js-header__logo-link').addClass('change-logo');
       $('.js-pc-nav').addClass('change-nav');
@@ -49,6 +52,7 @@ jQuery(function ($) {
       $('.js-header-header__hamburger').removeClass('change-hamburger');
     }
   });
+
   //ローディングアニメーション
   $(function () {
     // ローダー終了
@@ -96,15 +100,15 @@ jQuery(function ($) {
     speed: 2000 // 2秒かけてフェード
   });
 
-  //campaignスライダー
+  //report(voice)スライダー
   var service_swiper = new Swiper(".js-report-swiper", {
     centeredSlides: true,
     loop: true,
-    speed: 3000,
+    speed: 1500,
     slidesPerView: 1.5,
     spaceBetween: 30,
     autoplay: {
-      delay: 3000,
+      delay: 1500,
       disableOnInteraction: false // 矢印をクリックしても自動再生を止めない
     },
 
@@ -132,36 +136,6 @@ jQuery(function ($) {
     }
   });
 
-  //色壁が出て写真が出てくるアニメーション,
-  var box = $(".information__image,.voice-card__image,.price__image"),
-    speed = 700;
-  box.each(function () {
-    $(this).append('<div class="color"></div>');
-    var color = $(this).find($(".color")),
-      image = $(this).find("img");
-    var counter = 0;
-    image.css("opacity", "0");
-    color.css("width", "0%");
-    //inviewを使って背景色が画面に現れたら処理をする
-    color.on("inview", function () {
-      if (counter == 0) {
-        $(this).delay(200).animate({
-          width: "100%"
-        }, speed, function () {
-          image.css("opacity", "1");
-          $(this).css({
-            left: "0",
-            right: "auto"
-          });
-          $(this).animate({
-            width: "0%"
-          }, speed);
-        });
-        counter = 1;
-      }
-    });
-  });
-
   //追従バナー(フローティングバナー)
   var floating = $("#js-floating, #js-pagetop");
   floating.hide();
@@ -186,7 +160,7 @@ jQuery(function ($) {
   pageTop.click(function () {
     $("body,html").animate({
       scrollTop: 0
-    }, 500);
+    }, 800);
     return false;
   });
   // フッター手前でストップ
@@ -210,8 +184,6 @@ jQuery(function ($) {
   });
 
   //下層アコーディオンメニュー
-  // $(".accordion__answer").css("display", "block");
-  // $(".accordion__answer").addClass("is-open");
   $(".js-accordion-title").on("click", function () {
     $(this).next().slideToggle(300);
     $(this).toggleClass("is-open", 300);
@@ -300,5 +272,20 @@ jQuery(function ($) {
       var index = $('.js-tab').index(this);
       $('.js-panel').eq(index).addClass('is-active');
     });
+  });
+
+  //スクロールアニメーション
+  $(window).scroll(function () {
+    var scrollAnimationElm = document.querySelectorAll('.js-fade');
+    var scrollAnimationFunc = function scrollAnimationFunc() {
+      for (var i = 0; i < scrollAnimationElm.length; i++) {
+        var triggerMargin = 100;
+        if (window.innerHeight > scrollAnimationElm[i].getBoundingClientRect().top + triggerMargin) {
+          scrollAnimationElm[i].classList.add('fade-in');
+        }
+      }
+    };
+    window.addEventListener('load', scrollAnimationFunc);
+    window.addEventListener('scroll', scrollAnimationFunc);
   });
 });

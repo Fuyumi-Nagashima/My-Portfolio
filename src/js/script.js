@@ -35,19 +35,24 @@ jQuery(function ($) {
         }
       });
       //headerの背景色変更
-      $(window).on('scroll',function() {
-        if($('#js-fv').height() < $(window).scrollTop()) {
-          $('.header').addClass('change-color');
-          $('#js-header__logo-link').addClass('change-logo');
-          $('.js-pc-nav').addClass('change-nav');
-          $('.js-header-header__hamburger').addClass('change-hamburger');
+      $(window).on('scroll', function () {
+        var fvHeight = $('#js-fv').length ? $('#js-fv').height() : 0;
+        var subMvHeight = $('#js-sub-mv').length ? $('#js-sub-mv').height() : 0;
+        var triggerHeight = fvHeight || subMvHeight;
+    
+        if (triggerHeight < $(window).scrollTop()) {
+            $('.header').addClass('change-color');
+            $('#js-header__logo-link').addClass('change-logo');
+            $('.js-pc-nav').addClass('change-nav');
+            $('.js-header-header__hamburger').addClass('change-hamburger');
         } else {
-          $('.header').removeClass('change-color');
-          $('#js-header__logo-link').removeClass('change-logo');
-          $('.js-pc-nav').removeClass('change-nav');
-          $('.js-header-header__hamburger').removeClass('change-hamburger');
+            $('.header').removeClass('change-color');
+            $('#js-header__logo-link').removeClass('change-logo');
+            $('.js-pc-nav').removeClass('change-nav');
+            $('.js-header-header__hamburger').removeClass('change-hamburger');
         }
-      });
+    });
+    
       //ローディングアニメーション
   $(function () {
     // ローダー終了
@@ -126,33 +131,6 @@ jQuery(function ($) {
             clickable: true,
         },
     });
-        
-      //色壁が出て写真が出てくるアニメーション,
-      var box = $(".information__image,.voice-card__image,.price__image"),
-        speed = 700;
-    
-      box.each(function () {
-        $(this).append('<div class="color"></div>');
-        var color = $(this).find($(".color")),
-          image = $(this).find("img");
-        var counter = 0;
-    
-        image.css("opacity", "0");
-        color.css("width", "0%");
-        //inviewを使って背景色が画面に現れたら処理をする
-        color.on("inview", function () {
-          if (counter == 0) {
-            $(this)
-              .delay(200)
-              .animate({ width: "100%" }, speed, function () {
-                image.css("opacity", "1");
-                $(this).css({ left: "0", right: "auto" });
-                $(this).animate({ width: "0%" }, speed);
-              });
-            counter = 1;
-          }
-        });
-      });
 
 //追従バナー(フローティングバナー)
       const floating = $("#js-floating, #js-pagetop");
@@ -206,8 +184,6 @@ jQuery(function ($) {
   });
 
   //下層アコーディオンメニュー
-  // $(".accordion__answer").css("display", "block");
-  // $(".accordion__answer").addClass("is-open");
   $(".js-accordion-title").on("click", function() {
     $(this).next().slideToggle(300);
     $(this).toggleClass("is-open",300);
@@ -298,4 +274,21 @@ $(document).ready(function() {
     $('.js-panel').eq(index).addClass('is-active');
   });
 });
+
+//スクロールアニメーション
+$(window).scroll(function () {
+  var scrollAnimationElm = document.querySelectorAll('.js-fade');
+  var scrollAnimationFunc = function () {
+    for (var i = 0; i < scrollAnimationElm.length; i++) {
+      var triggerMargin = 100;
+      if (window.innerHeight > scrollAnimationElm[i].getBoundingClientRect().top + triggerMargin) {
+        scrollAnimationElm[i].classList.add('fade-in');
+      }
+    }
+  }
+  window.addEventListener('load', scrollAnimationFunc);
+  window.addEventListener('scroll', scrollAnimationFunc);
+});
+
+
 });

@@ -1,9 +1,6 @@
 @use "global" as *;
 .page-report__category-wrap{
     margin-top:rem(50);
-    @include mq('md'){
-        margin-top:rem(100);
-    }
 }
 .page-report__lists{
     display: grid;

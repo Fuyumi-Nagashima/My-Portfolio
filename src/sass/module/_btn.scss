@@ -12,6 +12,15 @@
     font-weight:$bold;
     letter-spacing:0.1em;
 }
+.btn--white{
+    color:$white;
+}
+.btn--404{
+    font-size: rem(12);
+    @include mq('md'){
+        font-size:rem(16);
+    }
+}
 .btn::first-letter{
     text-transform:uppercase;
 }
@@ -29,7 +38,15 @@
     /*アニメーションの指定*/
     transition: all .3s;
 }
-
+.btn--404::before{
+    width:rem(103);
+    @include mq('md'){
+        width:rem(126);
+    }
+}
+.btn--white::before{
+    background:$white;
+}
 .btn::after{
     content: '';
     /*絶対配置で矢印の位置を決める*/
@@ -43,6 +60,9 @@
     transform: rotate(35deg);
     /*アニメーションの指定*/
     transition: all .3s;
+}
+.btn--white::after{
+    background:$white;
 }
 
 /*hoverした際の移動*/

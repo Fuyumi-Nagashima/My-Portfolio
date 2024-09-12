@@ -7,7 +7,7 @@
   ?>
 <!-- 下層ページのmv -->
 <main>
-    <section class="layout-home-mv sub-mv">
+    <section class="layout-home-mv sub-mv" id="js-sub-mv">
         <div class="sub-mv__page-header">
             <div class="sub-mv__title">
                 <span>blog</span>
@@ -55,7 +55,7 @@
                         <a class="previouspostslink" rel="prev" href="<?php echo $prev_url; ?>">前へ</a>
                         <?php endif; ?>
 
-                        <a class="homepostslink" href="<?php echo get_post_type_archive_link('/'); ?>">一覧へ戻る</a>
+                        <a class="homepostslink" href="<?php echo get_post_type_archive_link('post'); ?>">一覧へ戻る</a>
 
                         <?php if($next): ?>
                         <a class="nextpostslink" rel="next" href="<?php echo $next_url; ?>">次へ</a>

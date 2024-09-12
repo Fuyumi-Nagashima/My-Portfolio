@@ -9,37 +9,13 @@
         </div>
       </section>
     <!-- パンくず -->
-    <nav class="breadcrumb">
-      <ol
-      class="breadcrumb__lists inner"
-      itemscope
-      itemtype="https://schema.org/BreadcrumbList"
-  >
-      <li
-      class="breadcrumb__list "
-      itemprop="itemListElement"
-      itemscope
-      itemtype="https://schema.org/ListItem"
-      >
-      <a class="breadcrumb__list-link" itemprop="item" href="index.html">
-          <span itemprop="name" class="breadcrumb__list-active">top</span>
-      </a>
-      <meta itemprop="position" content="1" />
-      </li>
-
-      <li
-      class="breadcrumb__list"
-      itemprop="itemListElement"
-      itemscope
-      itemtype="https://schema.org/ListItem"
-      >
-      <p class="breadcrumb__list-link" itemprop="item">
-          <span itemprop="name">利用規約</span>
-      </p>
-      <meta itemprop="position" content="2" />
-      </li>
-  </ol>
-  </nav>
+    <div class="breadcrumb">
+      <div class="breadcrumb__inner inner">
+        <?php if ( function_exists('bcn_display') ) {
+          bcn_display();
+        } ?>
+      </div>
+    </div>
   <!-- 利用規約 -->
   <section class="layout-terms-of-service terms-of-service sub-page">
     <div class="terms-of-service__inner inner">

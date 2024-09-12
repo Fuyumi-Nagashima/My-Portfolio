@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <main>
-      <section class="layout-home-mv sub-mv">
+      <section class="layout-home-mv sub-mv" id="js-sub-mv">
         <div class="sub-mv__page-header">
           <h1 class="sub-mv__title">
             <span>blog</span>

@@ -1,0 +1,7 @@
+@use "global" as *;
+.layout-page-country{
+    margin-top:rem(60);
+    @include mq('md'){
+        margin-top:rem(100);
+    }
+}

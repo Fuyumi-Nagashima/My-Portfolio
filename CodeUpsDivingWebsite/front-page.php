@@ -1,14 +1,14 @@
 <?php get_header(); ?>
 <?php 
-  $campaign = esc_url( home_url('/campaign/'));
-  $aboutus = esc_url( home_url('/aboutus/'));
-  $information = esc_url( home_url('/information/'));
-  $blog = esc_url( home_url('/blog/'));
-  $voice = esc_url( home_url('/voice/'));
-  $price = esc_url( home_url('/price/'));
-  $faq = esc_url( home_url('/faq/'));
-  $contact = esc_url( home_url('/contact/'));
-  ?>
+$visa = esc_url( home_url('/visa/'));
+$blog = esc_url( home_url('/blog/'));
+$report = esc_url( home_url('/report/'));
+$faq = esc_url( home_url('/faq/'));
+$contact = esc_url( home_url('/contact/'));
+$terms_of_service = esc_url( home_url('/terms-of-service/'));
+$privacy_policy = esc_url( home_url('/privacypolicy/'));
+$country = esc_url(home_url("/country"));  
+?>
 <main>
     <div class="fv" id="js-fv">
         <div class="fv__inner">
@@ -21,7 +21,7 @@
 
                 // 画像が存在する場合、ループで表示
                 if ($pc_images && $sp_images) :
-                  for ($i = 1; $i <= 4; $i++) : 
+                  for ($i = 1; $i <= 6; $i++) : 
                     $pc_image = $pc_images["mv_pc_0$i"];
                     $sp_image = $sp_images["mv_sp_0$i"];
                     if ($pc_image && $sp_image) :
@@ -51,7 +51,7 @@
     </div>
 
     <!-- introduction -->
-    <section class="layout-introduction introduction">
+    <section class="layout-introduction introduction js-fade">
         <div class="introduction__inner inner">
             <div class="introduction__logo">
                 <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/logo-blue.png"
@@ -78,7 +78,7 @@
     </section>
 
     <!-- Blogセクション -->
-    <section class="layout-blog blog">
+    <section class="layout-blog blog js-fade">
         <div class="blog__inner inner">
             <div class="blog__section-title section-title">
                 <p class="section-title__primary">blog</p>
@@ -139,9 +139,8 @@
             </div>
         </div>
     </section>
-
     <!-- 留学する目的(visaタイプ)から選ぶセクション -->
-    <section class="layout-visa visa">
+    <section class="layout-visa visa js-fade">
         <div class="visa__inner inner">
             <div class="visa__section-title section-title">
                 <p class="section-title__primary">what&nbsp;purpose?</p>
@@ -174,13 +173,12 @@
                 </div>
             </div>
             <div class="visa__btn">
-                <a href="<?php echo $blog; ?>" class="btn">view&nbsp;more </a>
+                <a href="<?php echo $visa; ?>" class="btn">view&nbsp;more </a>
             </div>
         </div>
     </section>
-
     <!-- 留学する国から選ぶセクション -->
-    <section class="layout-country country">
+    <section class="layout-country country js-fade">
         <div class="country__inner inner">
             <div class="country__section-title section-title">
                 <p class="section-title__primary">which&nbsp;country?</p>
@@ -190,47 +188,134 @@
             <div class="country__gallery gallery">
                 <div class="gallery__inner">
                     <ul class="gallery__list gallery-list">
-                        <li class="gallery-list__item js-modal-open" data-target="1">
-                            <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/gallery_aus.jpg" alt="船からシドニーのオペラハウスの全体像を見た景色"  >
-                            <p class="gallery-list__country-name">オーストラリア<span>australia</span></p>
-                        </li>
-                        <li class="gallery-list__item js-modal-open">
-                            <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/gallery_can.jpg" alt="カナダバンクーバーにあるエメラルドグリーンの湖が美しいバンフ国立公園の様子" target="2" class="js-modal-open">
+                    <li class="gallery-list__item">
+        <a href="<?php echo get_permalink(get_page_by_path('country')); ?>#<?php echo sanitize_title('オーストラリア'); ?>">
+            <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/gallery_aus.jpg" alt="船からシドニーのオペラハウスの全体像を見た景色">
+            <p class="gallery-list__country-name">オーストラリア<span>australia</span></p>
+        </a>
+    </li>
+                        <li class="gallery-list__item">
+                        <a href="<?php echo get_permalink(get_page_by_path('country')); ?>#<?php echo sanitize_title('カナダ'); ?>">
+                            <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/gallery_can.jpg" alt="カナダバンクーバーにあるエメラルドグリーンの湖が美しいバンフ国立公園の様子" >
                             <p class="gallery-list__country-name">カナダ<span>canada</span></p>
+                        </a>    
                         </li>
-                        <li class="gallery-list__item js-modal-open">
-                            <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/gallery_nz.jpg" alt="遠めから眺めたオークランドの街並み" target="3" class="js-modal-open" >
+                        <li class="gallery-list__item">
+                        <a href="<?php echo get_permalink(get_page_by_path('country')); ?>#<?php echo sanitize_title('ニュージーランド'); ?>">
+                            <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/gallery_nz.jpg" alt="遠めから眺めたオークランドの街並み" target="2" class="js-modal-open">
                             <p class="gallery-list__country-name">ニュージーランド<span>new zealand</span></p>
+                        </a>    
                         </li>
-                        <li class="gallery-list__item js-modal-open">
-                            <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/gallery_usa.jpg" alt="高層ビルが多数立ち並ぶアメリカの街並み" target="4" class="js-modal-open" >
+                        <li class="gallery-list__item">
+                        <a href="<?php echo get_permalink(get_page_by_path('country')); ?>#<?php echo sanitize_title('アメリカ'); ?>">
+                            <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/gallery_usa.jpg" alt="高層ビルが多数立ち並ぶアメリカの街並み" >
                             <p class="gallery-list__country-name">アメリカ<span>america</span></p>
-
+                        </a>    
                         </li>
-                        <li class="gallery-list__item js-modal-open">
-                        <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/gallery_ire.jpg" alt="赤色の建物のテンプルバー" target="5" class="js-modal-open" >
-                        <p class="gallery-list__country-name">アイルランド<span>ireland</span></p>
+                        <li class="gallery-list__item">
+                        <a href="<?php echo get_permalink(get_page_by_path('country')); ?>#<?php echo sanitize_title('アイルランド'); ?>">
+                            <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/gallery_ire.jpg" alt="高層ビルが多数立ち並ぶアメリカの街並み" >
+                            <p class="gallery-list__country-name">アイルランド<span>ireland</span></p>
+                        </a>    
                         </li>
-                        <li class="gallery-list__item js-modal-open">
-                        <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/gallery_uk.jpg" alt="車やバスが走るレンガの建物に囲まれたイギリスの街並み" target="6" class="js-modal-open" >
-                        <p class="gallery-list__country-name">イギリス<span>england</span></p>
-                        </li>
+                        <li class="gallery-list__item">
+                        <a href="<?php echo get_permalink(get_page_by_path('country')); ?>#<?php echo sanitize_title('イギリス'); ?>">
+                            <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/gallery_uk.jpg" alt="車やバスが走るレンガの建物に囲まれたイギリスの街並み" >
+                            <p class="gallery-list__country-name">イギリス<span>england</span></p>
+                        </a>
                     </ul>
                 </div><!-- gallery__inner -->
             </div><!-- gallery -->
         </div>
-        <!-- モーダル -->
-        <div class="gallery-list__modal modal js-modal" id="1">
-            <div class="modal__img">
-                <img src="" alt="省略">
-            </div>
-        </div>
         <div class="country__btn">
-            <a href="<?php echo $blog; ?>" class="btn">view&nbsp;more </a>
+            <a href="<?php echo $country; ?>" class="btn">view&nbsp;more </a>
+        </div>
+    </section>
+    <!-- 留学体験レポートセクション(voice/report) -->
+    <section class="layout-report report js-fade">
+        <div class="report__inner">
+            <div class="report__section-title section-title">
+                <p class="section-title__primary">voice</p>
+                <h2 class="section-title__sub">留学体験レポート</h2>
+            </div>
+            <!-- ボタン -->
+            <div class="report__btn-wrap">
+                <div class="swiper-button-prev report__prev js-report-arrow"></div>
+                <div class="swiper-button-next report__next js-report-arrow"></div>
+            </div>
+            <!-- スライド-->
+            <div class="report__swiper report-swiper">
+                <div class="swiper js-report-swiper report-swiper__contents">
+                    <ul class="swiper-wrapper report-swiper__wrapper">
+                        <?php
+                        // クエリの設定
+                        $args = array(
+                            'post_type' => 'report', // カスタム投稿タイプ「report」
+                            'orderby' => 'date', // 日付でソート
+                            'order' => 'DESC',  // 降順（新しい順）
+                            'posts_per_page' => -1 // すべての投稿を取得する場合は「-1」
+                        );
+                        $the_query = new WP_Query($args); // WP_Queryオブジェクトの生成
+                        ?>
+                        <?php if ($the_query->have_posts()): //投稿が存在する場合 ?>
+                        <?php while ($the_query->have_posts()): $the_query->the_post();  // 投稿ループ ?>
+                        <li class="swiper-slide report-swiper__slide page-campaign__card report-list">
+                        <a href="<?php the_permalink(); ?>" class="report-list__link">
+                            <div class="report-list__link">
+                                <figure class="report-list__image report-list__image--sub-page">
+                                    <picture>
+                                        <?php if (has_post_thumbnail()) : ?>
+                                        <?php the_post_thumbnail('full'); ?>
+                                        <?php else : ?>
+                                        <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/common/noimage.jpg')); ?>"
+                                            alt="NoImage画像" loading="lazy">
+                                        <?php endif; ?>
+                                    </picture>
+                                </figure>
+                                <div class="report-list__body report-list__body--subpage">
+                                    <span class="report-category">
+                                        <?php $personalInfo = get_field('voice_profile'); if ($personalInfo) :?>
+                                            <?php echo esc_html($personalInfo['profile_name']); ?>・<?php echo esc_html($personalInfo['profile_age']); ?>
+
+                                        <?php endif; ?>
+                                    </span>
+                                    <h3 class="report-list__title "><?php the_title(); ?></h3>
+                                    <p class="report-list__text report-list__text--subpage">
+                                    <?php 
+                                    $text = get_field('voice_text');
+                                    $text = strip_tags($text);
+                                    if(mb_strlen($text) > 50 ) {
+                                        $content= mb_substr($text,0,50) ;
+                                        echo $content. '...';
+                                    } else {
+                                        echo $text;
+                                    }
+                                    ?>
+                                    </p>
+                                </div>
+                            </div>
+                            </a> 
+                        </li>
+                        <?php endwhile; ?>
+                    </ul>
+                    <!-- view more ボタン -->
+                    <div class="report__btn">
+                        <a href="<?php echo get_post_type_archive_link('report'); ?>" class="btn">
+                            <span>view&nbsp;more</span>
+                            <div class="btn__arrow"></div>
+                        </a>
+                    </div>
+                    <?php else: ?>
+                    <div class="report__no-posts no-posts">
+                        <p class="no-posts__text">投稿がありません。</p>
+                    </div>
+                    <?php endif; wp_reset_postdata();?>
+                </div>
+            </div>
         </div>
     </section>
     <!-- office セクション -->
-    <section class="layout-office office">
+    <section class="layout-office office js-fade">
         <div class="office__inner inner">
             <div class="office__section-title section-title">
                 <p class="section-title__primary">office</p>
@@ -273,260 +358,18 @@
         </div>
     </section>
     <!-- 無料カウンセリング誘導セクション -->
-    <div class="layout-contact contact">
+    <div class="layout-contact contact js-fade">
         <div class="contact__image">
             <div class="contact__text-area">
                 <h2 class="contact__title">無料カウンセリング</h2>
-                <p class="contact__text">Dream Questでは<br class="u-mobile">【無料相談、無料サポート】を行っています！<br>まずはカウンセリングのご予約を<br class="u-mobile">メールフォームよりお願いします。<br>どんなこともお気軽にご相談ください！</p>
+                <p class="contact__text">Dream Questでは<br class="u-mobile">【無料相談】を行っています！<br>まずはお問い合わせフォームより<br class="u-mobile">どんなこともお気軽にご相談ください！</p>
                 <div class="contact__btn">
-                    <a href="<?php echo $contact; ?>" class="contact-button"><span>お申込みはこちら</span></a>
+                    <a href="<?php echo $contact; ?>" class="contact-button"><span>お問い合わせ</span></a>
                 </div>
             </div>
         </div>
         <p class="contact__lead">dream&nbsp;quest&nbsp;for&nbsp;you</p>
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- 留学体験レポートセクション(voice) -->
-    <section class="layout-report report">
-        <div class="report__inner">
-            <div class="report__section-title section-title">
-                <p class="section-title__primary">voice</p>
-                <h2 class="section-title__sub">留学体験レポート</h2>
-            </div>
-            <!-- ボタン -->
-            <div class="report__btn-wrap">
-                <div class="swiper-button-prev report__prev js-report-arrow"></div>
-                <div class="swiper-button-next report__next js-report-arrow"></div>
-            </div>
-            <!-- スライド-->
-            <div class="report__swiper report-swiper">
-                <div class="swiper js-report-swiper report-swiper__contents">
-                    <ul class="swiper-wrapper report-swiper__wrapper">
-                        <?php
-                        // クエリの設定
-                        $args = array(
-                            'post_type' => 'voice', // カスタム投稿タイプ「voice」
-                            'orderby' => 'date', // 日付でソート
-                            'order' => 'DESC',  // 降順（新しい順）
-                            'posts_per_page' => -1 // すべての投稿を取得する場合は「-1」
-                        );
-                        $the_query = new WP_Query($args); // WP_Queryオブジェクトの生成
-                        ?>
-                        <?php if ($the_query->have_posts()): //投稿が存在する場合 ?>
-                        <?php while ($the_query->have_posts()): $the_query->the_post();  // 投稿ループ ?>
-                        <li class="swiper-slide report-swiper__slide page-campaign__card report-list">
-                            <div class="report-list__link">
-                                <figure class="report-list__image report-list__image--sub-page">
-                                    <picture>
-                                        <?php if (has_post_thumbnail()) : ?>
-                                        <?php the_post_thumbnail('full'); ?>
-                                        <?php else : ?>
-                                        <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/common/noimage.jpg')); ?>"
-                                            alt="NoImage画像" loading="lazy">
-                                        <?php endif; ?>
-                                    </picture>
-                                </figure>
-                                <div class="report-list__body report-list__body--subpage">
-                                    <span class="report-category">
-                                        <?php $personalInfo = get_field('voice_profile'); if ($personalInfo) :?>
-                                            <?php echo esc_html($personalInfo['profile_name']); ?>・<?php echo esc_html($personalInfo['profile_age']); ?>
-
-                                        <?php endif; ?>
-                                    </span>
-                                    <h3 class="report-list__title "><?php the_title(); ?></h3>
-                                    <p class="report-list__text report-list__text--subpage">
-                                    <?php 
-                                    $text = get_field('voice_text');
-                                    $text = strip_tags($text);
-                                    if(mb_strlen($text) > 50 ) {
-                                        $content= mb_substr($text,0,50) ;
-                                        echo $content. '...';
-                                    } else {
-                                        echo $text;
-                                    }
-                                    ?>
-                                    </p>
-                                </div>
-                            </div>
-                        </li>
-                        <?php endwhile; ?>
-                    </ul>
-                    <!-- view more ボタン -->
-                    <div class="report__btn">
-                        <a href="<?php echo get_post_type_archive_link('campaign'); ?>" class="btn">
-                            <span>view&nbsp;more</span>
-                            <div class="btn__arrow"></div>
-                        </a>
-                    </div>
-                    <?php else: ?>
-                    <div class="report__no-posts no-posts">
-                        <p class="no-posts__text">投稿がありません。</p>
-                    </div>
-                    <?php endif; wp_reset_postdata();?>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    </section>
-    <!-- About us -->
-    <section class="layout-about about">
-        <div class="about__inner inner">
-            <div class="about__section-title section-title">
-                <p class="section-title__primary">about&nbsp;<span>us</span></p>
-                <h2 class="section-title__sub">私たちについて</h2>
-            </div>
-            <div class="about__container about-content">
-                <div class="about-content__images">
-                    <figure class="about-content__image01">
-                        <picture>
-                            <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/aboutus-01.webp"
-                                type="images/webp" />
-                            <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/aboutus-01.jpg"
-                                alt="屋根の上にシーサーが乗っている様子" />
-                        </picture>
-                    </figure>
-                    <figure class="about-content__image02">
-                        <picture>
-                            <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/aboutus-02.webp"
-                                type="images/webp" />
-                            <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/aboutus-02.jpg"
-                                alt="2匹の黄色熱帯魚が海で泳いでいる様子" />
-                        </picture>
-                    </figure>
-                </div>
-                <div class="about-content__text-wrap">
-                    <h3 class="about-content__text-title">
-                        <span>dive</span>&nbsp;into<br>the&nbsp;<span>ocean</span>
-                    </h3>
-                    <div class="about-content__text-body">
-                        <p class="about-content__text">
-                            ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br>ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキスト
-                        </p>
-                        <div class="about-content__btn">
-                            <a href="<?php echo $aboutus; ?>" class="btn">
-                                <span>view&nbsp;more</span>
-                                <div class="btn__arrow"></div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Information -->
-    <section class="layout-information information">
-        <div class="information__inner inner">
-            <div class="information__section-title section-title">
-                <p class="section-title__primary">information</p>
-                <h2 class="section-title__sub">ダイビング情報</h2>
-            </div>
-            <div class="information__container">
-                <figure class="information__image color">
-                    <picture>
-                        <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/top-information.webp"
-                            type="images/webp" />
-                        <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/top-information.jpg"
-                            alt="黄色や水色の複数の熱帯魚が泳いでいる様子" />
-                    </picture>
-                </figure>
-                <div class="information__body">
-                    <div class="information__text-body">
-                        <h3 class="information__text-title">ライセンス講習</h3>
-                        <p class="information__text">
-                            当店はダイビングライセンス（Cカード）世界最大の教育機関PADIの「正規店」として店舗登録されています。<br>正規登録店として、安心安全に初めての方でも安心安全にライセンス取得をサポート致します。
-                        </p>
-                    </div>
-                    <div class="information__btn">
-                        <a href="<?php echo $information; ?>" class="btn">
-                            <span>view&nbsp;more </span>
-                            <div class="btn__arrow"></div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Voice -->
-    <section class="layout-voice voice">
-        <div class="voice__inner inner">
-            <div class="voice__section-title section-title">
-                <p class="section-title__primary">voice</p>
-                <h2 class="section-title__sub">お客様の声</h2>
-            </div>
-            <div class="voice__cards voice-cards">
-                <?php
-            $args = array(
-                'post_type'      => 'voice',
-                'posts_per_page' => 2,
-                'orderby'        => 'rand' // ランダムな順序で並べ替え
-            );
-            $the_query = new WP_Query($args);
-            if ($the_query->have_posts()) :
-              while ($the_query->have_posts()) : $the_query->the_post();
-            ?>
-                <article class="voice-cards__item voice-card">
-                    <div class="voice-card__wrap">
-                        <div class="voice-card__head voice-card__head--subpage">
-                            <p class="voice-card__profile">
-                                <?php $personalInfo = get_field('profile'); if ($personalInfo) :?>
-                                <?php echo esc_html($personalInfo['profile_age']); ?>代(<?php echo esc_html($personalInfo['profile_gender']); ?>)
-                                <?php endif; ?>
-                            </p>
-                            <span class="voice-card__category">
-                                <?php
-                      $taxonomy_terms = get_the_terms(get_the_ID(), 'voice_category');
-                        if (!empty($taxonomy_terms)) {
-                          foreach ($taxonomy_terms as $taxonomy_term) {
-                            echo '<span>' . esc_html($taxonomy_term->name) . '</span>';
-                          }
-                        }
-                      ?>
-                            </span>
-                            <h2 class="voice-card__title"><?php the_field('title'); ?></h2>
-                        </div>
-                        <figure class="voice-card__image color">
-                            <?php the_post_thumbnail('full'); ?>
-                        </figure>
-                    </div>
-                    <div class="voice-card__text-body">
-                        <p class="voice-card__text">
-                            <?php 
-                    $text = get_field('text');
-                    if ($text) {
-                      $trimmed_text = wp_trim_words($text, 120, '... <a href="' . get_permalink() . '">[...続きを読む]</a>'); echo $trimmed_text;
-                    }
-                    ?>
-                        </p>
-                    </div>
-                </article>
-                <?php endwhile; ?>
-                <?php wp_reset_postdata(); ?>
-                <?php endif; ?>
-            </div>
-            <div class="voice__btn">
-                <a href="<?php echo $voice; ?>" class="btn">
-                    <span>view&nbsp;more </span>
-                    <div class="btn__arrow"></div>
-                </a>
-            </div>
-        </div>
-    </section>
 </main>
 <!-- 新しいローディング画面 -->
 <div id="loading-screen">

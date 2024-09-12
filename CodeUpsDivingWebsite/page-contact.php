@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 <!-- 下層ページのmv -->
 <main>
-      <section class="layout-page-contact-mv sub-mv">
+      <section class="layout-page-contact-mv sub-mv" id="js-sub-mv">
         <div class="sub-mv__page-header">
           <h2 class="sub-mv__title">
             <span>contact</span>
@@ -9,7 +9,7 @@
         </div>
       </section>
     <!-- パンくず -->
-     <div class="breadcrumb">
+     <div class="breadcrumb breadcrumb--contact">
       <div class="breadcrumb__inner inner">
       <?php if (function_exists('bcn_display')) {
         bcn_display();

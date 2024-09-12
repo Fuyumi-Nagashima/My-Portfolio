@@ -1,22 +1,9 @@
 @use "global" as *;
 .form__items{
-    @include mq('md'){
-        display: flex;
-        align-items: flex-start;
-        justify-content:space-between;
-        padding-bottom:rem(24);
-        border-bottom: 1px dotted $main-blue;
-        @include mq('md'){
-        padding-bottom:rem(40);
-        }
-    }
+    display: block;
 }
 .form__items + .form__items {
     margin-top:rem(24);
-    border-bottom: 1px dotted $main-blue;
-    @include mq('md'){
-        margin-top:rem(40);
-    }
 }
 .form__label{
     font-size:rem(16);
@@ -29,8 +16,9 @@
 .form__label span {
     width: rem(61);
     max-width:100%;
+    margin-left:rem(10);
+    border-radius:5px ;
     font-size: rem(12);
-    margin-left: rem(8);
     letter-spacing: 0.4em;  
     padding:rem(2) rem(14);
     display: inline-block;
@@ -48,20 +36,12 @@
 .form__textarea{
     margin-top:rem(16);
     @include mq('md'){
-        margin-top:rem(-2);
         max-width: rem(480);
         width:100%;
     }
 }
 .form__submit{
-    margin-top:rem(40);
-    max-width:rem(282);
-    margin-inline: auto;
-    @include mq('md'){
-    margin-top:rem(80);
-    max-width:100%;
-    text-align: center;
-    }
+    margin-top:rem(20);
 }
 .form__submit input +  span{
     font-size:rem(14);
@@ -114,75 +94,40 @@
 }
 
 //submit-btn
-.form__btn-submit {
-    position: relative;
-    display: inline-flex;
+.btn-submit{
+    display: flex;
+    justify-content:center;
     align-items: center;
-    justify-content: center;
-    color: #fff;
-    cursor: pointer;
-    max-width: 202px;
-    width: 100%;
-    font-size: 14px;
-    line-height: 1.6;
-    font-weight: normal;
-    background-color: #408F95; /* 初期背景色 */
-    border: none;
-    z-index: 1;
-    // transition: color 0.4s ease-in-out;
-    // border:1px solid $main-blue;
+    margin: 0 auto;
+    padding: rem(12);
+    width:rem(200);
+    border-radius:5px;
+    font-size: rem(18);
+    background-color:#C94800;
+    box-shadow: 0 5px 0 #EBC08F;
+    transition:0.3s;
+    @include mq('md'){
+        padding: rem(16);
+    }
 }
-
-.form__btn-submit input[type="submit"] {
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    border: none;
+.btn-submit::after {
+    content: '';
+    width: rem(8);
+    height: rem(8);
+    margin-left:rem(15);
+    border-top: 1px solid $white;
+    border-right: 1px solid $white;
+    transform: rotate(45deg);
+}
+.btn-submit:hover{
+    transform: translateY(3px);
+    text-decoration: none;
+    box-shadow: 0 2px 0 #EBC08F;
+}
+.btn-submit input {
     color: $white;
-    padding:rem(16) rem(56);
-    background: none;
-    cursor: pointer;
-    width: 100%;
-    height: 100%;
-    font-size:rem(14);
-    font-weight: normal;
-    border:1px solid #408F95;
-    z-index: 2; /* ボタンのテキストを最前面に */
-    position: relative;
-    text-align:left;
-}
-.form__btn-submit:hover input.wpcf7-form-control.wpcf7-submit[value="Send"] {
-    color:#408F95; /* ホバー時の文字色 */
 }
 
-.form__btn-submit::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -100%; /* 初期位置をボタンの左外に */
-    width: 100%;
-    height: 100%;
-    background-color:$white; /* ホバー時の背景色 */
-    // z-index: -1; /* ボタンテキストの後ろに配置 */
-    transition: left 0.2s ease-in-out;
-}
-.form__btn-submit::after {
-    border: 1px solid #408F95;
-    content: "";
-    height: 100%;
-    right: -4px;
-    top: 4px;
-    position: absolute;
-    z-index: -999; 
-    width: 100%;
-}
-.form__btn-submit:hover::before {
-    left: 0; /* ホバー時に背景色がボタン全体を覆う */
-    color:$main-blue;
-}
-.form__btn-submit:hover .btn__arrow {
-    border-color: $main-blue; /* ホバー時の矢印の色 */
-}
 .form__btn {
     margin-top: 24px;
     text-align: center;
@@ -214,13 +159,13 @@
 .wpcf7-list-item {
     display: inline-block;
     margin: 0;
+    text-align:left;
 }
 .wpcf7-response-output {
     color: red;
     font-weight: bold;
     margin-bottom: 20px;
 }
-
 /* 未入力の必須項目に赤色のボーダーを追加 */
 .wpcf7-form-control.wpcf7-not-valid {
     border: 2px solid red;
@@ -245,35 +190,5 @@
     background-color: rgba(201, 72, 0, 0.2);
 }
 
-
-/*.form__btn-submit span::first-letter{
-    text-transform:uppercase;
-}*/
-/*.form__btn-submit::after{
-    background:$white;
-    border:1px solid $main-blue;
-    position: absolute;
-    top: 0;
-    left: 0;  
-    content: '';
-    width: 100%;
-    height: 100%;
-    transform: scale(0, 1);
-    transform-origin: left top;
-    transition: .2s cubic-bezier(0.45, 0, 0.55, 1);
-    z-index: -10;
-}*/
- 
-
-/*.wpcf7-form-control.wpcf7-submit {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    cursor: pointer;
-    z-index: 2;  
-}*/
 
 

@@ -7,20 +7,14 @@
     <?php wp_head(); ?>
   </head>
   <?php 
-  $campaign = esc_url( home_url('/campaign/'));
-  $aboutus = esc_url( home_url('/aboutus/'));
   $visa = esc_url( home_url('/visa/'));
   $blog = esc_url( home_url('/blog/'));
   $report = esc_url( home_url('/report/'));
-  $price = esc_url( home_url('/price/'));
   $faq = esc_url( home_url('/faq/'));
   $contact = esc_url( home_url('/contact/'));
   $terms_of_service = esc_url( home_url('/terms-of-service/'));
   $privacy_policy = esc_url( home_url('/privacypolicy/'));
-  $campaign_category_license = esc_url(home_url("/campaign_category/license"));
-  $campaign_category_experience = esc_url(home_url("/campaign_category/experience"));
-  $campaign_category_fundiving = esc_url(home_url("/campaign_category/fundiving"));
-  $site_map = esc_url(home_url("/sitemap"));
+  $country = esc_url(home_url("/country"));  
   ?>
   <body>
     <header class="layout-header header js-header">
@@ -30,36 +24,30 @@
             <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/logo-white.png" alt="海外留学のDream Quest"/>
           </a>
         </h1>
-        <div class="header__hamburger hamburger u-mobile js-header-header__hamburger">
+        <button class="header__hamburger hamburger u-mobile js-header-header__hamburger" type="button">
           <span></span>
           <span></span>
           <span></span>
-        </div>
+        </button>
         <nav class="header__pc-nav pc-nav u-desktop">
           <ul class="pc-nav__items">
             <li class="pc-nav__item">
-              <a class="pc-nav__link js-pc-nav"  href="<?php echo $campaign; ?>">campaign</a>
-            </li>
-            <li class="pc-nav__item">
-              <a class="pc-nav__link js-pc-nav"  href="<?php echo $aboutus; ?>">about&nbsp;us</a>
+              <a class="pc-nav__link js-pc-nav"  href="<?php echo $blog; ?>">留学ブログ</a>
             </li>
             <li class="pc-nav__item">
               <a class="pc-nav__link js-pc-nav"  href="<?php echo $visa; ?>">目的から選ぶ</a>
             </li>
             <li class="pc-nav__item">
-              <a class="pc-nav__link js-pc-nav"  href="<?php echo $blog; ?>">留学ブログ</a>
+              <a class="pc-nav__link js-pc-nav"  href="<?php echo $country; ?>">国から選ぶ</a>
             </li>
             <li class="pc-nav__item">
               <a class="pc-nav__link js-pc-nav"  href="<?php echo $report; ?>">体験レポート</a>
             </li>
             <li class="pc-nav__item">
-              <a class="pc-nav__link js-pc-nav"  href="<?php echo $price; ?>">price</a>
-            </li>
-            <li class="pc-nav__item">
               <a class="pc-nav__link js-pc-nav"  href="<?php echo $faq; ?>">よくある質問</a>
             </li>
             <li class="pc-nav__item">
-              <a class="pc-nav__link js-pc-nav"  href="<?php echo $contact; ?>">contact</a>
+              <a class="pc-nav__link js-pc-nav"  href="<?php echo $contact; ?>">お問い合わせ</a>
             </li>
           </ul>
         </nav>
@@ -67,18 +55,18 @@
           <div class="drawer-menu__inner">
             <div class="drawer-menu__content">
                 <div class="drawer-menu__item">
-                  <a class="drawer-menu__heading" href="<?php echo $campaign; ?>">Blog<span>（留学ブログ）</span></a>
+                  <a class="drawer-menu__heading" href="<?php echo $blog; ?>">Blog<span>（留学ブログ）</span></a>
                 </div>
                 <div class="drawer-menu__item">
-                  <a class="drawer-menu__heading" href="<?php echo $information; ?>">Visa<span>（目的から選ぶ）</span></a>
+                  <a class="drawer-menu__heading" href="<?php echo $visa; ?>">Visa<span>（目的から選ぶ）</span></a>
                   <ul class="drawer-menu__navi">
-                    <li><a href="<?php echo $information; ?>?id=tab1">短期留学</a></li>
-                    <li><a href="<?php echo $information; ?>?id=tab3">長期留学</a></li>
-                    <li><a href="<?php echo $information; ?>?id=tab2">ワーキングホリデー</a></li>
+                    <li><a href="<?php echo $visa; ?>?id=tab1">短期留学</a></li>
+                    <li><a href="<?php echo $visa; ?>?id=tab2">長期留学</a></li>
+                    <li><a href="<?php echo $visa; ?>?id=tab3">ワーキングホリデー</a></li>
                   </ul>
                 </div>
                 <div class="drawer-menu__item">
-                  <a class="drawer-menu__heading" href="<?php echo $blog; ?>">Country<span>（国から選ぶ）</span></a>
+                  <a class="drawer-menu__heading" href="<?php echo $country; ?>">Country<span>（国から選ぶ）</span></a>
                 </div>
                 <div class="drawer-menu__item">
                   <a class="drawer-menu__heading" href="<?php echo $report; ?>">Report<span>（体験レポート）</span></a></a>
@@ -87,12 +75,11 @@
                   <a class="drawer-menu__heading" href="<?php echo $faq; ?>">Faq<span>（よくある質問）</span></a>
                 </div>
                 <div class="drawer-menu__item">
-                  <a class="drawer-menu__heading" href="<?php echo  $contact; ?>">Contact<span>（留学相談予約）</span></a>
+                  <a class="drawer-menu__heading" href="<?php echo  $contact; ?>">Contact<span>（お問い合わせ）</span></a>
                 </div>
                 <div class="drawer-menu__item drawer-menu__item--sub-heading">
                   <a href="<?php echo  $privacy_policy; ?>">プライバシーポリシー</a>
                   <a href="<?php echo  $terms_of_service; ?>">利用規約</a>
-                  <a href="<?php echo  $site_map; ?>">サイトマップ</a>
                 </div>
             </div>
           </div>
