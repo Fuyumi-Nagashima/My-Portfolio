@@ -100,15 +100,15 @@ jQuery(function ($) {
     speed: 2000 // 2秒かけてフェード
   });
 
-  //report(voice)スライダー
+  //campaignスライダー
   var service_swiper = new Swiper(".js-report-swiper", {
     centeredSlides: true,
     loop: true,
-    speed: 1500,
+    speed: 3000,
     slidesPerView: 1.5,
     spaceBetween: 30,
     autoplay: {
-      delay: 1500,
+      delay: 3000,
       disableOnInteraction: false // 矢印をクリックしても自動再生を止めない
     },
 
@@ -160,7 +160,7 @@ jQuery(function ($) {
   pageTop.click(function () {
     $("body,html").animate({
       scrollTop: 0
-    }, 800);
+    }, 500);
     return false;
   });
   // フッター手前でストップ
@@ -285,7 +285,22 @@ jQuery(function ($) {
         }
       }
     };
-    window.addEventListener('load', scrollAnimationFunc);
-    window.addEventListener('scroll', scrollAnimationFunc);
+    var scrollCardItems = document.querySelectorAll('.cards__item');
+    var scrollCardFunc = function scrollCardFunc() {
+      for (var i = 0; i < scrollCardItems.length; i++) {
+        var triggerMargin = 100;
+        if (window.innerHeight > scrollCardItems[i].getBoundingClientRect().top + triggerMargin) {
+          scrollCardItems[i].classList.add('fade-in-left');
+        }
+      }
+    };
+    window.addEventListener('load', function () {
+      scrollAnimationFunc();
+      scrollCardFunc();
+    });
+    window.addEventListener('scroll', function () {
+      scrollAnimationFunc();
+      scrollCardFunc();
+    });
   });
 });

@@ -285,10 +285,25 @@ $(window).scroll(function () {
         scrollAnimationElm[i].classList.add('fade-in');
       }
     }
-  }
-  window.addEventListener('load', scrollAnimationFunc);
-  window.addEventListener('scroll', scrollAnimationFunc);
+  };
+
+  var scrollCardItems = document.querySelectorAll('.cards__item');
+  var scrollCardFunc = function () {
+    for (var i = 0; i < scrollCardItems.length; i++) {
+      var triggerMargin = 100;
+      if (window.innerHeight > scrollCardItems[i].getBoundingClientRect().top + triggerMargin) {
+        scrollCardItems[i].classList.add('fade-in-left');
+      }
+    }
+  };
+
+  window.addEventListener('load', function() {
+    scrollAnimationFunc();
+    scrollCardFunc();
+  });
+  window.addEventListener('scroll', function() {
+    scrollAnimationFunc();
+    scrollCardFunc();
+  });
 });
-
-
 });

@@ -30,9 +30,9 @@
   </div>
   <!-- お客様の声 -->
   <div class="layout-page-report page-report">
-    <div class="page-voice__inner inner">
+    <div class="page-report__inner inner">
       <!-- タブ -->
-      <div class="page-voice__category-wrap category">
+      <div class="page-report__category-wrap category">
         <a href="<?php echo esc_url(get_post_type_archive_link('report')); ?>" class="category__item <?php echo is_post_type_archive('report') ? 'is-active' : ''; ?>" data-filter="all">all</a>
         <?php
         // report_categoryタクソノミーのタームを動的に取得

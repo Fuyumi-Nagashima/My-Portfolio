@@ -23,25 +23,38 @@ if (is_404() || is_page('contact')) {
                 <div class="footer__information">
                     <div class="footer__logo">
                         <a class="footer__logo-link" href="<?php echo esc_url(home_url('/')); ?>">
-                            <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/logo-white.png" alt="海外留学のDream Quest" />
+                            <picture>
+                                <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/logo-white.webp" type="image/webp">
+                                <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/logo-white.png" alt="海外留学のDream Quest">
+                            </picture>
                         </a>
                     </div>
                     <ul class="footer__sns">
-                        <li>
-                            <a href="https://www.facebook.com/login/?locale=ja_JP" target="_blank" rel="noopener noreferrer"><img
-                            src="<?php echo get_theme_file_uri(); ?>/assets/images/common/facebook-icon.png"
-                            alt="facebook" /></a>
-                        </li>
-                        <li>
-                            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><img
-                            src="<?php echo get_theme_file_uri(); ?>/assets/images/common/instagram-icon.png"
-                            alt="instagram" /></a>
-                        </li>
-                        <li>
-                            <a href="https://x.com/home?lang=ja" target="_blank" rel="noopener noreferrer"><img
-                            src="<?php echo get_theme_file_uri(); ?>/assets/images/common/x-logo.png"
-                            alt="x" /></a>
-                        </li>
+                    <li>
+    <a href="https://www.facebook.com/login/?locale=ja_JP" target="_blank" rel="noopener noreferrer">
+        <picture>
+            <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/facebook-icon.webp" type="image/webp">
+            <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/facebook-icon.png" alt="facebook">
+        </picture>
+    </a>
+</li>
+<li>
+    <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+        <picture>
+            <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/instagram-icon.webp" type="image/webp">
+            <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/instagram-icon.png" alt="instagram">
+        </picture>
+    </a>
+</li>
+<li>
+    <a href="https://x.com/home?lang=ja" target="_blank" rel="noopener noreferrer">
+        <picture>
+            <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/x-logo.webp" type="image/webp">
+            <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/x-logo.png" alt="x">
+        </picture>
+    </a>
+</li>
+
                     </ul>
                 </div>
                 <div class="footer__nav footer-nav ">

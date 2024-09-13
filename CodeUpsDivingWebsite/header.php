@@ -20,9 +20,12 @@
     <header class="layout-header header js-header">
       <div class="header__inner">
         <h1 class="header__logo">
-          <a class="header__logo-link" id="js-header__logo-link" href="<?php echo esc_url(home_url('/')); ?>">
-            <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/logo-white.png" alt="海外留学のDream Quest"/>
-          </a>
+        <a class="header__logo-link" id="js-header__logo-link" href="<?php echo esc_url(home_url('/')); ?>">
+          <picture>
+              <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/logo-white.webp" type="image/webp">
+              <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/logo-white.png" alt="海外留学のDream Quest">
+          </picture>
+        </a>
         </h1>
         <button class="header__hamburger hamburger u-mobile js-header-header__hamburger" type="button">
           <span></span>

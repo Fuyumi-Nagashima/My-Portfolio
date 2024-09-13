@@ -97,6 +97,6 @@
         <?php wp_pagenavi(); ?>
       </div>
     </div><!--inner-->
-  </div><!--layout-page-voice-->
+  </div><!--layout-archive-report-->
 </main>
 <?php get_footer(); ?>

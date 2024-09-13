@@ -1,6 +1,6 @@
 @use "global" as *;
 .layout-office{
-    padding: rem(100) 0 rem(60) 0;
+    padding: rem(60) 0 ;
     @include mq('md'){
         padding: rem(140) 0 rem(140) 0;
     }

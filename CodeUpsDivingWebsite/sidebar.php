@@ -20,7 +20,7 @@
                         <?php if (has_post_thumbnail()) : ?>
                         <?php the_post_thumbnail('full'); ?>
                         <?php else : ?>
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/common/noimage.png"
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/common/noimage.jpg"
                             alt="No image available">
                         <?php endif; ?>
                     </picture>

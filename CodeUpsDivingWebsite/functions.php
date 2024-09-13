@@ -123,7 +123,7 @@ function custom_cf7_redirect() {
                 responseOutput.style.display = 'none';
             }
             // サンクスページにリダイレクト
-            window.location.href = 'http://codeupsdivingwordpresstheme.local/thanks/';
+            window.location.href = 'http://my-portofolio.local/thanks/';
         }, false);
     </script>
     <?php

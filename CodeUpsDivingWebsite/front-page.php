@@ -53,10 +53,12 @@ $country = esc_url(home_url("/country"));
     <!-- introduction -->
     <section class="layout-introduction introduction js-fade">
         <div class="introduction__inner inner">
-            <div class="introduction__logo">
-                <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/logo-blue.png"
-                    alt="海外留学のDream Quest" />
-            </div>
+        <div class="introduction__logo">
+            <picture>
+                <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/logo-blue.webp" type="image/webp">
+                <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/logo-blue.png" alt="海外留学のDream Quest">
+            </picture>
+        </div>
             <h2 class="introduction__lead">海外留学のDream Quest</h2>
             <div class="introduction__text-wrap">
                 <p class="introduction__text">Dream Questは、あなたの夢探しの旅、<br>夢を追い求める旅をサポートします。</p>
@@ -66,17 +68,135 @@ $country = esc_url(home_url("/country"));
                     Questで、夢を現実にする第一歩を<br class="u-mobile">踏み出しましょう。</p>
             </div>
             <div class="introduction__image-wrap">
-                <figure class="introduction__image">
-                    <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/introduction-image.jpg"
-                        alt="オペラハウスとハーバーブリッジ" />
-                </figure>
+            <figure class="introduction__image">
+                <picture>
+                    <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/introduction-image.webp" type="image/webp">
+                    <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/introduction-image.jpg" alt="オペラハウスとハーバーブリッジ">
+                </picture>
+            </figure>
                 <div class="introduction__marquee-area">
                     <p class="introduction__marquee-text">dream&nbsp;quest&nbsp;for&nbsp;challengers</p>
                 </div>
             </div>
         </div>
     </section>
+    <!-- 留学する国から選ぶセクション -->
+    <section class="layout-country country js-fade">
+        <div class="country__inner inner">
+            <div class="country__section-title section-title">
+                <p class="section-title__primary">which&nbsp;country?</p>
+                <h2 class="section-title__sub">留学する国から選ぶ</h2>
+            </div>
+            <!-- ここからギャラリー -->
+            <div class="country__gallery gallery">
+                <div class="gallery__inner">
+                <ul class="gallery__list gallery-list">
+    <li class="gallery-list__item">
+        <a href="<?php echo get_permalink(get_page_by_path('country')); ?>#<?php echo sanitize_title('オーストラリア'); ?>">
+            <picture>
+                <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/gallery_aus.webp" type="image/webp">
+                <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/gallery_aus.jpg" alt="船からシドニーのオペラハウスの全体像を見た景色">
+            </picture>
+            <p class="gallery-list__country-name">オーストラリア<span>australia</span></p>
+        </a>
+    </li>
+    <li class="gallery-list__item">
+        <a href="<?php echo get_permalink(get_page_by_path('country')); ?>#<?php echo sanitize_title('カナダ'); ?>">
+            <picture>
+                <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/gallery_can.webp" type="image/webp">
+                <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/gallery_can.jpg" alt="カナダバンクーバーにあるエメラルドグリーンの湖が美しいバンフ国立公園の様子">
+            </picture>
+            <p class="gallery-list__country-name">カナダ<span>canada</span></p>
+        </a>
+    </li>
+    <li class="gallery-list__item">
+        <a href="<?php echo get_permalink(get_page_by_path('country')); ?>#<?php echo sanitize_title('ニュージーランド'); ?>">
+            <picture>
+                <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/gallery_nz.webp" type="image/webp">
+                <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/gallery_nz.jpg" alt="遠めから眺めたオークランドの街並み">
+            </picture>
+            <p class="gallery-list__country-name">ニュージーランド<span>new zealand</span></p>
+        </a>
+    </li>
+    <li class="gallery-list__item">
+        <a href="<?php echo get_permalink(get_page_by_path('country')); ?>#<?php echo sanitize_title('アメリカ'); ?>">
+            <picture>
+                <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/gallery_usa.webp" type="image/webp">
+                <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/gallery_usa.jpg" alt="高層ビルが多数立ち並ぶアメリカの街並み">
+            </picture>
+            <p class="gallery-list__country-name">アメリカ<span>america</span></p>
+        </a>
+    </li>
+    <li class="gallery-list__item">
+        <a href="<?php echo get_permalink(get_page_by_path('country')); ?>#<?php echo sanitize_title('アイルランド'); ?>">
+            <picture>
+                <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/gallery_ire.webp" type="image/webp">
+                <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/gallery_ire.jpg" alt="高層ビルが多数立ち並ぶアメリカの街並み">
+            </picture>
+            <p class="gallery-list__country-name">アイルランド<span>ireland</span></p>
+        </a>
+    </li>
+    <li class="gallery-list__item">
+        <a href="<?php echo get_permalink(get_page_by_path('country')); ?>#<?php echo sanitize_title('イギリス'); ?>">
+            <picture>
+                <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/gallery_uk.webp" type="image/webp">
+                <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/gallery_uk.jpg" alt="車やバスが走るレンガの建物に囲まれたイギリスの街並み">
+            </picture>
+            <p class="gallery-list__country-name">イギリス<span>england</span></p>
+        </a>
+    </li>
+</ul>
+                </div><!-- gallery__inner -->
+            </div><!-- gallery -->
+        </div>
+        <div class="country__btn">
+            <a href="<?php echo $country; ?>" class="btn">view&nbsp;more </a>
+        </div>
+    </section>
+    <!-- 留学する目的(visaタイプ)から選ぶセクション -->
+    <section class="layout-visa visa js-fade">
+        <div class="visa__inner inner">
+            <div class="visa__section-title section-title">
+                <p class="section-title__primary">what&nbsp;purpose?</p>
+                <h2 class="section-title__sub">留学する目的で選ぶ</h2>
+            </div>
+            <div class="visa__cards visa-cards">
+                <div class="visa-cards__card visa-card">
+                <figure class="visa-card__image">
+                    <picture>
+                        <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/studying-abroad.webp" type="image/webp">
+                        <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/studying-abroad.jpg" alt="外国人と2人の日本人女性がディスカッションをしている">
+                    </picture>
+                    <p class="visa-card__image-title">studying&nbsp;abroad</p>
+                </figure>
 
+                    <div class="visa-card__text-area">
+                        <h3 class="visa-card__title">語学留学</h3>
+                        <p class="visa-card__text">語学学校で語学を総合的に学びながら、生活の中で実践。ビジネス英語コース、各種試験対策コース、進学準備コースなど目的別コースも。</p>
+                    </div>
+                </div>
+                <div class="visa__card visa-card">
+                <figure class="visa-card__image">
+                    <picture>
+                        <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/working-holiday.webp" type="image/webp">
+                        <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/working-holiday.jpg" alt="カフェで女性が働いている">
+                    </picture>
+                    <p class="visa-card__image-title">working&nbsp;holiday</p>
+                </figure>
+
+                    <div class="visa-card__text-area">
+                        <h3 class="visa-card__title">ワーキングホリデー</h3>
+                        <p class="visa-card__text">
+                            海外で1～2年間、「暮らす」「学ぶ」「働く」を同時に楽しめるワーキングホリデー。学校に通いながらアルバイトしたり、ボランティアやスポーツや旅行を堪能したりと、留学とは違う自由でアクティブな海外生活を楽しめます。
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="visa__btn">
+                <a href="<?php echo $visa; ?>" class="btn">view&nbsp;more </a>
+            </div>
+        </div>
+    </section>
     <!-- Blogセクション -->
     <section class="layout-blog blog js-fade">
         <div class="blog__inner inner">
@@ -137,98 +257,6 @@ $country = esc_url(home_url("/country"));
             <div class="blog__btn">
                 <a href="<?php echo $blog; ?>" class="btn">view&nbsp;more </a>
             </div>
-        </div>
-    </section>
-    <!-- 留学する目的(visaタイプ)から選ぶセクション -->
-    <section class="layout-visa visa js-fade">
-        <div class="visa__inner inner">
-            <div class="visa__section-title section-title">
-                <p class="section-title__primary">what&nbsp;purpose?</p>
-                <h2 class="section-title__sub">留学する目的で選ぶ</h2>
-            </div>
-            <div class="visa__cards visa-cards">
-                <div class="visa-cards__card visa-card">
-                    <figure class="visa-card__image">
-                        <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/studying-abroad.jpg"
-                            alt="外国人と2人の日本人女性がディスカッションをしている" />
-                        <p class="visa-card__image-title">studying&nbsp;abroad</p>
-                    </figure>
-                    <div class="visa-card__text-area">
-                        <h3 class="visa-card__title">語学留学</h3>
-                        <p class="visa-card__text">語学学校で語学を総合的に学びながら、生活の中で実践。ビジネス英語コース、各種試験対策コース、進学準備コースなど目的別コースも。</p>
-                    </div>
-                </div>
-                <div class="visa__card visa-card">
-                    <figure class="visa-card__image">
-                        <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/working-holiday.jpg"
-                            alt="カフェで女性が働いている" />
-                        <p class="visa-card__image-title">working&nbsp;holiday</p>
-                    </figure>
-                    <div class="visa-card__text-area">
-                        <h3 class="visa-card__title">ワーキングホリデー</h3>
-                        <p class="visa-card__text">
-                            海外で1～2年間、「暮らす」「学ぶ」「働く」を同時に楽しめるワーキングホリデー。学校に通いながらアルバイトしたり、ボランティアやスポーツや旅行を堪能したりと、留学とは違う自由でアクティブな海外生活を楽しめます。
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="visa__btn">
-                <a href="<?php echo $visa; ?>" class="btn">view&nbsp;more </a>
-            </div>
-        </div>
-    </section>
-    <!-- 留学する国から選ぶセクション -->
-    <section class="layout-country country js-fade">
-        <div class="country__inner inner">
-            <div class="country__section-title section-title">
-                <p class="section-title__primary">which&nbsp;country?</p>
-                <h2 class="section-title__sub">留学する国から選ぶ</h2>
-            </div>
-            <!-- ここからギャラリー -->
-            <div class="country__gallery gallery">
-                <div class="gallery__inner">
-                    <ul class="gallery__list gallery-list">
-                    <li class="gallery-list__item">
-        <a href="<?php echo get_permalink(get_page_by_path('country')); ?>#<?php echo sanitize_title('オーストラリア'); ?>">
-            <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/gallery_aus.jpg" alt="船からシドニーのオペラハウスの全体像を見た景色">
-            <p class="gallery-list__country-name">オーストラリア<span>australia</span></p>
-        </a>
-    </li>
-                        <li class="gallery-list__item">
-                        <a href="<?php echo get_permalink(get_page_by_path('country')); ?>#<?php echo sanitize_title('カナダ'); ?>">
-                            <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/gallery_can.jpg" alt="カナダバンクーバーにあるエメラルドグリーンの湖が美しいバンフ国立公園の様子" >
-                            <p class="gallery-list__country-name">カナダ<span>canada</span></p>
-                        </a>    
-                        </li>
-                        <li class="gallery-list__item">
-                        <a href="<?php echo get_permalink(get_page_by_path('country')); ?>#<?php echo sanitize_title('ニュージーランド'); ?>">
-                            <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/gallery_nz.jpg" alt="遠めから眺めたオークランドの街並み" target="2" class="js-modal-open">
-                            <p class="gallery-list__country-name">ニュージーランド<span>new zealand</span></p>
-                        </a>    
-                        </li>
-                        <li class="gallery-list__item">
-                        <a href="<?php echo get_permalink(get_page_by_path('country')); ?>#<?php echo sanitize_title('アメリカ'); ?>">
-                            <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/gallery_usa.jpg" alt="高層ビルが多数立ち並ぶアメリカの街並み" >
-                            <p class="gallery-list__country-name">アメリカ<span>america</span></p>
-                        </a>    
-                        </li>
-                        <li class="gallery-list__item">
-                        <a href="<?php echo get_permalink(get_page_by_path('country')); ?>#<?php echo sanitize_title('アイルランド'); ?>">
-                            <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/gallery_ire.jpg" alt="高層ビルが多数立ち並ぶアメリカの街並み" >
-                            <p class="gallery-list__country-name">アイルランド<span>ireland</span></p>
-                        </a>    
-                        </li>
-                        <li class="gallery-list__item">
-                        <a href="<?php echo get_permalink(get_page_by_path('country')); ?>#<?php echo sanitize_title('イギリス'); ?>">
-                            <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/gallery_uk.jpg" alt="車やバスが走るレンガの建物に囲まれたイギリスの街並み" >
-                            <p class="gallery-list__country-name">イギリス<span>england</span></p>
-                        </a>
-                    </ul>
-                </div><!-- gallery__inner -->
-            </div><!-- gallery -->
-        </div>
-        <div class="country__btn">
-            <a href="<?php echo $country; ?>" class="btn">view&nbsp;more </a>
         </div>
     </section>
     <!-- 留学体験レポートセクション(voice/report) -->
@@ -322,9 +350,12 @@ $country = esc_url(home_url("/country"));
                 <h2 class="section-title__sub">オフィス紹介</h2>
             </div>
             <div class="office__wrap">
-                <figure class="office__image-area">
-                    <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/office.jpg" alt="テーブルとイスが置かれたオフィス" >
-                </figure>
+            <figure class="office__image-area">
+                <picture>
+                    <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/office.webp" type="image/webp">
+                    <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/office.jpg" alt="テーブルとイスが置かれたオフィス">
+                </picture>
+            </figure>
                 <div class="office__table office-table">
                     <div class="office-table__content">
                         <h3 class="office-table__head">東京（本社）</h3>
@@ -373,13 +404,17 @@ $country = esc_url(home_url("/country"));
 </main>
 <!-- 新しいローディング画面 -->
 <div id="loading-screen">
-    <div class="plane-icon" id="js-plane-icon">
-        <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/loading-airplane-img.png"
-            alt="ローディング画面で下から上に動く飛行機" decoding="async" loading="eager" />
-    </div>
-    <div class="opening__logo" id="js-opening__logo">
-        <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/logo-blue.png" alt="海外留学のDream Quest"
-            decoding="async" loading="eager" />
-    </div>
+<div class="plane-icon" id="js-plane-icon">
+    <picture>
+        <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/loading-airplane-img02.webp" type="image/webp">
+        <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/loading-airplane-img02.png" alt="ローディング画面で下から上に動く飛行機" decoding="async" loading="eager">
+    </picture>
+</div>
+<div class="opening__logo" id="js-opening__logo">
+    <picture>
+        <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/logo-blue.webp" type="image/webp">
+        <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/logo-blue.png" alt="海外留学のDream Quest" decoding="async" loading="eager">
+    </picture>
+</div>
 </div>
 <?php get_footer(); ?>
