@@ -39,7 +39,7 @@ jQuery(function ($) {
         var fvHeight = $('#js-fv').length ? $('#js-fv').height() : 0;
         var subMvHeight = $('#js-sub-mv').length ? $('#js-sub-mv').height() : 0;
         var triggerHeight = fvHeight || subMvHeight;
-    
+
         if (triggerHeight < $(window).scrollTop()) {
             $('.header').addClass('change-color');
             $('#js-header__logo-link').addClass('change-logo');
@@ -52,7 +52,7 @@ jQuery(function ($) {
             $('.js-header-header__hamburger').removeClass('change-hamburger');
         }
     });
-    
+
       //ローディングアニメーション
   $(function () {
     // ローダー終了
@@ -97,15 +97,15 @@ jQuery(function ($) {
           speed: 2000, // 2秒かけてフェード
         });
 
-      //campaignスライダー
+        //Voice(report)のスライダー
       var service_swiper = new Swiper(".js-report-swiper", {
         centeredSlides: true,
         loop: true,
-        speed:3000,
+        speed:2000,
         slidesPerView: 1.5,
         spaceBetween: 30,
         autoplay: {
-            delay:3000,
+            delay:2000,
             disableOnInteraction: false,// 矢印をクリックしても自動再生を止めない
         },
         breakpoints: {
@@ -126,16 +126,16 @@ jQuery(function ($) {
               slidesPerView:5,
             }
           },
-        pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-        },
+          navigation: {
+            nextEl: ".swiper-button-next", // 次へボタンのクラス名を指定
+            prevEl: ".swiper-button-prev", // 前へボタンのクラス名を指定
+          },
     });
 
 //追従バナー(フローティングバナー)
       const floating = $("#js-floating, #js-pagetop");
       floating.hide();
-    
+
       $(window).on("scroll", function () {
         if ($(this).scrollTop() > 70) {
           floating.fadeIn(300);
@@ -189,7 +189,7 @@ jQuery(function ($) {
     $(this).toggleClass("is-open",300);
   });
 
-  //ブログ詳細ぺージのアコーディオン 
+  //ブログ詳細ぺージのアコーディオン
   //親要素のクリックイベント
 $('.asideblog-list__year').click(function() {
 	$(this).next('ul').slideToggle();
@@ -200,7 +200,7 @@ $('.menu-subtitle').click(function() {
 });
 $('.asideblog-list__month').click(function() {
 	$(this).children('ul').slideToggle();
-}); 
+});
 //年代をクリックしたら中身が出たり隠れたりする
 $('.js-asideblog-list__year,.js-asideblog-list__month').on('click',function (){
   $(this).toggleClass('open');
@@ -214,58 +214,38 @@ $('.js-tab').on('click',function(){
   $('.js-panel').eq(index).addClass('is-active');
 });
 
-//Aboutページのモーダルウィンドウ
-const open = $(".js-modal-open");
-const close = $(".modal");
-const modal = $(".js-modal");
-
-// 開くボタンをクリックしたらモーダルを表示する
-open.on("click", function () {
-  var imgSrc = $(this).children().attr('src');
-  $('.modal__img,modal__img--long').children().attr('src', imgSrc);
-  $('.modal').fadeIn();
-    $("html, body").css("overflow", "hidden"); // スクロールを禁止する
-});
-
-// 閉じるボタンをクリックしたらモーダルを閉じる
-close.on("click", function () {
-  $('.modal').fadeOut();
-    $("html, body").css("overflow", "initial"); // スクロールを有効にする
-});
-
-
 //別ページからアクティブなタブへのリンク
 $(document).ready(function() {
   // URLからクエリパラメータを取得
   const urlParams = new URLSearchParams(window.location.search);
   const tabParam = urlParams.get('id');
-  
+
   // 初期タブを決める変数を宣言
   let initialTab = "tab1"; // デフォルトのタブ
   if (tabParam && $('#' + tabParam).length) {
     initialTab = tabParam;
   }
-  
+
   // リロードしたときにスクロールを止める
   $(window).on('load', function () {
     if (tabParam) {
       $('body,html').stop().scrollTop(0);
     }
   });
-  
+
   // コンテンツ非表示 & タブを非アクティブ
   $('.tab__content-item').removeClass("is-active");
   $('.tab__menu li').removeClass('is-active');
-  
+
   // 何番目のタブかを格納
   const tabno = $('.tab__menu li#' + initialTab).index();
-  
+
   // コンテンツ表示
   $('.tab__content-item').eq(tabno).addClass('is-active');
-  
+
   // タブのアクティブ化
   $('.tab__menu li').eq(tabno).addClass('is-active');
-  
+
   // タブクリック時の処理
   $('.js-tab').on('click', function() {
     $('.js-tab,.js-panel').removeClass('is-active');
@@ -275,7 +255,6 @@ $(document).ready(function() {
   });
 });
 
-//スクロールアニメーション
 $(window).scroll(function () {
   var scrollAnimationElm = document.querySelectorAll('.js-fade');
   var scrollAnimationFunc = function () {
@@ -292,7 +271,7 @@ $(window).scroll(function () {
     for (var i = 0; i < scrollCardItems.length; i++) {
       var triggerMargin = 100;
       if (window.innerHeight > scrollCardItems[i].getBoundingClientRect().top + triggerMargin) {
-        scrollCardItems[i].classList.add('fade-in-left');
+        scrollCardItems[i].classList.add('fade-in');
       }
     }
   };
@@ -306,4 +285,25 @@ $(window).scroll(function () {
     scrollCardFunc();
   });
 });
+
+$(window).on('load', function() {
+	// ページのURLを取得
+	const url = $(location).attr('href'),
+	// headerの高さを取得してそれに30px追加した値をheaderHeightに代入
+	headerHeight = $('header').outerHeight() + 30;
+
+	// urlに「#」が含まれていれば
+	if(url.indexOf("#") != -1){
+		// urlを#で分割して配列に格納
+		const anchor = url.split("#"),
+		// 分割した最後の文字列（#◯◯の部分）をtargetに代入
+		target = $('#' + anchor[anchor.length - 1]),
+		// リンク先の位置からheaderHeightの高さを引いた値をpositionに代入
+		position = Math.floor(target.offset().top) - headerHeight;
+		// positionの位置に移動
+		$("html, body").animate({scrollTop:position}, 500);
+	}
+});
+
+
 });

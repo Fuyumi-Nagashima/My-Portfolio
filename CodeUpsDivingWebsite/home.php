@@ -23,7 +23,7 @@
               <h2 class="aside-wrapper__title"><span>最新記事一覧</span></h2>
                 <div class="two-column__cards cards cards--2column">
                 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-                <a href="<?php the_permalink(); ?>" class="cards__item card">
+                <a href="<?php the_permalink(); ?>" class="cards__item-sub card">
                     <figure class="card__image">
                     <?php 
                     if(has_post_thumbnail()){

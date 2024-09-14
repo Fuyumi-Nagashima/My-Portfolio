@@ -1,74 +1,73 @@
 @use "global" as *;
 .page-faq__inner.inner {
-        width:100%;
-    @include mq('md'){
-        max-width: rem(750);
-        margin-inline: auto;
-    }
+  width: 100%;
+  @include mq("md") {
+    max-width: rem(750);
+    margin-inline: auto;
+  }
 }
 .accordion__item + .accordion__item {
-    margin-top:rem(40) ;
-    @include mq('md'){
-        margin-top:rem(34) ;
-    }
+  margin-top: rem(40);
+  @include mq("md") {
+    margin-top: rem(34);
+  }
 }
 .accordion__question {
-    background:$sub-blue;
-    color:$white;
-    cursor: pointer;
-    font-size: rem(16);
-    padding:rem(25) rem(96) rem(25) rem(40);
-    position: relative;
-    @include mq('md'){
+  background: $sub-blue;
+  color: $white;
+  cursor: pointer;
+  font-size: rem(16);
+  padding: rem(25) rem(96) rem(25) rem(40);
+  position: relative;
+  @include mq("md") {
     font-size: rem(20);
-    }
+  }
 }
 .accordion__question::before {
-    position: absolute;
-    content: '';
-    top: 44%;
-    right: 16px;
-    height: rem(1);
-    width: rem(28);
-    background:$white;
-    transform: rotate(180deg);
-    transition: all .3s ease-in-out;
-    @include mq('md'){
-        width: rem(32);
-        right: 40px;
-    }
+  position: absolute;
+  content: "";
+  top: 44%;
+  right: 16px;
+  height: rem(1);
+  width: rem(28);
+  background: $white;
+  transform: rotate(180deg);
+  transition: all 0.3s ease-in-out;
+  @include mq("md") {
+    width: rem(32);
+    right: 40px;
+  }
 }
 .accordion__question:after {
-    position: absolute;
-    content: '';
-    top: 44%;
-    right: 16px;
-    height: rem(1);
-    width: rem(28);
-    background: $white;
-    transform: rotate(180deg);
-    transition: all .3s ease-in-out;
-    @include mq('md'){
-        width: rem(32);
-        right: 40px;
-    }
+  position: absolute;
+  content: "";
+  top: 44%;
+  right: 16px;
+  height: rem(1);
+  width: rem(28);
+  background: $white;
+  transform: rotate(180deg);
+  transition: all 0.3s ease-in-out;
+  @include mq("md") {
+    width: rem(32);
+    right: 40px;
+  }
 }
 .accordion__question.is-open:before {
-    transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 .accordion__question.is-open:after {
-    transform: rotate(90deg);
+  transform: rotate(90deg);
 }
-.accordion__answer{
-
-    font-size: rem(16);
-    border-top: 1px solid $sub-blue;
-    border-left: 1px solid $sub-blue;
-    border-right: 1px solid $sub-blue;
-    border-bottom: 1px solid $sub-blue;
-    padding: rem(19) rem(16);
-    @include mq('md'){
-        padding: rem(40) ;
-        margin-top:rem(16);
-    }
+.accordion__answer {
+  font-size: rem(16);
+  border-top: 1px solid $sub-blue;
+  border-left: 1px solid $sub-blue;
+  border-right: 1px solid $sub-blue;
+  border-bottom: 1px solid $sub-blue;
+  padding: rem(19) rem(16);
+  @include mq("md") {
+    padding: rem(40);
+    margin-top: rem(16);
+  }
 }

@@ -1,19 +1,19 @@
 @use "global" as *;
-.breadcrumb{
-    padding-top: rem(8);
+.breadcrumb {
+  padding-top: rem(8);
 }
-.breadcrumb--404{
-    color:$white;
-    margin-top:rem(80);
-    background-color: $main-blue;
-    @include mq('md'){
-    margin-top:rem(90);
-    }
+.breadcrumb--404 {
+  color: $white;
+  margin-top: rem(80);
+  background-color: $main-blue;
+  @include mq("md") {
+    margin-top: rem(90);
+  }
 }
 .breadcrumb span {
-    font-size:rem(14);
-    display: inline-block;
+  font-size: rem(14);
+  display: inline-block;
 }
-.breadcrumb--contact{
-    background-color: #F8F4EE;
+.breadcrumb--contact {
+  background-color: #f8f4ee;
 }

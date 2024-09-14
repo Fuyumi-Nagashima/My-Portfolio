@@ -1,0 +1,15 @@
+root = false
+
+[*]
+# インデントはスペースを使用
+indent_style = space
+# インデント幅は2スペース
+indent_size = 2
+# 改行コードはLF
+end_of_line = lf
+# 文字コードはUTF-8
+charset = utf-8
+# 行末の余分なスペースを削除
+trim_trailing_whitespace = true
+# ファイルの末尾に改行を追加
+insert_final_newline = true
