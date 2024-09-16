@@ -20,7 +20,7 @@ $country = esc_url(home_url("/country"));
           $sp_images = get_field('mv_img_sp');
           // 画像が存在する場合、ループで表示
           if ($pc_images && $sp_images) :
-            for ($i = 1; $i <= 6; $i++) :
+            for ($i = 1; $i <= 5; $i++) :
               $pc_image = $pc_images["mv_pc_0$i"];
               $sp_image = $sp_images["mv_sp_0$i"];
               if ($pc_image && $sp_image) :
@@ -47,7 +47,6 @@ $country = esc_url(home_url("/country"));
       </div>
     </div>
   </div>
-
   <!-- introduction -->
   <section class="layout-introduction introduction js-fade">
     <div class="introduction__inner inner">
@@ -92,8 +91,7 @@ $country = esc_url(home_url("/country"));
         <div class="gallery__inner">
           <ul class="gallery__list gallery-list">
             <li class="gallery-list__item">
-              <a
-                href="<?php echo get_permalink(get_page_by_path('country')); ?>#<?php echo sanitize_title('オーストラリア'); ?>">
+              <a href="<?php echo get_permalink(get_page_by_path('country')); ?>#australia">
                 <picture>
                   <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/gallery_aus.webp"
                     type="image/webp">
@@ -104,7 +102,7 @@ $country = esc_url(home_url("/country"));
               </a>
             </li>
             <li class="gallery-list__item">
-              <a href="<?php echo get_permalink(get_page_by_path('country')); ?>#<?php echo sanitize_title('カナダ'); ?>">
+              <a href="<?php echo get_permalink(get_page_by_path('country')); ?>#canada">
                 <picture>
                   <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/gallery_can.webp"
                     type="image/webp">
@@ -115,19 +113,18 @@ $country = esc_url(home_url("/country"));
               </a>
             </li>
             <li class="gallery-list__item">
-              <a
-                href="<?php echo get_permalink(get_page_by_path('country')); ?>#<?php echo sanitize_title('ニュージーランド'); ?>">
+              <a href="<?php echo get_permalink(get_page_by_path('country')); ?>#new-zealand">
                 <picture>
                   <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/gallery_nz.webp"
                     type="image/webp">
                   <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/gallery_nz.jpg"
                     alt="遠めから眺めたオークランドの街並み">
                 </picture>
-                <p class="gallery-list__country-name">ニュージーランド<span>new zealand</span></p>
+                <p class="gallery-list__country-name">ニュージーランド<span>new&nbsp;zealand</span></p>
               </a>
             </li>
             <li class="gallery-list__item">
-              <a href="<?php echo get_permalink(get_page_by_path('country')); ?>#<?php echo sanitize_title('アメリカ'); ?>">
+              <a href="<?php echo get_permalink(get_page_by_path('country')); ?>#usa">
                 <picture>
                   <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/gallery_usa.webp"
                     type="image/webp">
@@ -138,8 +135,7 @@ $country = esc_url(home_url("/country"));
               </a>
             </li>
             <li class="gallery-list__item">
-              <a
-                href="<?php echo get_permalink(get_page_by_path('country')); ?>#<?php echo sanitize_title('アイルランド'); ?>">
+              <a href="<?php echo get_permalink(get_page_by_path('country')); ?>#ireland">
                 <picture>
                   <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/gallery_ire.webp"
                     type="image/webp">
@@ -150,14 +146,14 @@ $country = esc_url(home_url("/country"));
               </a>
             </li>
             <li class="gallery-list__item">
-              <a href="<?php echo get_permalink(get_page_by_path('country')); ?>#<?php echo sanitize_title('イギリス'); ?>">
+              <a href="<?php echo get_permalink(get_page_by_path('country')); ?>#uk">
                 <picture>
                   <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/gallery_uk.webp"
                     type="image/webp">
                   <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/gallery_uk.jpg"
                     alt="車やバスが走るレンガの建物に囲まれたイギリスの街並み">
                 </picture>
-                <p class="gallery-list__country-name">イギリス<span>england</span></p>
+                <p class="gallery-list__country-name">イギリス<span>United&nbsp;Kingdom</span></p>
               </a>
             </li>
           </ul>
@@ -249,7 +245,7 @@ $country = esc_url(home_url("/country"));
                     echo $matches[0];
                   }
                 }
-            ?>
+                ?>
           </figure>
           <?php
               $cat = get_the_category();

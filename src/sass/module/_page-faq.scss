@@ -1,4 +1,11 @@
 @use "global" as *;
+.page-faq__inner.inner {
+  width: 100%;
+  @include mq("md") {
+    max-width: rem(750);
+    margin-inline: auto;
+  }
+}
 .page-faq__heading{
     text-align:center;
 }

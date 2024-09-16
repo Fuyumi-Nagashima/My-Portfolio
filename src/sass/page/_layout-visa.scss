@@ -1,6 +1,6 @@
 @use "global" as *;
 .layout-visa{
-    padding:rem(80) 0;
+    padding:rem(64) 0;
     background-color:#F4F9FF;
     @include mq('md'){
         padding:rem(100) 0;

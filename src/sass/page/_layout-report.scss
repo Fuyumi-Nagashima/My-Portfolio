@@ -1,9 +1,9 @@
 @use "global" as *;
 .layout-report{
-    padding:rem(60) 0;
+    padding:rem(64) 0;
     background:#F7F5F2;
     @include mq('md'){
     position:relative;
-    padding: rem(100) 0 rem(60) 0;
+    padding: rem(100) 0;
     }
 }

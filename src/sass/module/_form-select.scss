@@ -1,27 +1,43 @@
 @use "global" as *;
+//プルダウンの矢印
+.form-select {
+  position: relative;
+}
+.form-select::after {
+  position: absolute;
+  content: "";
+  display: inline-block;
+  border-top: 1px solid #333333;
+  border-right: 1px solid #333333;
+  height: rem(8);
+  width: rem(8);
+  top: 15px;
+  right: 20px;
+  transform: rotate(135deg);
+  pointer-events: none; //これを入れないとこのエリアをクリックしてもプルダウンされない
+  @include mq('md'){
+    top: 8px;
+  }
+}
 .form-select select {
-    padding: rem(11) rem(28) rem(12) rem(8);
-    width: 100%;
-    font-size: rem(12);
-    line-height: calc(17/12);
-    border-radius: 0;
-    border: 1px solid $main-blue;
-    background-image: url(./../images/common/page-contact-arrow.svg);
-    background-repeat: no-repeat;
-    background-size: rem(12);
-    background-position: right rem(5) top rem(12);
-    appearance: none;
-    cursor: pointer;
-    @include mq('md'){
-        padding: rem(7) rem(28) rem(6) rem(8);
-    }
+  padding: rem(11) rem(28) rem(12) rem(8);
+  width: 100%;
+  font-size: rem(12);
+  line-height: calc(17 / 12);
+  border-radius: 0;
+  border: 1px solid $main-blue;
+  appearance: none;
+  cursor: pointer;
+  @include mq("md") {
+    padding: rem(7) rem(28) rem(6) rem(8);
+  }
 }
 
 .form-select select::-ms-expand {
-    display: none;
+  display: none;
 }
 .form-select select:focus {
-    border: 1px solid #ccc;
-    box-shadow: none;
-	outline: none;
+  border: 1px solid #ccc;
+  box-shadow: none;
+  outline: none;
 }

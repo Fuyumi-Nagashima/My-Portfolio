@@ -1,9 +1,13 @@
 @use "global" as *;
 
 .layout-introduction{
-    margin-top:rem(64);
-    position: relative;
-    overflow: hidden;
+  padding: rem(64) 0;
+  background-color:#F7F5F2;
+  position: relative;
+  overflow: hidden;
+  @include mq('md'){
+    padding:rem(100) 0;
+  }
 }
 .layout-introduction::before{
     @include mq('md'){

@@ -42,23 +42,6 @@ function my_setup() {
 add_action( 'after_setup_theme', 'my_setup' );
 
 
-//archive-campaignとarchive-voice(カスタム投稿)での記事表示件数を決める
-function set_custom_post_type_posts_per_page($query) {
-    if ($query->is_main_query() && !is_admin()) {
-        // 'report' はカスタム投稿タイプのスラッグ
-        if (is_post_type_archive('report')) {
-            $query->set('posts_per_page', 6);
-        }
-        // 既存の 'campaign' カスタム投稿タイプの設定も保持する
-        elseif (is_post_type_archive('campaign')) {
-            $query->set('posts_per_page', 4);
-        }
-    }
-}
-add_action('pre_get_posts', 'set_custom_post_type_posts_per_page');
-
-
-
 //管理画面の投稿画面で本文入力部分を非表示にする
 function remove_wysiwyg()
 {
@@ -112,21 +95,23 @@ function wpcf7_autop_return_false()
 }
 
  // サンクスページにリダイレクト
-function custom_cf7_redirect() {
+ function custom_cf7_redirect() {
+  if(is_page('contact')) :  // contactページのみ出力する
     ?>
-    <script type="text/javascript">
-        document.addEventListener('wpcf7mailsent', function(event) {
-            // デフォルトの送信完了メッセージを非表示にする
-            var form = event.target;
-            var responseOutput = form.querySelector('.wpcf7-response-output');
-            if (responseOutput) {
-                responseOutput.style.display = 'none';
-            }
-            // サンクスページにリダイレクト
-            window.location.href = 'http://my-portofolio.local/thanks/';
-        }, false);
-    </script>
-    <?php
+<script type="text/javascript">
+document.addEventListener('wpcf7mailsent', function(event) {
+  // デフォルトの送信完了メッセージを非表示にする
+  var form = event.target;
+  var responseOutput = form.querySelector('.wpcf7-response-output');
+  if (responseOutput) {
+    responseOutput.style.display = 'none';
+  }
+  // サンクスページにリダイレクト
+  window.location.href = '<?php echo esc_html(home_url('thanks')); ?>'; // URLは動的に出力
+}, false);
+</script>
+<?php
+  endif;
 }
 add_action('wp_footer', 'custom_cf7_redirect');
 
@@ -176,19 +161,6 @@ function column_views_sortable($columns) {
     return $columns;
 }
 add_filter('manage_edit-post_sortable_columns', 'column_views_sortable');
-
-// ソートクエリを処理
-function sort_views_column($query) {
-    if (!is_admin()) {
-        return;
-    }
-    $orderby = $query->get('orderby');
-    if ($orderby == 'post_views_count') {
-        $query->set('meta_key', 'post_views_count');
-        $query->set('orderby', 'meta_value_num');
-    }
-}
-add_action('pre_get_posts', 'sort_views_column');
 
 function custom_archive_title($title) {
     // コロンとそれ以前の部分を取り除く

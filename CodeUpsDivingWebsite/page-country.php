@@ -26,8 +26,7 @@
             $image_url = $img_data[0];
             $alt = get_post_meta($country_item['country_image'], '_wp_attachment_image_alt', true) ?: get_post($country_item['country_image'])->post_title;
         ?>
-        <div class="page-country__item countries__item"
-          id="<?php echo sanitize_title($country_item['country_name']); ?>">
+        <div class="page-country__item countries__item" id="<?php echo sanitize_title($country_item['country_id']); ?>">
           <div class="countries__content">
             <h3 class="countries__heading"><?php echo esc_html($country_item['country_name']); ?></h3>
             <p class="countries__text"><?php echo esc_html($country_item['country_description']); ?></p>
