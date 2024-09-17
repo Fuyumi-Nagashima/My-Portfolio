@@ -30,7 +30,9 @@ body {
   text-rendering: optimizeLegibility;
   line-height: 1.5;
   position:relative;
+  display: none;
 }
+
 body.js-fixed {
   width: 100%;
   height: 100%;

@@ -48,23 +48,23 @@ $country = esc_url(home_url("/country"));
     </div>
   </div>
   <!-- introduction -->
-  <section class="layout-introduction introduction js-fade">
+  <section class="layout-introduction introduction ">
     <div class="introduction__inner inner">
-      <div class="introduction__logo">
+      <div class="introduction__logo js-fade">
         <picture>
           <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/logo-blue.webp" type="image/webp">
           <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/logo-blue.png" alt="海外留学のDream Quest">
         </picture>
       </div>
-      <h2 class="introduction__lead">海外留学のDream Quest</h2>
-      <div class="introduction__text-wrap">
-        <p class="introduction__text">Dream Questは、あなたの夢探しの旅、<br>夢を追い求める旅をサポートします。</p>
+      <h2 class="introduction__lead js-fade">海外留学のDream Quest</h2>
+      <div class=" introduction__text-wrap js-fade">
+        <p class=" introduction__text">Dream Questは、あなたの夢探しの旅、<br>夢を追い求める旅をサポートします。</p>
         <p class="introduction__text">独自プログラムと豊富なネットワークを活用し、<br>一度きりの人生で最高の挑戦となる<br class="u-mobile">海外留学を実現します。
         </p>
         <p class="introduction__text">あなたの成長に繋がる貴重な経験を提供し、<br>安心のサポート体制で留学を全力で応援します。<br>Dream
           Questで、夢を現実にする第一歩を<br class="u-mobile">踏み出しましょう。</p>
       </div>
-      <div class="introduction__image-wrap">
+      <div class="introduction__image-wrap js-fade">
         <figure class="introduction__image">
           <picture>
             <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/introduction-image.webp"
@@ -425,9 +425,9 @@ $country = esc_url(home_url("/country"));
 <div id="loading-screen">
   <div class="plane-icon" id="js-plane-icon">
     <picture>
-      <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/loading-airplane-img02.webp"
+      <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/loading-airplane-image.webp"
         type="image/webp">
-      <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/loading-airplane-img02.png"
+      <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/loading-airplane-image.png"
         alt="ローディング画面で下から上に動く飛行機" decoding="async" loading="eager">
     </picture>
   </div>

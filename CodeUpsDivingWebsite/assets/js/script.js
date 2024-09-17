@@ -24,12 +24,12 @@ jQuery(function ($) {
     if (state == false) {
       pos = $(window).scrollTop();
       $("body").addClass("js-fixed").css({
-        top: -pos,
+        top: -pos
       });
       state = true;
     } else {
       $("body").removeClass("js-fixed").css({
-        top: 0,
+        top: 0
       });
       window.scrollTo(0, pos);
       state = false;
@@ -52,43 +52,46 @@ jQuery(function ($) {
       $(".js-header-header__hamburger").removeClass("change-hamburger");
     }
   });
-
-  // ローディングアニメーション
   $(function () {
-    // ローダー終了
-    function end_loader() {
-      $("#loading-screen").fadeOut(400, function () {
-        show_logo(); // show_logo関数を定義した上で呼び出す
-      });
+    // ローディングアニメーションを実行するか確認
+    var hasVisited = sessionStorage.getItem("hasVisited");
+    if (!hasVisited) {
+      sessionStorage.setItem("hasVisited", "true"); // 訪問済みを記録
+    } else {
+      // 訪問済みならローディング画面をスキップ
+      $("#loading-screen").remove();
+      return;
     }
 
-    // ロゴを表示する関数を追加
-    function show_logo() {
-      $("#js-logo").fadeIn(800); // 例として、ロゴの表示を行う処理
+    // ローダー終了
+    function end_loader() {
+      $("#loading-screen").fadeOut(1000); // ローディング画面がフェードアウト
     }
 
     // 画像表示
     function show_img() {
-      $("#js-plane-icon img").fadeIn(800).css("animation-delay", "1s");
+      $("#js-plane-icon img").fadeIn(800).css("animation-delay", "1s"); // 飛行機画像をフェードイン
+    }
+
+    // ロゴ表示
+    function show_logo() {
+      $("#js-opening__logo").fadeIn(800).delay(600).fadeOut(800); // ロゴをフェードインし、0.5秒後にフェードアウト
     }
 
     // タイマー処理
     $(window).on("load", function () {
-      // 画像表示
+      // 飛行機の表示と移動開始
+      show_img();
+
+      // 飛行機が画面外に移動後、ロゴを表示
       setTimeout(function () {
-        show_img();
-      }, 3000);
-      // ローディング画面
-      setTimeout(function () {
-        $("#js-opening__logo").fadeIn(3000);
-      }, 1000);
-      setTimeout(function () {
-        $("#js-opening").fadeOut(4000);
-      }, 3000);
-      // ローダー終了
+        show_logo();
+      }, 3000); // 3秒後にロゴを表示
+
+      // ロゴがフェードアウトしたらローダーを終了
       setTimeout(function () {
         end_loader();
-      }, 5000); // アニメーションが完了するのを待つ
+      }, 4800); // ロゴがフェードアウト後、ローディング画面を消す
     });
   });
 
@@ -97,17 +100,14 @@ jQuery(function ($) {
     loop: true,
     effect: "fade",
     // フェード切り替え
-    fadeEffect: {
-      crossFade: true, // フェード時にスライドが重ならないようにする
-    },
     // 自動再生
     autoplay: {
       delay: 4000,
       // 4秒後に次のスライドへ
-      disableOnInteraction: false, // ユーザーが操作しても自動再生を継続
+      disableOnInteraction: false // ユーザーが操作しても自動再生を継続
     },
 
-    speed: 2000, // 2秒かけてフェード
+    speed: 2000 // 2秒かけてフェード
   });
 
   //Voice(report)のスライダー
@@ -119,32 +119,32 @@ jQuery(function ($) {
     spaceBetween: 30,
     autoplay: {
       delay: 2000,
-      disableOnInteraction: false, // 矢印をクリックしても自動再生を止めない
+      disableOnInteraction: false // 矢印をクリックしても自動再生を止めない
     },
 
     breakpoints: {
       768: {
         spaceBetween: 25,
-        slidesPerView: 2.75,
+        slidesPerView: 2.75
       },
       1080: {
         spaceBetween: 25,
-        slidesPerView: 3.25,
+        slidesPerView: 3.25
       },
       1280: {
         spaceBetween: 25,
-        slidesPerView: 3.75,
+        slidesPerView: 3.75
       },
       1920: {
         spaceBetween: 25,
-        slidesPerView: 5,
-      },
+        slidesPerView: 5
+      }
     },
     navigation: {
       nextEl: ".swiper-button-next",
       // 次へボタンのクラス名を指定
-      prevEl: ".swiper-button-prev", // 前へボタンのクラス名を指定
-    },
+      prevEl: ".swiper-button-prev" // 前へボタンのクラス名を指定
+    }
   });
 
   //追従バナー(フローティングバナー)
@@ -169,12 +169,9 @@ jQuery(function ($) {
     }
   });
   pageTop.click(function () {
-    $("body,html").animate(
-      {
-        scrollTop: 0,
-      },
-      500
-    );
+    $("body,html").animate({
+      scrollTop: 0
+    }, 500);
     return false;
   });
   // フッター手前でストップ
@@ -187,12 +184,12 @@ jQuery(function ($) {
       // ページトップボタンがフッター手前に来たらpositionとfixedからabsoluteに変更
       $("#js-pagetop").css({
         position: "absolute",
-        bottom: footHeight + 18,
+        bottom: footHeight + 18
       });
     } else {
       $("#js-pagetop").css({
         position: "fixed",
-        bottom: "20px",
+        bottom: "20px"
       });
     }
   });
@@ -216,12 +213,9 @@ jQuery(function ($) {
     $(this).children("ul").slideToggle();
   });
   //年代をクリックしたら中身が出たり隠れたりする
-  $(".js-asideblog-list__year,.js-asideblog-list__month").on(
-    "click",
-    function () {
-      $(this).toggleClass("open");
-    }
-  );
+  $(".js-asideblog-list__year,.js-asideblog-list__month").on("click", function () {
+    $(this).toggleClass("open");
+  });
 
   //下層ページpage-informationタブ切り替え
   $(".js-tab").on("click", function () {
@@ -276,10 +270,7 @@ jQuery(function ($) {
     var scrollAnimationFunc = function scrollAnimationFunc() {
       for (var i = 0; i < scrollAnimationElm.length; i++) {
         var triggerMargin = 100;
-        if (
-          window.innerHeight >
-          scrollAnimationElm[i].getBoundingClientRect().top + triggerMargin
-        ) {
+        if (window.innerHeight > scrollAnimationElm[i].getBoundingClientRect().top + triggerMargin) {
           scrollAnimationElm[i].classList.add("fade-in");
         }
       }
@@ -288,10 +279,7 @@ jQuery(function ($) {
     var scrollCardFunc = function scrollCardFunc() {
       for (var i = 0; i < scrollCardItems.length; i++) {
         var triggerMargin = 100;
-        if (
-          window.innerHeight >
-          scrollCardItems[i].getBoundingClientRect().top + triggerMargin
-        ) {
+        if (window.innerHeight > scrollCardItems[i].getBoundingClientRect().top + triggerMargin) {
           scrollCardItems[i].classList.add("fade-in");
         }
       }
@@ -320,12 +308,12 @@ jQuery(function ($) {
         // リンク先の位置からheaderHeightの高さを引いた値をpositionに代入
         position = Math.floor(target.offset().top) - headerHeight;
       // positionの位置に移動
-      $("html, body").animate(
-        {
-          scrollTop: position,
-        },
-        500
-      );
+      $("html, body").animate({
+        scrollTop: position
+      }, 500);
     }
+  });
+  $(function () {
+    $("body").fadeIn(1200); //1秒かけてフェードイン！
   });
 });

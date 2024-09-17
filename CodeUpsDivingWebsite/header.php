@@ -7,7 +7,7 @@
   <meta name="format-detection" content="telephone=no" />
   <?php wp_head(); ?>
 </head>
-<?php 
+<?php
   $visa = esc_url( home_url('/visa/'));
   $blog = esc_url( home_url('/blog/'));
   $report = esc_url( home_url('/report/'));
@@ -15,7 +15,7 @@
   $contact = esc_url( home_url('/contact/'));
   $terms_of_service = esc_url( home_url('/terms-of-service/'));
   $privacy_policy = esc_url( home_url('/privacypolicy/'));
-  $country = esc_url(home_url("/country"));  
+  $country = esc_url(home_url("/country"));
   ?>
 
 <body <?php body_class(); ?>>

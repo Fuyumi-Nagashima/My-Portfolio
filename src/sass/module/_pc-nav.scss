@@ -20,8 +20,14 @@
     justify-content: center;
     font-family: $english-font-family;
     position: relative;
-    overflow: hidden; 
+    overflow: hidden;
     transition: all 0.7s 0s ease;
+    @include mq('md'){
+      font-size: rem(12);
+    }
+    @include mq('lg'){
+      font-size: rem(15);
+    }
 }
 .pc-nav__link:hover{
     color:#B3CBEC;
