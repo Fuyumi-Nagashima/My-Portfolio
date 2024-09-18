@@ -25,12 +25,17 @@ dd {
   margin: 0;
 }
 /* Set core body defaults */
+#page-fade {
+  opacity: 0;
+  transition: opacity 1s ease-in-out; /* 2秒でフェードイン */
+}
+
 body {
   min-height: 100vh;
   text-rendering: optimizeLegibility;
   line-height: 1.5;
   position:relative;
-  display: none;
+  // display: none;
 }
 
 body.js-fixed {

@@ -117,6 +117,7 @@ if (is_404() || is_page('contact')) {
     <span class="pagetop__arrow"></span>
   </div>
 </a>
+</div>
 <?php wp_footer(); ?>
 </body>
 

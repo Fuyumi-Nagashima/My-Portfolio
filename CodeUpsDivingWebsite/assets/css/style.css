@@ -45,8 +45,12 @@ dd {
 
 /* Set core body defaults */
 
+#page-fade {
+	opacity: 0;
+	transition: opacity 1s ease-in-out; /* 2秒でフェードイン */
+}
+
 body {
-	display: none;
 	line-height: 1.5;
 	min-height: 100vh;
 	position: relative;
@@ -1682,15 +1686,21 @@ footer__inner {
 	object-fit: cover;
 }
 
-.swiper-slide-active .slide-img,
-.swiper-slide-duplicate-active .slide-img,
-.swiper-slide-prev .slide-img {
+.swiper-slide-active .fv__swiper-slide img,
+.swiper-slide-duplicate-active .fv__swiper-slide img,
+.swiper-slide-prev .fv__swiper-slide img {
 	animation: zoomUp 10s linear 0s normal both;
 }
 
-.slide-img img {
-	display: block;
+.swiper-slide {
 	height: inherit;
+}
+
+.fv__swiper-slide img {
+	-o-object-fit: cover;
+	display: block;
+	height: 100%;
+	object-fit: cover;
 	width: 100%;
 }
 

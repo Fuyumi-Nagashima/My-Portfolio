@@ -10,7 +10,7 @@ function add_google_fonts() {
 // CSSファイルの読み込み
 add_action('wp_enqueue_scripts', 'add_custom_css');
 function add_custom_css() {
-    wp_enqueue_style('swiper-css', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css');
+    wp_enqueue_style('swiper-css', 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css');
     wp_enqueue_style('theme-style', get_theme_file_uri('/assets/css/style.css'));
 }
 
@@ -19,7 +19,7 @@ add_action('wp_enqueue_scripts', 'add_custom_js');
 function add_custom_js() {
     wp_enqueue_script('jquery', 'https://code.jquery.com/jquery-3.7.1.min.js', array(), false, true);
     wp_enqueue_script('jquery-inview', get_theme_file_uri('/assets/js/jquery.inview.min.js'), array(), false, true);
-    wp_enqueue_script('swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', array(), false, true);
+    wp_enqueue_script('swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js', array(), false, true);
     wp_enqueue_script('custom-script', get_theme_file_uri('/assets/js/script.js'), array(), false, true);
 }
 
@@ -220,14 +220,14 @@ function my_theme_setup() {
     add_post_type_support('post', 'thumbnail'); // 標準投稿タイプにアイキャッチ画像のサポートを追加
   }
   add_action('after_setup_theme', 'my_theme_setup');
-  
+
   // 投稿リストにアイキャッチ画像のカラムを追加
   function add_thumbnail_column($columns) {
     $columns['thumbnail'] = 'Featured Image';
     return $columns;
   }
   add_filter('manage_post_posts_columns', 'add_thumbnail_column');
-  
+
 
   // アイキャッチ画像をカラムに表示
   function display_thumbnail_column($column, $post_id) {
@@ -242,11 +242,11 @@ function my_theme_setup() {
     }
   }
   add_action('manage_post_posts_custom_column', 'display_thumbnail_column', 10, 2);
-  
+
   // カスタム投稿タイプ 'campaign' にアイキャッチ画像のカラムを追加
   add_filter('manage_campaign_posts_columns', 'add_thumbnail_column');
   add_action('manage_campaign_posts_custom_column', 'display_thumbnail_column', 10, 2);
-  
+
   // カスタム投稿タイプ 'voice' にアイキャッチ画像のカラムを追加
   add_filter('manage_report_posts_columns', 'add_thumbnail_column');
   add_action('manage_report_posts_custom_column', 'display_thumbnail_column', 10, 2);
@@ -287,7 +287,7 @@ function add_custom_widget() {
     $html .= '</div>'; // divタグを閉じる
     echo $html;
   }
-  
+
 //②自作した情報をダッシュボードのウィジェットに登録する関数
 function add_my_widget() {
 	wp_add_dashboard_widget('custom_widget', '各種投稿', 'add_custom_widget');
@@ -315,5 +315,5 @@ function remove_dashboard_widget() {
  	remove_meta_box( 'dashboard_quick_press', 'dashboard', 'side' );
  	//WordPressイベントとニュース
  	remove_meta_box( 'dashboard_primary', 'dashboard', 'side' );
-} 
+}
 add_action('wp_dashboard_setup', 'remove_dashboard_widget' );

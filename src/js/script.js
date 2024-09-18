@@ -94,8 +94,12 @@ jQuery(function ($) {
   const swiper = new Swiper(".js-fv__swiper", {
     loop: true,
     effect: "fade", // フェード切り替え
+    fadeEffect: {
+      crossFade: true,
+    },
     // 自動再生
     autoplay: {
+      waitForTransition:false,
       delay: 4000, // 4秒後に次のスライドへ
       disableOnInteraction: false, // ユーザーが操作しても自動再生を継続
     },
@@ -319,7 +323,9 @@ jQuery(function ($) {
     }
   });
 
-  $(function () {
-    $("body").fadeIn(1200); //1秒かけてフェードイン！
+//ページ遷移時に全体をふわっと表示させる
+  $(window).on('load', function () {
+    $("#page-fade").css('opacity', 1); // ページがロードされたら2秒でフェードイン
   });
+
 });
