@@ -52,47 +52,33 @@ jQuery(function ($) {
       $(".js-header-header__hamburger").removeClass("change-hamburger");
     }
   });
-  $(function () {
-    // ローディングアニメーションを実行するか確認
+  $(document).ready(function () {
     var hasVisited = sessionStorage.getItem("hasVisited");
     if (!hasVisited) {
-      sessionStorage.setItem("hasVisited", "true"); // 訪問済みを記録
+      sessionStorage.setItem("hasVisited", "true");
     } else {
-      // 訪問済みならローディング画面をスキップ
       $("#loading-screen").remove();
+      $("body").fadeIn(1200);
       return;
     }
-
-    // ローダー終了
     function end_loader() {
-      $("#loading-screen").fadeOut(1000); // ローディング画面がフェードアウト
+      $("#loading-screen").fadeOut(1000, function () {
+        $("body").fadeIn(1200);
+      });
     }
-
-    // 画像表示
     function show_img() {
-      $("#js-plane-icon img").fadeIn(800).css("animation-delay", "1s"); // 飛行機画像をフェードイン
+      $("#js-plane-icon img").fadeIn(800).css("animation-delay", "1s");
     }
-
-    // ロゴ表示
     function show_logo() {
-      $("#js-opening__logo").fadeIn(800).delay(600).fadeOut(800); // ロゴをフェードインし、0.5秒後にフェードアウト
+      $("#js-opening__logo").fadeIn(800).delay(600).fadeOut(800);
     }
-
-    // タイマー処理
-    $(window).on("load", function () {
-      // 飛行機の表示と移動開始
-      show_img();
-
-      // 飛行機が画面外に移動後、ロゴを表示
-      setTimeout(function () {
-        show_logo();
-      }, 3000); // 3秒後にロゴを表示
-
-      // ロゴがフェードアウトしたらローダーを終了
-      setTimeout(function () {
-        end_loader();
-      }, 4800); // ロゴがフェードアウト後、ローディング画面を消す
-    });
+    show_img();
+    setTimeout(function () {
+      show_logo();
+    }, 3000);
+    setTimeout(function () {
+      end_loader();
+    }, 4800);
   });
 
   //fvスライダー

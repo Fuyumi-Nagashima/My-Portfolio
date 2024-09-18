@@ -11,7 +11,7 @@ $country = esc_url(home_url("/country"));
 ?>
 <main>
   <div class="fv" id="js-fv">
-    <div class="fv__inner">
+    <div class=" fv__inner">
       <div class="swiper fv__swiper js-fv__swiper">
         <div class="swiper-wrapper fv__swiper-wrapper">
           <?php
@@ -25,12 +25,14 @@ $country = esc_url(home_url("/country"));
               $sp_image = $sp_images["mv_sp_0$i"];
               if ($pc_image && $sp_image) :
           ?>
-          <div class="swiper-slide">
-            <picture class="fv__swiper-slide">
-              <source srcset="<?php echo esc_url($sp_image['sizes']['medium_large']); ?>" media="(max-width:767px)" />
-              <img src="<?php echo esc_url($pc_image['sizes']['large']); ?>"
-                alt="<?php echo esc_attr($pc_image['alt']); ?>" decoding="async" loading="lazy" />
-            </picture>
+          <div class="swiper-slide fv__swiper-slide">
+            <div class="slide-img">
+              <picture>
+                <source srcset="<?php echo esc_url($sp_image['sizes']['medium_large']); ?>" media="(max-width:767px)" />
+                <img src="<?php echo esc_url($pc_image['sizes']['large']); ?>"
+                  alt="<?php echo esc_attr($pc_image['alt']); ?>" />
+              </picture>
+            </div>
           </div>
           <?php
               endif;
@@ -38,12 +40,12 @@ $country = esc_url(home_url("/country"));
           endif;
           ?>
         </div>
-        <div class="fv__title-wrap">
+        <!-- <div class="fv__title-wrap">
           <p class="fv__title-small">その挑戦が<br>夢へ繋がる。</p>
         </div>
         <div class="fv__title-bottom">
           <p class="fv__title-big">dream&nbsp;quest&nbsp;for&nbsp;challengers</p>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>

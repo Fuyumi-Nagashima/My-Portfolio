@@ -655,7 +655,7 @@ a:hover {
 	content: "";
 	height: 0.0625rem; /*絶対配置で矢印の位置を決める*/
 	position: absolute;
-	right: -17%;
+	right: -12%;
 	transform: rotate(35deg); /*アニメーションの指定*/
 	transition: all 0.3s; /*矢印の形状*/
 	width: 0.625rem;
@@ -1664,7 +1664,7 @@ footer__inner {
 }
 
 .fv {
-	height: 100dvh;
+	height: 100vh;
 	position: relative;
 	width: 100%;
 }
@@ -1675,22 +1675,22 @@ footer__inner {
 }
 
 .fv__swiper,
-.fv__swiper-slide picture,
-.fv__swiper-slide img {
+.fv__swiper-slide,
+.fv__swiper-wrapper {
 	-o-object-fit: cover;
 	height: inherit;
 	object-fit: cover;
 }
 
-.swiper-slide-active .fv__swiper-slide img,
-.swiper-slide-duplicate-active .fv__swiper-slide img,
-.swiper-slide-prev .fv__swiper-slide img {
-	animation: zoomUp 7s linear 0s normal both;
+.swiper-slide-active .slide-img,
+.swiper-slide-duplicate-active .slide-img,
+.swiper-slide-prev .slide-img {
+	animation: zoomUp 10s linear 0s normal both;
 }
 
-.fv__swiper-slide {
+.slide-img img {
 	display: block;
-	height: 100svh;
+	height: inherit;
 	width: 100%;
 }
 
@@ -1716,6 +1716,7 @@ footer__inner {
 	overflow: hidden;
 	padding: 0.5rem 0;
 	position: absolute;
+	width: 100vw;
 	z-index: 1;
 }
 
@@ -1729,6 +1730,7 @@ footer__inner {
 	letter-spacing: 0.1em;
 	padding-left: 100%;
 	text-transform: uppercase;
+	transform: translateX(100%);
 	white-space: nowrap;
 }
 
@@ -4161,12 +4163,8 @@ html {
 
 @keyframes marquee {
 
-0% {
-	transform: translate(0);
-}
-
 100% {
-	transform: translate(-100%);
+	transform: translateX(-100%);
 }
 
 }
